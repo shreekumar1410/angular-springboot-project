@@ -1,0 +1,108 @@
+<div class="profile-form-container">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="form-card">
+          <div class="form-header">
+            <h2>
+              <i class="bi" [class]="isEdit ? 'bi-pencil-square' : 'bi-person-plus'"></i>
+              {{ isEdit ? 'Edit Profile' : 'Create Profile' }}
+            </h2>
+          </div>
+          <div class="form-body">
+          <div [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label-custom">
+                    <i class="bi bi-person"></i>Name *
+                  </label>
+                  <input type="text" class="form-control-custom" id="name" formControlName="name" placeholder="Enter your name">
+                  <div *ngIf="profileForm.get('name')!.invalid && profileForm.get('name')!.touched" class="error-text">
+                    <i class="bi bi-exclamation-circle"></i>
+                    <span *ngIf="profileForm.get('name')!.errors?.['required']">Name is required.</span>
+                    <span *ngIf="profileForm.get('name')!.errors?.['pattern']">Name should contain only letters and spaces.</span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label-custom">
+                    <i class="bi bi-envelope"></i>Email
+                  </label>
+                  <input type="email" class="form-control-custom" id="email" formControlName="email" placeholder="Enter your email">
+                </div>
+                <div class="col-md-6">
+                  <label for="age" class="form-label-custom">
+                    <i class="bi bi-calendar"></i>Age
+                  </label>
+                  <input type="number" class="form-control-custom" id="age" formControlName="age" placeholder="Enter your age">
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label-custom">
+                    <i class="bi bi-telephone"></i>Phone *
+                  </label>
+                  <input type="text" class="form-control-custom" id="phone" formControlName="phone" placeholder="Enter your phone">
+                  <div *ngIf="profileForm.get('phone')!.invalid && profileForm.get('phone')!.touched" class="error-text">
+                    <i class="bi bi-exclamation-circle"></i>
+                    <span *ngIf="profileForm.get('phone')!.errors?.['required']">Phone is required.</span>
+                    <span *ngIf="profileForm.get('phone')!.errors?.['pattern']">Phone should contain only numbers, spaces, +, -.</span>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <label for="address" class="form-label-custom">
+                    <i class="bi bi-geo-alt"></i>Address *
+                  </label>
+                  <input type="text" class="form-control-custom" id="address" formControlName="address" placeholder="Enter your address">
+                  <div *ngIf="profileForm.get('address')!.invalid && profileForm.get('address')!.touched" class="error-text">
+                    <i class="bi bi-exclamation-circle"></i>Address is required.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="gender" class="form-label-custom">
+                    <i class="bi bi-gender-ambiguous"></i>Gender
+                  </label>
+                  <select class="form-select-custom" id="gender" formControlName="gender">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="dob" class="form-label-custom">
+                    <i class="bi bi-calendar-event"></i>Date of Birth *
+                  </label>
+                  <input type="date" class="form-control-custom" id="dob" formControlName="dob">
+                  <div *ngIf="profileForm.get('dob')!.invalid && profileForm.get('dob')!.touched" class="error-text">
+                    <i class="bi bi-exclamation-circle"></i>Date of Birth is required.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="qualification" class="form-label-custom">
+                    <i class="bi bi-mortarboard"></i>Qualification
+                  </label>
+                  <input type="text" class="form-control-custom" id="qualification" formControlName="qualification" placeholder="Enter your qualification">
+                </div>
+                <div class="col-md-6">
+                  <label for="languages" class="form-label-custom">
+                    <i class="bi bi-translate"></i>Languages
+                  </label>
+                  <input type="text" class="form-control-custom" id="languages" formControlName="languages" placeholder="Enter languages (comma separated)">
+                </div>
+              </div>
+              <button type="submit" class="btn-submit mt-4" [disabled]="!profileForm.valid">
+                <i class="bi" [class]="isEdit ? 'bi-check-circle me-2' : 'bi-person-plus me-2'"></i>
+                {{ isEdit ? 'Update Profile' : 'Create Profile' }}
+              </button>
+            </form>
+            <div *ngIf="errorMessage" class="alert-custom alert-danger-custom">
+              <i class="bi bi-exclamation-triangle me-2"></i>{{ errorMessage }}
+            </div>
+            <div *ngIf="successMessage" class="alert-custom alert-success-custom">
+              <i class="bi bi-check-circle me-2"></i>{{ successMessage }}
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

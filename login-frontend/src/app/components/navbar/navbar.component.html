@@ -1,0 +1,62 @@
+<nav class="navbar-custom navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand-custom" >
+      <i class="bi bi-shield-lock me-2"></i>
+      <span>MyApp</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto" *ngIf="isLoggedIn()">
+        <li class="nav-item" *ngIf="isUser()">
+          <a class="nav-link-custom" routerLink="/user/dashboard" routerLinkActive="active">
+            <i class="bi bi-speedometer2 me-1"></i>Dashboard
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isUser()">
+          <a class="nav-link-custom" routerLink="/users" routerLinkActive="active">
+            <i class="bi bi-people me-1"></i>Users
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isUser()">
+          <a class="nav-link-custom" routerLink="/profile" routerLinkActive="active">
+            <i class="bi bi-person-circle me-1"></i>Profile
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link-custom" routerLink="/admin/dashboard" routerLinkActive="active">
+            <i class="bi bi-speedometer2 me-1"></i>Dashboard
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link-custom" routerLink="/admin/users" routerLinkActive="active">
+            <i class="bi bi-people me-1"></i>Users
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link-custom" routerLink="/admin/auth-users" routerLinkActive="active">
+            <i class="bi bi-person-badge me-1"></i>Auth Users
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link-custom" routerLink="/admin/login-audit" routerLinkActive="active">
+            <i class="bi bi-clock-history me-1"></i>Login Audit
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin()">
+          <a class="nav-link-custom" routerLink="/profile" routerLinkActive="active">
+            <i class="bi bi-person-circle me-1"></i>Profile
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav" *ngIf="isLoggedIn()">
+        <li class="nav-item">
+          <button class="btn-logout" (click)="logout()">
+            <i class="bi bi-box-arrow-right me-2"></i>Logout
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,20 @@
+################################
+# Angular (Frontend)
+################################
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.vscode/
+
+################################
+# Spring Boot (Backend)
+################################
+backend/target/
+backend/.idea/
+backend/*.log
+
+################################
+# OS / Common
+################################
+.DS_Store
+Thumbs.db

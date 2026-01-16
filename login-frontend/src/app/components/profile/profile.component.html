@@ -1,0 +1,142 @@
+<div class="profile-container">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="page-title mb-4">
+          <i class="bi bi-person-circle me-2"></i>My Profile
+        </h2>
+
+        <div *ngIf="user" class="profile-card">
+          <div class="profile-header">
+            <div class="profile-avatar">
+              <i class="bi bi-person-fill"></i>
+            </div>
+            <h3 class="profile-name">{{ user.name }}</h3>
+            <p class="profile-email">
+              <i class="bi bi-envelope me-2"></i>{{ user.emailId }}
+            </p>
+          </div>
+
+          <div class="profile-body">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="bi bi-calendar"></i>
+                  </div>
+                  <div class="info-content">
+                    <label>Age</label>
+                    <p>{{ user.age || 'N/A' }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="bi bi-telephone"></i>
+                  </div>
+                  <div class="info-content">
+                    <label>Phone</label>
+                    <p>{{ user.phone || 'N/A' }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="bi bi-geo-alt"></i>
+                  </div>
+                  <div class="info-content">
+                    <label>Address</label>
+                    <p>{{ user.address || 'N/A' }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="bi bi-gender-ambiguous"></i>
+                  </div>
+                  <div class="info-content">
+                    <label>Gender</label>
+                    <p>{{ user.gender || 'N/A' }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="bi bi-mortarboard"></i>
+                  </div>
+                  <div class="info-content">
+                    <label>Qualification</label>
+                    <p>{{ user.qualification || 'N/A' }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="bi bi-calendar-event"></i>
+                  </div>
+                  <div class="info-content">
+                    <label>Date of Birth</label>
+                    <p>{{ user.dob || 'N/A' }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="bi bi-translate"></i>
+                  </div>
+                  <div class="info-content">
+                    <label>Languages</label>
+                    <p>{{ user.languages || 'N/A' }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="login-history-section">
+              <h5 class="section-title">
+                <i class="bi bi-clock-history me-2"></i>Login History
+              </h5>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="history-item">
+                    <i class="bi bi-box-arrow-in-right me-2"></i>
+                    <div>
+                      <label>Last Login Time</label>
+                      <p>{{ formatDate(lastLoginTime) }}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="history-item">
+                    <i class="bi bi-box-arrow-right me-2"></i>
+                    <div>
+                      <label>Last Logout Time</label>
+                      <p>{{ formatDate(lastLogoutTime) }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="profile-actions">
+              <button class="btn-edit-profile" (click)="editProfile()">
+                <i class="bi bi-pencil-square me-2"></i>Edit Profile
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="errorMessage" class="alert-custom alert-danger-custom mt-4">
+          <i class="bi bi-exclamation-triangle me-2"></i>{{ errorMessage }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

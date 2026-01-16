@@ -1,0 +1,111 @@
+<div class="dashboard-container">
+  <!-- Login Alert Toast Pop-up -->
+  <div *ngIf="showAlert && loginAlertMessage" class="toast-popup show" role="alert">
+    <div class="toast-header">
+      <strong class="me-auto">Login Notification</strong>
+      <button type="button" class="btn-close" aria-label="Close" (click)="dismissAlert()"></button>
+    </div>
+    <div class="toast-body">
+      {{ loginAlertMessage }}
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h1 class="dashboard-title mb-5">
+      <i class="bi bi-speedometer2 me-2"></i>
+      {{ isAdmin ? 'Admin Dashboard' : 'User Dashboard' }}
+    </h1>
+    
+    <!-- User Dashboard Content -->
+    <div *ngIf="isUser" class="row g-4">
+      <div class="col-md-6">
+        <div class="dashboard-card">
+          <div class="card-icon bg-primary">
+            <i class="bi bi-person-circle"></i>
+          </div>
+          <h3>Profile</h3>
+          <p>Manage your personal information and settings</p>
+          <a routerLink="/profile" class="card-link">
+            View Profile <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="dashboard-card">
+          <div class="card-icon bg-success">
+            <i class="bi bi-people"></i>
+          </div>
+          <h3>Users</h3>
+          <p>Browse and connect with other users</p>
+          <a routerLink="/users" class="card-link">
+            View Users <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+      <!-- <div class="col-md-4">
+        <div class="dashboard-card">
+          <div class="card-icon bg-info">
+            <i class="bi bi-gear"></i>
+          </div>
+          <h3>Settings</h3>
+          <p>Customize your dashboard preferences</p>
+          <a routerLink="/profile" class="card-link">
+            Go to Settings <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- Admin Dashboard Content -->
+    <div *ngIf="isAdmin" class="row g-4">
+      <div class="col-md-3">
+        <div class="dashboard-card">
+          <div class="card-icon bg-primary">
+            <i class="bi bi-people"></i>
+          </div>
+          <h3>Users</h3>
+          <p>Manage user profiles and information</p>
+          <a routerLink="/admin/users" class="card-link">
+            Manage Users <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="dashboard-card">
+          <div class="card-icon bg-success">
+            <i class="bi bi-person-badge"></i>
+          </div>
+          <h3>Auth Users</h3>
+          <p>Manage authentication and roles</p>
+          <a routerLink="/admin/auth-users" class="card-link">
+            Auth Users <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="dashboard-card">
+          <div class="card-icon bg-info">
+            <i class="bi bi-clock-history"></i>
+          </div>
+          <h3>Login Audit</h3>
+          <p>View login history and events</p>
+          <a routerLink="/admin/login-audit" class="card-link">
+            View Audit <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="dashboard-card">
+          <div class="card-icon bg-warning">
+            <i class="bi bi-person-circle"></i>
+          </div>
+          <h3>Profile</h3>
+          <p>Manage your admin profile</p>
+          <a routerLink="/profile" class="card-link">
+            View Profile <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

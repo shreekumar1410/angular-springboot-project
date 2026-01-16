@@ -1,0 +1,76 @@
+<div class="login-container">
+  <div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+      <div class="col-md-5 col-lg-4">
+        <div class="auth-card">
+          <div class="card-header-custom">
+            <i class="bi bi-box-arrow-in-right me-2"></i>
+            <h2 class="mb-0">Login</h2>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group-custom mb-4">
+                <label for="email" class="form-label-custom">
+                  <i class="bi bi-envelope me-2"></i>Email Address
+                </label>
+                <input 
+                  type="email" 
+                  class="form-control-custom" 
+                  id="email" 
+                  formControlName="email"
+                  placeholder="Enter your email">
+                <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-text">
+                  <i class="bi bi-exclamation-circle me-1"></i>Please enter a valid email
+                </div>
+              </div>
+              <div class="form-group-custom mb-4">
+                <label for="password" class="form-label-custom">
+                  <i class="bi bi-lock me-2"></i>Password
+                </label>
+                <div class="input-group-custom">
+                  <input 
+                    [type]="showPassword ? 'text' : 'password'" 
+                    class="form-control-custom" 
+                    id="password" 
+                    formControlName="password"
+                    placeholder="Enter your password">
+                  <button 
+                    class="btn-toggle-password" 
+                    type="button" 
+                    (click)="showPassword = !showPassword"
+                    [attr.aria-label]="showPassword ? 'Hide password' : 'Show password'">
+                    <i class="bi" [class]="showPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+                  </button>
+                </div>
+                <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-text">
+                  <i class="bi bi-exclamation-circle me-1"></i>Password is required
+                </div>
+              </div>
+              <button 
+                type="submit" 
+                class="btn-submit w-100" 
+                [disabled]="!loginForm.valid">
+                <i class="bi bi-box-arrow-in-right me-2"></i>
+                <span>Login</span>
+              </button>
+            </form>
+            <div class="auth-links mt-4">
+              <p class="text-center mb-2">
+                Don't have an account? 
+                <a routerLink="/register-login" class="link-custom">Register here</a>
+              </p>
+              <p class="text-center mb-0">
+                <a routerLink="/forgot-password" class="link-custom">
+                  <i class="bi bi-question-circle me-1"></i>Forgot Password?
+                </a>
+              </p>
+            </div>
+            <div *ngIf="showError && errorMessage" class="alert-custom alert-danger-custom shake">
+              <i class="bi bi-exclamation-triangle me-2"></i>{{ errorMessage }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
