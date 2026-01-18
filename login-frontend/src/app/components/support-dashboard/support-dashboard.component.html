@@ -13,32 +13,31 @@
   <div class="container py-5">
     <h1 class="dashboard-title mb-5">
       <i class="bi bi-speedometer2 me-2"></i>
-      User Dashboard
+      Support Dashboard
     </h1>
     
-    <!-- User Dashboard Content -->
     <div class="row g-4">
       <div class="col-md-6">
         <div class="dashboard-card">
-          <div class="card-icon bg-primary">
-            <i class="bi bi-person-circle"></i>
+          <div class="card-icon bg-warning">
+            <i class="bi bi-key"></i>
           </div>
-          <h3>Profile</h3>
-          <p>Manage your personal information and settings</p>
-          <a routerLink="/user/profile" class="card-link">
-            View Profile <i class="bi bi-arrow-right ms-2"></i>
+          <h3>Password Reset Requests</h3>
+          <p>View and approve password reset requests from users</p>
+          <a routerLink="/support/password-reset-requests" class="card-link">
+            Manage Requests <i class="bi bi-arrow-right ms-2"></i>
           </a>
         </div>
       </div>
       <div class="col-md-6">
         <div class="dashboard-card">
-          <div class="card-icon bg-success">
-            <i class="bi bi-people"></i>
+          <div class="card-icon bg-info">
+            <i class="bi bi-clock-history"></i>
           </div>
-          <h3>Users</h3>
-          <p>Browse and connect with other users</p>
-          <a routerLink="/users" class="card-link">
-            View Users <i class="bi bi-arrow-right ms-2"></i>
+          <h3>Login Audit</h3>
+          <p>View login history and audit logs (read-only)</p>
+          <a routerLink="/support/login-audit" class="card-link">
+            View Audit <i class="bi bi-arrow-right ms-2"></i>
           </a>
         </div>
       </div>

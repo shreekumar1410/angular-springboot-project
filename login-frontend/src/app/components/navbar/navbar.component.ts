@@ -28,6 +28,30 @@ export class NavbarComponent {
     return this.authService.isUser();
   }
 
+  isSupport(): boolean {
+    return this.authService.isSupport();
+  }
+
+  isSuperAdmin(): boolean {
+    return this.authService.isSuperAdmin();
+  }
+
+  getUsersRoute(): string {
+    const role = this.authService.getRole();
+    switch (role) {
+      case 'USER':
+        return '/users';
+      case 'SUPPORT':
+        return '/users'; // Support can also view users list
+      case 'ADMIN':
+        return '/admin/users';
+      case 'SUPER_ADMIN':
+        return '/super-admin/users';
+      default:
+        return '/users';
+    }
+  }
+
   logout(): void {
     this.authService.logout().subscribe({
       next: () => {

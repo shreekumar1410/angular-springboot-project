@@ -3,10 +3,12 @@ package com.example.registration.controller;
 import com.example.registration.dto.ChangeRoleRequest;
 import com.example.registration.dto.ChangeStatusRequest;
 import com.example.registration.entity.LoginAudit;
+import com.example.registration.entity.PasswordResetRequest;
 import com.example.registration.entity.UserAuth;
 import com.example.registration.repository.UserAuthRepository;
 import com.example.registration.service.AdminService;
 import com.example.registration.service.LoginAuditService;
+import com.example.registration.service.SupportPasswordResetService;
 import com.example.registration.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,18 +23,19 @@ import java.util.Map;
 @CrossOrigin("*")
 public class AdminController {
 
-    @Autowired
+//    @Autowired
     private UserAuthRepository authRepo;
 
     private final AdminService adminService;
+    private final SupportPasswordResetService supportPasswordResetService;
     private UserService userService;
 
     @Autowired
     private LoginAuditService loginAuditService;
 
-    public AdminController(UserService userService, AdminService adminService) {
-        this.userService = userService;
+    public AdminController( AdminService adminService, SupportPasswordResetService supportPasswordResetService) {
         this.adminService = adminService;
+        this.supportPasswordResetService = supportPasswordResetService;
     }
 
     @DeleteMapping("/auth/{id}")
@@ -57,7 +60,7 @@ public class AdminController {
     }
 
     // 🔄 CHANGE ROLE
-    @PutMapping("/users/{authId}/role")
+    @PutMapping("/change-role/{authId}")
     public ResponseEntity<Map<String, String>> changeRole(
             @PathVariable Long authId,
             @RequestBody ChangeRoleRequest request) {
@@ -72,7 +75,7 @@ public class AdminController {
 
 
     // 🔒 ACTIVATE / DEACTIVATE
-    @PutMapping("/users/{authId}/status")
+    @PutMapping("/change-status/{authId}")
     public ResponseEntity<Map<String, String>> changeStatus(
             @PathVariable Long authId,
             @RequestBody ChangeStatusRequest request) {
@@ -87,6 +90,13 @@ public class AdminController {
     @GetMapping("/login-audit")
     public List<LoginAudit> getLoginAudit() {
         return loginAuditService.getAllAudits();
+    }
+
+    //FORGET PASSWORD
+
+    @GetMapping("/password-reset-audit")
+    public List<PasswordResetRequest> audit() {
+        return supportPasswordResetService.getAllRequests();
     }
 }
 

@@ -9,29 +9,39 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto" *ngIf="isLoggedIn()">
+        <!-- USER MENU -->
         <li class="nav-item" *ngIf="isUser()">
           <a class="nav-link-custom" routerLink="/user/dashboard" routerLinkActive="active">
             <i class="bi bi-speedometer2 me-1"></i>Dashboard
           </a>
         </li>
         <li class="nav-item" *ngIf="isUser()">
-          <a class="nav-link-custom" routerLink="/users" routerLinkActive="active">
-            <i class="bi bi-people me-1"></i>Users
-          </a>
-        </li>
-        <li class="nav-item" *ngIf="isUser()">
-          <a class="nav-link-custom" routerLink="/profile" routerLinkActive="active">
+          <a class="nav-link-custom" routerLink="/user/profile" routerLinkActive="active">
             <i class="bi bi-person-circle me-1"></i>Profile
           </a>
         </li>
-        <li class="nav-item" *ngIf="isAdmin()">
-          <a class="nav-link-custom" routerLink="/admin/dashboard" routerLinkActive="active">
+
+        <!-- SUPPORT MENU -->
+        <li class="nav-item" *ngIf="isSupport()">
+          <a class="nav-link-custom" routerLink="/support/dashboard" routerLinkActive="active">
             <i class="bi bi-speedometer2 me-1"></i>Dashboard
           </a>
         </li>
+        <li class="nav-item" *ngIf="isSupport()">
+          <a class="nav-link-custom" routerLink="/support/password-reset-requests" routerLinkActive="active">
+            <i class="bi bi-key me-1"></i>Password Reset Requests
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isSupport()">
+          <a class="nav-link-custom" routerLink="/support/login-audit" routerLinkActive="active">
+            <i class="bi bi-clock-history me-1"></i>Login Audit
+          </a>
+        </li>
+
+        <!-- ADMIN MENU -->
         <li class="nav-item" *ngIf="isAdmin()">
-          <a class="nav-link-custom" routerLink="/admin/users" routerLinkActive="active">
-            <i class="bi bi-people me-1"></i>Users
+          <a class="nav-link-custom" routerLink="/admin/dashboard" routerLinkActive="active">
+            <i class="bi bi-speedometer2 me-1"></i>Dashboard
           </a>
         </li>
         <li class="nav-item" *ngIf="isAdmin()">
@@ -40,13 +50,37 @@
           </a>
         </li>
         <li class="nav-item" *ngIf="isAdmin()">
-          <a class="nav-link-custom" routerLink="/admin/login-audit" routerLinkActive="active">
+          <a class="nav-link-custom" routerLink="/admin/password-reset-audit" routerLinkActive="active">
+            <i class="bi bi-shield-check me-1"></i>Password Reset Audit
+          </a>
+        </li>
+
+        <!-- SUPER ADMIN MENU -->
+        <li class="nav-item" *ngIf="isSuperAdmin()">
+          <a class="nav-link-custom" routerLink="/super-admin/dashboard" routerLinkActive="active">
+            <i class="bi bi-speedometer2 me-1"></i>Dashboard
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isSuperAdmin()">
+          <a class="nav-link-custom" routerLink="/super-admin/roles" routerLinkActive="active">
+            <i class="bi bi-shield-lock me-1"></i>Roles
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isSuperAdmin()">
+          <a class="nav-link-custom" routerLink="/super-admin/password-reset-audit" routerLinkActive="active">
+            <i class="bi bi-shield-check me-1"></i>Password Reset Audit
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isSuperAdmin()">
+          <a class="nav-link-custom" routerLink="/super-admin/login-audit" routerLinkActive="active">
             <i class="bi bi-clock-history me-1"></i>Login Audit
           </a>
         </li>
-        <li class="nav-item" *ngIf="isAdmin()">
-          <a class="nav-link-custom" routerLink="/profile" routerLinkActive="active">
-            <i class="bi bi-person-circle me-1"></i>Profile
+
+        <!-- COMMON MENU ITEM: Users (for all roles) -->
+        <li class="nav-item" *ngIf="isLoggedIn()">
+          <a class="nav-link-custom" [routerLink]="getUsersRoute()" routerLinkActive="active">
+            <i class="bi bi-people me-1"></i>Users
           </a>
         </li>
       </ul>

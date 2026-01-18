@@ -10,7 +10,6 @@
             </h2>
           </div>
           <div class="form-body">
-          <div [formGroup]="profileForm" (ngSubmit)="onSubmit()">
             <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
               <div class="row g-3">
                 <div class="col-md-6">
@@ -21,7 +20,8 @@
                   <div *ngIf="profileForm.get('name')!.invalid && profileForm.get('name')!.touched" class="error-text">
                     <i class="bi bi-exclamation-circle"></i>
                     <span *ngIf="profileForm.get('name')!.errors?.['required']">Name is required.</span>
-                    <span *ngIf="profileForm.get('name')!.errors?.['pattern']">Name should contain only letters and spaces.</span>
+                    <span *ngIf="profileForm.get('name')!.errors?.['pattern']">Name should contain only letters, spaces, underscore (_), and digits.</span>
+                    <span *ngIf="profileForm.get('name')!.errors?.['maxDigits']">Name can contain maximum 3 digits.</span>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -89,10 +89,12 @@
                   <input type="text" class="form-control-custom" id="languages" formControlName="languages" placeholder="Enter languages (comma separated)">
                 </div>
               </div>
-              <button type="submit" class="btn-submit mt-4" [disabled]="!profileForm.valid">
+              <button type="submit" class="btn-submit mt-4" [disabled]="!profileForm.valid || isSubmitting">
                 <i class="bi" [class]="isEdit ? 'bi-check-circle me-2' : 'bi-person-plus me-2'"></i>
-                {{ isEdit ? 'Update Profile' : 'Create Profile' }}
+                <span *ngIf="!isSubmitting">{{ isEdit ? 'Update Profile' : 'Create Profile' }}</span>
+                <span *ngIf="isSubmitting">{{ isEdit ? 'Updating...' : 'Creating...' }}</span>
               </button>
+
             </form>
             <div *ngIf="errorMessage" class="alert-custom alert-danger-custom">
               <i class="bi bi-exclamation-triangle me-2"></i>{{ errorMessage }}
@@ -100,8 +102,7 @@
             <div *ngIf="successMessage" class="alert-custom alert-success-custom">
               <i class="bi bi-check-circle me-2"></i>{{ successMessage }}
             </div>
-
-        </div>
+          </div>
       </div>
     </div>
   </div>

@@ -12,10 +12,25 @@ export class RoleGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
     const requiredRole = route.data['role'];
-    if (requiredRole === 'ADMIN' && this.authService.isAdmin()) {
+    const userRole = this.authService.getRole();
+    
+    if (!userRole) {
+      this.router.navigate(['/login']);
+      return false;
+    }
+
+    // Check if user has the required role
+    if (requiredRole === 'USER' && this.authService.isUser()) {
       return true;
-    } else if (requiredRole === 'USER' && this.authService.isUser()) {
+    } else if (requiredRole === 'SUPPORT' && this.authService.isSupport()) {
       return true;
+    } else if (requiredRole === 'ADMIN' && this.authService.isAdmin()) {
+      return true;
+    } else if (requiredRole === 'SUPER_ADMIN' && this.authService.isSuperAdmin()) {
+      return true;
+    } else if (Array.isArray(requiredRole)) {
+      // Support multiple roles
+      return requiredRole.includes(userRole);
     } else {
       this.router.navigate(['/login']);
       return false;

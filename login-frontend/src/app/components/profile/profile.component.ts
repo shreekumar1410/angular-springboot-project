@@ -38,6 +38,7 @@ export class ProfileComponent implements OnInit {
     this.userService.getCurrentUser().subscribe({
       next: (user) => {
         this.user = user;
+        console.log(this.user);
       },
       error: (error) => {
         this.errorMessage = 'Failed to load profile';

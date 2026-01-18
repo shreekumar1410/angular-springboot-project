@@ -2,12 +2,30 @@
   <div class="container py-5">
     <div class="page-header mb-4">
       <h2 class="page-title">
-        <i class="bi bi-person-badge me-2"></i>Auth Users
+        <i class="bi bi-shield-lock me-2"></i>Roles Management
       </h2>
     </div>
-    <div class="table-card">
+
+    <div *ngIf="loading" class="loading-state">
+      <div class="spinner-custom">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3">Loading roles...</p>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert-custom alert-danger-custom mb-4">
+      <i class="bi bi-exclamation-triangle me-2"></i>{{ errorMessage }}
+    </div>
+
+    <div *ngIf="successMessage" class="alert-custom alert-success-custom mb-4">
+      <i class="bi bi-check-circle me-2"></i>{{ successMessage }}
+    </div>
+
+    <div class="table-card" *ngIf="!loading && authUsers.length > 0">
       <div class="table-responsive">
-        <table class="table-custom" *ngIf="authUsers.length > 0">
+        <table class="table-custom">
           <thead>
             <tr>
               <th><i class="bi bi-envelope me-1"></i>Email</th>
@@ -42,11 +60,11 @@
                 </span>
               </td>
               <td>
-                <div class="action-group">
+                <div class="action-group" >
                   <select
                     class="form-select-custom me-2"
                     [value]="auth.role"
-                    [disabled]="auth.email === loggedInEmail || (auth.role !== 'USER' && auth.role !== 'SUPPORT')"
+                    [disabled]="auth.email === loggedInEmail"
                     (change)="onRoleChange(auth.id, $event)">
                     <option *ngFor="let role of getRolesForDropdown(auth.role)" [value]="role">{{ role }}</option>
                   </select>
@@ -54,21 +72,24 @@
                     class="btn-action" 
                     [class.btn-activate]="!auth.active" 
                     [class.btn-deactivate]="auth.active"
-                    [hidden]="auth.email === loggedInEmail || (auth.role !== 'USER' && auth.role !== 'SUPPORT')"
+                    [hidden]="auth.email === loggedInEmail"
+
                     (click)="changeStatus(auth.id, !auth.active)">
                     <i class="bi" [class]="auth.active ? 'bi-toggle-on me-1' : 'bi-toggle-off me-1'"></i>
                     {{ auth.active ? 'Deactivate' : 'Activate' }}
                   </button>
                 </div>
+                <!-- <span *ngIf="!canModify(auth)" class="text-muted">-</span> -->
               </td>
             </tr>
           </tbody>
         </table>
-        <div *ngIf="authUsers.length === 0" class="empty-state">
-          <i class="bi bi-inbox"></i>
-          <p>No auth users found</p>
-        </div>
       </div>
+    </div>
+
+    <div *ngIf="!loading && authUsers.length === 0" class="empty-state">
+      <i class="bi bi-inbox"></i>
+      <p>No auth users found</p>
     </div>
   </div>
 </div>

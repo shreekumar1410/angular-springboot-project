@@ -32,12 +32,22 @@ public class UserService {
 
     public User createProfile(Long authId, UserProfileRequest request) {
 
+        String email = SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getName();
+//
+//        System.out.println("LOGIN MAIL");
+//        System.out.println("email = " + email);
+
         UserAuth auth = authRepo.findById(authId)
                 .orElseThrow(() -> new AccessDeniedException("Unauthorized"));
 
         if (auth.isProfileCreated()) {
             throw new AccessDeniedException("Profile already created");
         }
+//
+//        System.out.println("this is from user service");
+//        System.out.println(request.getEmailId());
 
         User user = new User();
         user.setName(request.getName());
@@ -47,7 +57,7 @@ public class UserService {
         user.setLanguages(request.getLanguages());
         user.setGender(request.getGender());
         user.setAge(request.getAge());
-        user.setEmailId(request.getEmailId());
+        user.setEmailId(auth.getEmail());
         user.setQualification(request.getQualification());
         user.setAuth(auth);
 
@@ -80,9 +90,15 @@ public class UserService {
 
         List<User> users = userRepo.findAll();
 
+        System.out.println("role = " + role);
+
 
         if (USER.equals(role)) {
         // USER → SHORT INFO
+
+            System.out.println("this sout is used in userservice");
+            System.out.println("CURRENT USER ROLE: "+role);
+
             AtomicLong sno = new AtomicLong(1);
             return users.stream()
                     .map(u -> new UserShortResponse(
@@ -95,6 +111,11 @@ public class UserService {
 
         } else {
             // ADMIN + SUPER_ADMIN → FULL INFO
+
+            System.out.println("this sout is used in userservice");
+            System.out.println("CURRENT USER ROLE: "+role);
+
+
             return users.stream()
                     .map(u -> new UserFullResponse(
                             u.getId(),
@@ -176,7 +197,7 @@ public class UserService {
                 .getAuthentication()
                 .getName();
 
-        System.out.println("Emial = "+email);
+        System.out.println(" lOGIN Emial = "+email);
 
         return userRepo.findByAuthEmail(email)
                 .orElseThrow(() ->

@@ -12,27 +12,34 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
+  // Profile management
   createProfile(profile: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/api/users`, profile);
+    return this.http.post(`${this.apiUrl}/users/profile`, profile);
   }
 
   getCurrentUser(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/api/users/me`);
+    return this.http.get(`${this.apiUrl}/users/me`);
   }
 
   getOwnProfile(id: string): Observable<any> {
-    return this.http.get(`${this.apiUrl}/api/users/${id}`);
+    return this.http.get(`${this.apiUrl}/users/${id}`);
   }
 
   updateOwnProfile(id: string, profile: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/api/users/${id}`, profile);
+    return this.http.put(`${this.apiUrl}/users/${id}`, profile);
   }
 
+  // User list (short view for USER role)
   getUsers(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/api/users`);
+    return this.http.get<any[]>(`${this.apiUrl}/users`);
+  }
+
+  // Password reset request
+  requestPasswordReset(email: string): Observable<any> {
+    return this.http.post(`${this.apiUrl}/user/password-reset-request?email=${email}`, {});
   }
 
   getUserLoginHistory(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/api/users/me/login-history`);
+    return this.http.get<any[]>(`${this.apiUrl}/users/me/login-history`);
   }
 }

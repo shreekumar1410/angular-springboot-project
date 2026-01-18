@@ -1,0 +1,70 @@
+<div class="dashboard-container">
+  <!-- Login Alert Toast Pop-up -->
+  <div *ngIf="showAlert && loginAlertMessage" class="toast-popup show" role="alert">
+    <div class="toast-header">
+      <strong class="me-auto">Login Notification</strong>
+      <button type="button" class="btn-close" aria-label="Close" (click)="dismissAlert()"></button>
+    </div>
+    <div class="toast-body">
+      {{ loginAlertMessage }}
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h1 class="dashboard-title mb-5">
+      <i class="bi bi-speedometer2 me-2"></i>
+      Admin Dashboard
+    </h1>
+    
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="dashboard-card">
+          <div class="card-icon bg-primary">
+            <i class="bi bi-people"></i>
+          </div>
+          <h3>Users</h3>
+          <p>Manage user profiles and information</p>
+          <a routerLink="/admin/users" class="card-link">
+            Manage Users <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="dashboard-card">
+          <div class="card-icon bg-success">
+            <i class="bi bi-person-badge"></i>
+          </div>
+          <h3>Auth Users</h3>
+          <p>Manage authentication and roles</p>
+          <a routerLink="/admin/auth-users" class="card-link">
+            Auth Users <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="dashboard-card">
+          <div class="card-icon bg-info">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <h3>Password Reset Audit</h3>
+          <p>View password reset audit logs (read-only)</p>
+          <a routerLink="/admin/password-reset-audit" class="card-link">
+            View Audit <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="dashboard-card">
+          <div class="card-icon bg-warning">
+            <i class="bi bi-person-circle"></i>
+          </div>
+          <h3>Profile</h3>
+          <p>Manage your admin profile</p>
+          <a routerLink="/profile" class="card-link">
+            View Profile <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

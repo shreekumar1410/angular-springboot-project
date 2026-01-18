@@ -1,4 +1,4 @@
-// User Dashboard Component
+// Support Dashboard Component
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -6,13 +6,13 @@ import { RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-user-dashboard',
+  selector: 'app-support-dashboard',
   standalone: true,
   imports: [CommonModule, RouterLink],
-  templateUrl: './user-dashboard.component.html',
-  styleUrls: ['./user-dashboard.component.css']
+  templateUrl: './support-dashboard.component.html',
+  styleUrls: ['./support-dashboard.component.css']
 })
-export class UserDashboardComponent implements OnInit, OnDestroy {
+export class SupportDashboardComponent implements OnInit, OnDestroy {
   loginAlertMessage: string | null = null;
   showAlert: boolean = false;
   private autoHideTimer: any = null;
@@ -26,9 +26,7 @@ export class UserDashboardComponent implements OnInit, OnDestroy {
     if (alertMessage) {
       this.loginAlertMessage = alertMessage;
       this.showAlert = true;
-      // Remove from sessionStorage after displaying
       sessionStorage.removeItem('loginAlertMessage');
-      // Auto-hide after delay
       this.startAutoHideTimer();
     }
   }

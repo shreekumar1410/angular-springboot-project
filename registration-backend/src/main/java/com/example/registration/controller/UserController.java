@@ -53,10 +53,13 @@
 package com.example.registration.controller;
 
 import com.example.registration.dto.UserProfileRequest;
+import com.example.registration.entity.LoginAudit;
 import com.example.registration.entity.User;
 import com.example.registration.entity.UserAuth;
 import com.example.registration.exception.AccessDeniedException;
 import com.example.registration.repository.UserAuthRepository;
+import com.example.registration.service.LoginAuditService;
+import com.example.registration.service.SupportPasswordResetService;
 import com.example.registration.service.UserService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -64,22 +67,26 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/users")
 @CrossOrigin("*")
 public class UserController {
 
-    private final UserService service;
+    private final UserService userService;
     private final UserAuthRepository authRepo;
+    private final SupportPasswordResetService supportPasswordResetService;
+    private final LoginAuditService loginAuditService;
 
-    public UserController(UserService service, UserAuthRepository authRepo) {
-        this.service = service;
+    public UserController(UserService userService, UserAuthRepository authRepo, SupportPasswordResetService supportPasswordResetService, LoginAuditService loginAuditService) {
+        this.userService = userService;
         this.authRepo = authRepo;
+        this.supportPasswordResetService = supportPasswordResetService;
+        this.loginAuditService = loginAuditService;
     }
 
     /**
      * CREATE PROFILE (FIRST TIME AFTER LOGIN)
      */
-    @PostMapping
+    @PostMapping("/profile")
     public User createProfile(@RequestBody UserProfileRequest request) {
 
         // 1️⃣ Get logged-in email from JWT
@@ -98,7 +105,7 @@ public class UserController {
         }
 
         // 4️⃣ Create profile via service
-        return service.createProfile(auth.getId(), request);
+        return userService.createProfile(auth.getId(), request);
     }
 
     /**
@@ -106,7 +113,7 @@ public class UserController {
      */
     @GetMapping
     public List<?> getUser() {
-        return service.getUsersByRole();
+        return userService.getUsersByRole();
     }
 
 //    @GetMapping("/{id}")
@@ -120,11 +127,23 @@ public class UserController {
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User user) {
 
-        return service.updateUser(id, user);
+        return userService.updateUser(id, user);
     }
 
     @GetMapping("/me")
     public User getMyProfile() {
-        return service.getMyProfile();
+        return userService.getMyProfile();
+    }
+
+    //FORGET PASSWORD
+
+    @PostMapping("/password-reset-request")
+    public void raiseRequest(@RequestParam String email) {
+        supportPasswordResetService.raiseRequest(email);
+    }
+
+    @GetMapping("/me/login-history")
+    public List<LoginAudit> getMyLoginHistory() {
+        return loginAuditService.getCurrentUserAudit();
     }
 }

@@ -8,6 +8,7 @@ import com.example.registration.enums.LoginReason;
 import com.example.registration.enums.LoginType;
 import com.example.registration.repository.LoginAuditRepository;
 import com.example.registration.security.JwtHashUtil;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.time.Duration;
@@ -140,4 +141,12 @@ public class LoginAuditService {
 
         return result.toString().trim();
     }
+
+    public List<LoginAudit> getCurrentUserAudit() {
+        String email = SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getName();
+        return loginAuditRepository.findByEmail(email);
+    }
+
 }

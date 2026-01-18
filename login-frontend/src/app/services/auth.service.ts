@@ -63,4 +63,28 @@ export class AuthService {
   isUser(): boolean {
     return this.getRole() === 'USER';
   }
+
+  isSupport(): boolean {
+    return this.getRole() === 'SUPPORT';
+  }
+
+  isSuperAdmin(): boolean {
+    return this.getRole() === 'SUPER_ADMIN';
+  }
+
+  getRoleBasedRoute(): string {
+    const role = this.getRole();
+    switch (role) {
+      case 'USER':
+        return '/user/dashboard';
+      case 'SUPPORT':
+        return '/support/dashboard';
+      case 'ADMIN':
+        return '/admin/dashboard';
+      case 'SUPER_ADMIN':
+        return '/super-admin/dashboard';
+      default:
+        return '/login';
+    }
+  }
 }

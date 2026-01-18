@@ -19,4 +19,5 @@ public interface LoginAuditRepository extends JpaRepository<LoginAudit, Long> {
             LoginType loginType
     );
 
+        List<LoginAudit> findByEmail(String email);
 }

@@ -47,10 +47,25 @@ export class LoginComponent {
 
           if (!response.profileCreated) {
             this.router.navigate(['/profile/form']);
-          } else if (response.role === 'USER') {
-            this.router.navigate(['/user/dashboard']);
           } else {
-            this.router.navigate(['/admin/dashboard']);
+            // Role-based redirection
+            const role = response.role;
+            switch (role) {
+              case 'USER':
+                this.router.navigate(['/user/dashboard']);
+                break;
+              case 'SUPPORT':
+                this.router.navigate(['/support/dashboard']);
+                break;
+              case 'ADMIN':
+                this.router.navigate(['/admin/dashboard']);
+                break;
+              case 'SUPER_ADMIN':
+                this.router.navigate(['/super-admin/dashboard']);
+                break;
+              default:
+                this.router.navigate(['/login']);
+            }
           }
         },
         error: (err) => {
