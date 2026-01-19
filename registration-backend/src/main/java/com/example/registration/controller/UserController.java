@@ -135,13 +135,6 @@ public class UserController {
         return userService.getMyProfile();
     }
 
-    //FORGET PASSWORD
-
-    @PostMapping("/password-reset-request")
-    public void raiseRequest(@RequestParam String email) {
-        supportPasswordResetService.raiseRequest(email);
-    }
-
     @GetMapping("/me/login-history")
     public List<LoginAudit> getMyLoginHistory() {
         return loginAuditService.getCurrentUserAudit();

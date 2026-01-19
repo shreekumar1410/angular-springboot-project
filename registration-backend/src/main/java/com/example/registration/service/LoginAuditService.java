@@ -149,4 +149,23 @@ public class LoginAuditService {
         return loginAuditRepository.findByEmail(email);
     }
 
+    public void recordPasswordChange(
+            String email,
+            String role,
+            boolean success,
+            LoginReason reason
+    ) {
+        try {
+            LoginAudit audit = new LoginAudit();
+            audit.setEmail(email);
+            audit.setRole(role);
+            audit.setLoginType(LoginType.PASSWORD_CHANGED);
+            audit.setEventTime(Instant.now());
+            audit.setReason(reason);
+
+            loginAuditRepository.save(audit);
+        } catch (Exception ignored) {}
+    }
+
+
 }

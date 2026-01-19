@@ -1,12 +1,11 @@
 package com.example.registration.controller;
 
 import com.example.registration.config.JwtUtil;
-import com.example.registration.dto.LoginRequest;
-import com.example.registration.dto.LoginResponse;
-import com.example.registration.dto.RegisterRequest;
+import com.example.registration.dto.*;
 import com.example.registration.service.AuthService;
 import com.example.registration.repository.UserAuthRepository;
 import com.example.registration.service.LoginAuditService;
+import com.example.registration.service.SupportPasswordResetService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,12 +24,14 @@ public class AuthController {
     private final UserAuthRepository userAuthRepository;
     private final LoginAuditService loginAuditService;
     private final JwtUtil jwtUtil;
+    private final SupportPasswordResetService supportPasswordResetService;
 
-    public AuthController(AuthService authService, UserAuthRepository userAuthRepository, LoginAuditService loginAuditService, JwtUtil jwtUtil) {
+    public AuthController(AuthService authService, UserAuthRepository userAuthRepository, LoginAuditService loginAuditService, JwtUtil jwtUtil, SupportPasswordResetService supportPasswordResetService) {
         this.authService = authService;
         this.userAuthRepository = userAuthRepository;
         this.loginAuditService = loginAuditService;
         this.jwtUtil = jwtUtil;
+        this.supportPasswordResetService = supportPasswordResetService;
     }
 
     @PostMapping("/login")
@@ -79,6 +80,31 @@ public class AuthController {
 
         return ResponseEntity.ok().build();
     }
+
+    //FORGET PASSWORD
+
+    @PostMapping("/password-reset-request")
+    public Map<String, String> raiseRequest(
+            @RequestBody ForgotPasswordRequest request) {
+
+        supportPasswordResetService.raiseRequest(request.getEmail());
+
+        return Map.of(
+                "message", "Password reset request submitted successfully"
+        );
+    }
+
+    @PutMapping("/change-password")
+    public ResponseEntity<?> changePassword(
+            @RequestBody ChangePasswordRequest request) {
+
+        authService.changePassword(request);
+
+        return ResponseEntity.ok(
+                Map.of("message", "Password changed successfully")
+        );
+    }
+
 
 
 }

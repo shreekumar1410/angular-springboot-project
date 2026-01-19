@@ -22,11 +22,15 @@ export class AuthService {
   }
 
   forgotPassword(email: { email: string }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/auth/forgot-password`, email);
+    return this.http.post(`${this.apiUrl}/auth/password-reset-request`, email);
   }
 
   resetPassword(data: { token: string; newPassword: string }): Observable<any> {
     return this.http.put(`${this.apiUrl}/auth/reset-password`, data);
+  }
+
+  changePassword(data: { currentPassword: string; newPassword: string }): Observable<any> {
+    return this.http.put(`${this.apiUrl}/auth/change-password`, data);
   }
 
   logout(): Observable<any> {

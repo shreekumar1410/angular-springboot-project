@@ -2,7 +2,7 @@
   <div class="container py-5">
     <div class="page-header mb-4">
       <h2 class="page-title">
-        <i class="bi bi-people me-2"></i>Users List
+        <i class="bi bi-people me-2"></i>{{ getPageTitle() }}
       </h2>
     </div>
     <div class="table-card">
@@ -10,35 +10,56 @@
         <table class="table-custom" *ngIf="users.length > 0">
           <thead>
             <tr>
-              <th *ngIf="isAdmin"><i class="bi bi-hash me-1"></i>ID</th>
-              <th *ngIf="!isAdmin"><i class="bi bi-list-ol me-1"></i>S.No</th>
+              <!-- ID column: Show ID for admin/superadmin, S.No for user/support -->
+              <th *ngIf="canViewFullDetails"><i class="bi bi-hash me-1"></i>ID</th>
+              <th *ngIf="!canViewFullDetails"><i class="bi bi-list-ol me-1"></i>S.No</th>
+              
+              <!-- Common columns: Always visible -->
               <th><i class="bi bi-person me-1"></i>Name</th>
               <th><i class="bi bi-envelope me-1"></i>Email</th>
               <th><i class="bi bi-telephone me-1"></i>Phone</th>
-              <th *ngIf="isAdmin"><i class="bi bi-geo-alt me-1"></i>Address</th>
-              <th *ngIf="isAdmin"><i class="bi bi-calendar me-1"></i>DOB</th>
-              <th *ngIf="isAdmin"><i class="bi bi-translate me-1"></i>Languages</th>
-              <th *ngIf="isAdmin"><i class="bi bi-gear me-1"></i>Actions</th>
+              
+              <!-- Extended columns: Only for SUPPORT, ADMIN, SUPER_ADMIN -->
+              <th *ngIf="canViewFullDetails"><i class="bi bi-geo-alt me-1"></i>Address</th>
+              <th *ngIf="canViewFullDetails"><i class="bi bi-calendar me-1"></i>DOB</th>
+              <th *ngIf="canViewFullDetails"><i class="bi bi-translate me-1"></i>Languages</th>
+              
+              <!-- Actions column: Only for ADMIN and SUPER_ADMIN -->
+              <th *ngIf="canDelete">
+                <i class="bi bi-gear me-1"></i>Actions
+              </th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let user of users; let i = index">
-              <td *ngIf="isAdmin">{{ user.id }}</td>
-              <td *ngIf="!isAdmin">{{ i + 1 }}</td>
+              <!-- ID or S.No -->
+              <td *ngIf="canViewFullDetails">{{ user.id }}</td>
+              <td *ngIf="!canViewFullDetails">{{ i + 1 }}</td>
+              
+              <!-- Common data -->
               <td><strong>{{ user.name }}</strong></td>
               <td>{{ user.email }}</td>
-              <td>{{ user.phone || 'N/A' }}</td>
-              <td *ngIf="isAdmin">{{ user.address || 'N/A' }}</td>
-              <td *ngIf="isAdmin">{{ user.dob || 'N/A' }}</td>
-              <td *ngIf="isAdmin">{{ user.languages || 'N/A' }}</td>
-              <td *ngIf="isAdmin">
-                <button 
-                  class="btn-action btn-delete" 
-                  [disabled]="user.email === loggedInEmail" 
-                  (click)="deleteUser(user.id)"
-                  [title]="user.email === loggedInEmail ? 'Cannot delete your own profile' : 'Delete user'">
-                  <i class="bi bi-trash me-1"></i>Delete
-                </button>
+              <td>{{ getDisplayPhone(user.phone) }}</td>
+              
+              <!-- Extended data: Only for SUPPORT, ADMIN, SUPER_ADMIN -->
+              <td *ngIf="canViewFullDetails">{{ user.address || 'N/A' }}</td>
+              <td *ngIf="canViewFullDetails">{{ user.dob || 'N/A' }}</td>
+              <td *ngIf="canViewFullDetails">{{ user.languages || 'N/A' }}</td>
+              
+              <!-- Actions: Only for ADMIN and SUPER_ADMIN -->
+              <td *ngIf="canDelete">
+                <div class="action-group">
+                  <!-- Delete button: ADMIN can delete USER, SUPER_ADMIN can delete ADMIN and USER -->
+                  <!-- Note: Role change and activate/deactivate are available in admin-auth-users component -->
+                  <!-- as they require auth user data (authId, role, active status) not included in user profile response -->
+                  <button 
+                    class="btn-action btn-delete" 
+                    [disabled]="user.email === loggedInEmail" 
+                    (click)="deleteUser(user.id, user.email)"
+                    [title]="user.email === loggedInEmail ? 'Cannot delete your own profile' : 'Delete user'">
+                    <i class="bi bi-trash me-1"></i>Delete
+                  </button>
+                </div>
               </td>
             </tr>
           </tbody>

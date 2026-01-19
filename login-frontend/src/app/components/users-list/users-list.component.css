@@ -121,3 +121,10 @@
   font-size: 1.25rem;
   margin: 0;
 }
+
+.action-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}

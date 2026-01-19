@@ -1,5 +1,6 @@
 package com.example.registration.entity;
 
+import com.example.registration.enums.PasswordResetStatus;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -17,8 +18,12 @@ public class PasswordResetRequest {
 
     private String userEmail;
 
-    @Column(nullable = false)
-    private String status; // REQUESTED, APPROVED, PASSWORD_SENT, CLOSED
+    private String TempPasswordPlain;
+
+    private String tempPasswordHash;
+
+    @Enumerated(EnumType.STRING)
+    private PasswordResetStatus status;// REQUESTED, APPROVED, PASSWORD_SENT, CLOSED
 
     private String approvedBy; // SUPPORT email
     private LocalDateTime requestedAt;
@@ -54,11 +59,27 @@ public class PasswordResetRequest {
         this.userEmail = userEmail;
     }
 
-    public String getStatus() {
+    public String getTempPasswordPlain() {
+        return TempPasswordPlain;
+    }
+
+    public void setTempPasswordPlain(String tempPasswordPlain) {
+        TempPasswordPlain = tempPasswordPlain;
+    }
+
+    public String getTempPasswordHash() {
+        return tempPasswordHash;
+    }
+
+    public void setTempPasswordHash(String tempPasswordHash) {
+        this.tempPasswordHash = tempPasswordHash;
+    }
+
+    public PasswordResetStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(PasswordResetStatus status) {
         this.status = status;
     }
 

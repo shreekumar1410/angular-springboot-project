@@ -1,4 +1,5 @@
-// ng g component components/users-list
+// Unified Users List Component
+// Handles USER, SUPPORT, ADMIN, and SUPER_ADMIN roles with role-based visibility
 
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
@@ -15,8 +16,20 @@ import { CommonModule } from '@angular/common';
 })
 export class UsersListComponent implements OnInit {
   users: any[] = [];
-  isAdmin: boolean = false;
   loggedInEmail = localStorage.getItem('email');
+  currentRole: string | null = null;
+
+  // Role flags
+  isUser: boolean = false;
+  isSupport: boolean = false;
+  isAdmin: boolean = false;
+  isSuperAdmin: boolean = false;
+
+  // Permission flags
+  canViewFullDetails: boolean = false;
+  canDelete: boolean = false;
+  // Note: canChangeRole and canActivateDeactivate require auth user data
+  // These are handled in admin-auth-users component
 
   constructor(
     private userService: UserService,
@@ -25,12 +38,31 @@ export class UsersListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.isAdmin = this.authService.isAdmin();
+    this.initializeRole();
     this.loadUsers();
   }
 
+  initializeRole(): void {
+    this.currentRole = this.authService.getRole();
+    
+    // Set role flags
+    this.isUser = this.authService.isUser();
+    this.isSupport = this.authService.isSupport();
+    this.isAdmin = this.authService.isAdmin();
+    this.isSuperAdmin = this.authService.isSuperAdmin();
+
+    // Set permission flags based on role
+    this.canViewFullDetails = this.isSupport || this.isAdmin || this.isSuperAdmin;
+    this.canDelete = this.isAdmin || this.isSuperAdmin;
+  }
+
   loadUsers(): void {
-    this.userService.getUsers().subscribe({
+    // Use appropriate service based on role
+    const service = (this.isAdmin || this.isSuperAdmin) 
+      ? this.adminService.getUsers() 
+      : this.userService.getUsers();
+
+    service.subscribe({
       next: (data) => {
         this.users = data;
       },
@@ -40,8 +72,35 @@ export class UsersListComponent implements OnInit {
     });
   }
 
-  deleteUser(userId: number) {
-    if (confirm('Are you sure you want to delete this user?')){
+  // Phone masking for USER role
+  maskPhone(phone: string | null | undefined): string {
+    if (!phone || phone.length < 4) return 'N/A';
+    // Backend already masks, but we'll handle it here too for safety
+    if (phone.startsWith('XXXXXX')) {
+      return phone; // Already masked by backend
+    }
+    return 'XXXXXX' + phone.substring(phone.length - 4);
+  }
+
+  // Get display phone based on role
+  getDisplayPhone(phone: string | null | undefined): string {
+    if (!phone) return 'N/A';
+    if (this.isUser) {
+      return this.maskPhone(phone);
+    }
+    return phone;
+  }
+
+  // Delete user (ADMIN can delete USER, SUPER_ADMIN can delete ADMIN and USER)
+  // Note: Backend handles role-based deletion permissions
+  deleteUser(userId: number, userEmail: string): void {
+    // Check if trying to delete own profile
+    if (userEmail === this.loggedInEmail) {
+      alert('You cannot delete your own profile');
+      return;
+    }
+
+    if (confirm('Are you sure you want to delete this user?')) {
       this.adminService.deleteUser(userId).subscribe({
         next: () => {
           alert('User deleted successfully');
@@ -49,12 +108,22 @@ export class UsersListComponent implements OnInit {
         },
         error: (err) => {
           if (err.status === 403) {
-            alert(err.error); // "You cannot delete your own profile"
+            alert(err.error || 'You do not have permission to delete this user');
           } else {
             alert('Something went wrong');
           }
         }
       });
+    }
   }
-} 
+
+
+  // Get page title based on role
+  getPageTitle(): string {
+    if (this.isUser) return 'Users List';
+    if (this.isSupport) return 'Users List';
+    if (this.isAdmin) return 'Manage Users';
+    if (this.isSuperAdmin) return 'Manage Users';
+    return 'Users List';
+  }
 }

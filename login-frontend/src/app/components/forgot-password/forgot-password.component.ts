@@ -53,19 +53,29 @@ export class ForgotPasswordComponent {
     if (this.emailForm.valid) {
       this.isLoading = true;
       this.errorMessage = '';
+  
       this.authService.forgotPassword(this.emailForm.value).subscribe({
-        next: (response) => {
-          this.resetToken = response.resetToken;
-          this.showResetForm = true;
+        next: () => {
+          // ✅ Do NOT expect any response body
           this.isLoading = false;
+  
+          // show success message instead of reset form
+          this.successMessage =
+            'Password reset request submitted successfully. Please contact support.';
+  
+          // optional: disable form or redirect
+          this.emailForm.reset();
         },
         error: (error) => {
-          this.errorMessage = error?.error?.message || 'Failed to send reset email';
+          this.errorMessage =
+            error?.error?.message || 'Failed to send reset email';
           this.isLoading = false;
         }
       });
     }
   }
+  
+
 
   onResetSubmit(): void {
     if (this.resetForm.valid && this.resetToken) {

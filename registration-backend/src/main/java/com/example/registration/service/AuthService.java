@@ -1,14 +1,13 @@
 package com.example.registration.service;
 
-import com.example.registration.dto.LoginAlertDTO;
-import com.example.registration.dto.LoginRequest;
-import com.example.registration.dto.LoginResponse;
-import com.example.registration.dto.RegisterRequest;
+import com.example.registration.dto.*;
 import com.example.registration.entity.UserAuth;
 import com.example.registration.enums.LoginReason;
 import com.example.registration.exception.BadRequestException;
+import com.example.registration.exception.ResourceNotFoundException;
 import com.example.registration.repository.UserAuthRepository;
 import com.example.registration.config.JwtUtil;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -106,5 +105,67 @@ public class AuthService {
 
         return authRepo.save(auth);
     }
+
+    public void changePassword(ChangePasswordRequest request) {
+
+        // 1. Get logged-in user's email from JWT
+        String email = SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getName();
+
+        String role = SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getAuthorities()
+                .iterator()
+                .next()
+                .getAuthority();
+
+        UserAuth auth = authRepo.findByEmail(email)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+
+        // 2. Validate current password
+        if (!passwordEncoder.matches(
+                request.getCurrentPassword(),
+                auth.getPassword()
+        )) {
+            loginAuditService.recordPasswordChange(
+                    email,
+                    role,
+                    false,
+                    LoginReason.INVALID_CURRENT_PASSWORD
+            );
+            throw new BadRequestException("Current password is incorrect");
+        }
+
+        // 3. Prevent same password reuse
+        if (passwordEncoder.matches(
+                request.getNewPassword(),
+                auth.getPassword()
+        )){
+            loginAuditService.recordPasswordChange(
+                    email,
+                    role,
+                    false,
+                    LoginReason.SAME_PASSWORD_REUSE
+            );
+            throw new BadRequestException("New password must be different");
+        }
+
+        // 4. Update password
+        auth.setPassword(
+                passwordEncoder.encode(request.getNewPassword())
+        );
+
+        authRepo.save(auth);
+
+        // ✅ audit success
+        loginAuditService.recordPasswordChange(
+                email,
+                role,
+                true,
+                LoginReason.PASSWORD_CHANGED_SUCCESS
+        );
+    }
+
 
 }

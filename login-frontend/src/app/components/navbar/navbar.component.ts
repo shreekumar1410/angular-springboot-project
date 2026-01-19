@@ -42,7 +42,7 @@ export class NavbarComponent {
       case 'USER':
         return '/users';
       case 'SUPPORT':
-        return '/users'; // Support can also view users list
+        return '/support/users'; // Support can also view users list
       case 'ADMIN':
         return '/admin/users';
       case 'SUPER_ADMIN':

@@ -19,6 +19,56 @@
       <i class="bi bi-exclamation-triangle me-2"></i>{{ errorMessage }}
     </div>
 
+    <!-- Filters -->
+    <div class="filters-card mb-4" *ngIf="!loading && auditEntries.length > 0">
+      <div class="row g-3">
+        <div class="col-md-3">
+          <label class="filter-label">
+            <i class="bi bi-envelope me-1"></i>Email
+          </label>
+          <input 
+            type="text" 
+            class="form-control-custom" 
+            [(ngModel)]="filterEmail"
+            (ngModelChange)="onFilterChange()"
+            placeholder="Filter by email...">
+        </div>
+        <div class="col-md-3">
+          <label class="filter-label">
+            <i class="bi bi-list-ul me-1"></i>Action
+          </label>
+          <select 
+            class="form-control-custom" 
+            [(ngModel)]="filterAction"
+            (ngModelChange)="onFilterChange()">
+            <option value="ALL">All Actions</option>
+            <option value="LOGIN">Login</option>
+            <option value="LOGOUT">Logout</option>
+            <option value="PASSWORD_CHANGED">Password Changed</option>
+            <option value="FAILED">Login Failed</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="filter-label">
+            <i class="bi bi-check-circle me-1"></i>Status
+          </label>
+          <select 
+            class="form-control-custom" 
+            [(ngModel)]="filterStatus"
+            (ngModelChange)="onFilterChange()">
+            <option value="ALL">All Status</option>
+            <option value="SUCCESS">Success</option>
+            <option value="FAILED">Failed</option>
+          </select>
+        </div>
+        <div class="col-md-3 d-flex align-items-end">
+          <button class="btn-clear-filters" (click)="clearFilters()">
+            <i class="bi bi-x-circle me-1"></i>Clear Filters
+          </button>
+        </div>
+      </div>
+    </div>
+
     <div class="table-card" *ngIf="!loading && auditEntries.length > 0">
       <div class="table-responsive">
         <table class="table-custom">
@@ -26,9 +76,10 @@
             <tr>
               <th><i class="bi bi-envelope me-1"></i>Email</th>
               <th><i class="bi bi-shield-check me-1"></i>Role</th>
-              <th><i class="bi bi-box-arrow-in-right me-1"></i>Login Type</th>
-              <th><i class="bi bi-calendar-event me-1"></i>Event Time</th>
-              <th><i class="bi bi-clock me-1"></i>Token Expiry</th>
+              <th><i class="bi bi-list-ul me-1"></i>Action</th>
+              <th><i class="bi bi-check-circle me-1"></i>Status</th>
+              <th><i class="bi bi-info-circle me-1"></i>Reason</th>
+              <th><i class="bi bi-calendar-event me-1"></i>Date & Time</th>
             </tr>
           </thead>
           <tbody>
@@ -44,13 +95,22 @@
                 </span>
               </td>
               <td>
-                <span [class]="getLoginTypeClass(entry.loginType)">
-                  <i class="bi" [class]="entry.loginType === 'LOGIN' ? 'bi-box-arrow-in-right me-1' : entry.loginType === 'LOGOUT' ? 'bi-box-arrow-right me-1' : 'bi-x-circle me-1'"></i>
-                  {{ entry.loginType }}
+                <span [class]="getActionClass(entry.loginType)">
+                  <i class="bi" [ngClass]="getActionIcon(entry.loginType) + ' me-1'"></i>
+                  {{ getAction(entry.loginType) }}
+                </span>
+              </td>
+              <td>
+                <span [class]="getStatusClass(entry)">
+                  {{ getStatus(entry) }}
+                </span>
+              </td>
+              <td>
+                <span class="reason-text" [title]="entry.reason || 'N/A'">
+                  {{ entry.reason || 'N/A' }}
                 </span>
               </td>
               <td>{{ formatDate(entry.eventTime) }}</td>
-              <td>{{ formatDate(entry.jwtExpiresAt) }}</td>
             </tr>
           </tbody>
         </table>
@@ -88,7 +148,7 @@
 
     <div *ngIf="!loading && auditEntries.length === 0" class="empty-state">
       <i class="bi bi-inbox"></i>
-      <p>No login audit data available</p>
+      <p>No audit records found</p>
     </div>
   </div>
 </div>

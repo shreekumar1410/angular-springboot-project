@@ -44,6 +44,6 @@ export class AdminService {
 
   // Get login audit (for SUPER_ADMIN only)
   getLoginAudit(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/admin/login-audit`);
+    return this.http.get<any[]>(`${this.apiUrl}/support/login-audit`);
   }
 }

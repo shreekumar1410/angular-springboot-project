@@ -43,6 +43,9 @@ public class SecurityConfig {
                         .requestMatchers("/user/**")
                             .hasAnyAuthority(Roles.USER, Roles.ADMIN, Roles.SUPER_ADMIN)
 
+                        .requestMatchers("/support/**")
+                            .hasAnyAuthority(Roles.SUPPORT, Roles.SUPER_ADMIN)
+
                         // ADMIN + SUPER ADMIN
                         .requestMatchers("/admin/**")
                         .hasAnyAuthority(Roles.ADMIN, Roles.SUPER_ADMIN)

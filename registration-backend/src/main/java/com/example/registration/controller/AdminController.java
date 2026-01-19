@@ -87,16 +87,11 @@ public class AdminController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/login-audit")
-    public List<LoginAudit> getLoginAudit() {
-        return loginAuditService.getAllAudits();
-    }
-
-    //FORGET PASSWORD
-
     @GetMapping("/password-reset-audit")
     public List<PasswordResetRequest> audit() {
+
         return supportPasswordResetService.getAllRequests();
     }
+
 }
 
