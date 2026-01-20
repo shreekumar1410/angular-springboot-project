@@ -43,6 +43,7 @@
 
 package com.example.registration.config;
 
+import com.example.registration.enums.Roles;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -56,7 +57,7 @@ public class JwtUtil {
 
     private final String SECRET_KEY = "my_secret_key_12345_my_secret_key_12345";
 
-    public String generateToken(String email, String role) {
+    public String generateToken(String email, Roles role) {
         return Jwts.builder()
                 .setSubject(email)
                 .claim("role", role)

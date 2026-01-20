@@ -89,6 +89,17 @@
   cursor: pointer;
 }
 
+.btn-edit {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.btn-edit:hover {
+  background: linear-gradient(135deg, #218838 0%, #1aa179 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+}
+
 .btn-delete {
   background: #dc3545;
   color: white;

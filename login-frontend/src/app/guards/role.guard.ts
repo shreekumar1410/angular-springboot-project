@@ -22,6 +22,8 @@ export class RoleGuard implements CanActivate {
     // Check if user has the required role
     if (requiredRole === 'USER' && this.authService.isUser()) {
       return true;
+    } else if (requiredRole === 'EDITOR' && this.authService.isEditor()) {
+      return true;
     } else if (requiredRole === 'SUPPORT' && this.authService.isSupport()) {
       return true;
     } else if (requiredRole === 'ADMIN' && this.authService.isAdmin()) {

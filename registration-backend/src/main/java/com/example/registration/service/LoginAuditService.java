@@ -33,7 +33,7 @@ public class LoginAuditService {
             LoginAudit audit = new LoginAudit();
             audit.setEmail(user.getEmail());
             audit.setUserAuth(user);
-            audit.setRole(user.getRole());
+            audit.setRole(user.getRole().name());
             audit.setEventTime(Instant.now());
             audit.setLoginType(LoginType.LOGIN);
             audit.setReason(LoginReason.LOGIN_SUCCESS);
@@ -49,7 +49,7 @@ public class LoginAuditService {
             LoginAudit audit = new LoginAudit();
             audit.setEmail(user.getEmail());
             audit.setUserAuth(user);
-            audit.setRole(user.getRole());
+            audit.setRole(user.getRole().name());
             audit.setEventTime(Instant.now());
             audit.setLoginType(LoginType.LOGOUT);
             audit.setReason(LoginReason.USER_LOGOUT);

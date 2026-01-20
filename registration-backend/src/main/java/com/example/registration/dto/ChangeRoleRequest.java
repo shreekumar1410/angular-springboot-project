@@ -1,14 +1,16 @@
 package com.example.registration.dto;
 
+import com.example.registration.enums.Roles;
+
 public class ChangeRoleRequest {
 
-    private String role; // ADMIN or USER
+    private Roles role; // ADMIN or USER
 
-    public String getRole() {
+    public Roles getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Roles role) {
         this.role = role;
     }
 }

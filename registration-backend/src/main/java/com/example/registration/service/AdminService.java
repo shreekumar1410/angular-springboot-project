@@ -2,11 +2,13 @@ package com.example.registration.service;
 
 import com.example.registration.entity.User;
 import com.example.registration.entity.UserAuth;
+import com.example.registration.enums.ActionStatus;
+import com.example.registration.enums.ActionType;
 import com.example.registration.exception.AccessDeniedException;
 import com.example.registration.exception.ResourceNotFoundException;
 import com.example.registration.repository.UserAuthRepository;
 import com.example.registration.repository.UserRepository;
-import com.example.registration.util.Roles;
+import com.example.registration.enums.Roles;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -18,10 +20,12 @@ public class AdminService {
 
     private final UserAuthRepository authRepo;
     private final UserRepository userRepo;
+    private final ActionAuditService actionAuditService;
 
-    public AdminService(UserRepository userRepo, UserAuthRepository authRepo) {
+    public AdminService(UserRepository userRepo, UserAuthRepository authRepo, ActionAuditService actionAuditService) {
         this.userRepo = userRepo;
         this.authRepo = authRepo;
+        this.actionAuditService = actionAuditService;
     }
 
     // =====================================================
@@ -70,7 +74,7 @@ public class AdminService {
     // 🔐 CHANGE USER ROLE
     // =====================================================
 
-    public void changeUserRole(Long authId, String newRole) {
+    public void changeUserRole(Long authId, Roles newRole) {
 
         UserAuth target = authRepo.findById(authId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
@@ -101,13 +105,27 @@ public class AdminService {
             // SUPER_ADMIN can assign USER / SUPPORT / ADMIN
             if (!Roles.USER.equals(newRole)
                     && !Roles.SUPPORT.equals(newRole)
-                    && !Roles.ADMIN.equals(newRole)) {
+                    && !Roles.ADMIN.equals(newRole)
+                    && !Roles.EDITOR.equals(newRole)){
                 throw new RuntimeException("Invalid role");
             }
         }
+        //for action aduit
+        String before = target.getRole().name();
 
         target.setRole(newRole);
         authRepo.save(target);
+
+        //for action aduit
+        actionAuditService.logAction(
+                ActionType.ROLE_CHANGE,
+                ActionStatus.SUCCESS,
+                target.getEmail(),
+                target.getId(),
+                before,
+                newRole.name(),
+                "Role updated"
+        );
     }
 
     // =====================================================

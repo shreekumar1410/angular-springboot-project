@@ -1,6 +1,6 @@
 package com.example.registration.config;
 
-import com.example.registration.util.Roles;
+import com.example.registration.enums.Roles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,18 +41,18 @@ public class SecurityConfig {
 
                         // USER + ADMIN + SUPER ADMIN
                         .requestMatchers("/user/**")
-                            .hasAnyAuthority(Roles.USER, Roles.ADMIN, Roles.SUPER_ADMIN)
+                            .hasAnyAuthority(Roles.USER.name(), Roles.EDITOR.name(), Roles.ADMIN.name(), Roles.SUPER_ADMIN.name())
 
                         .requestMatchers("/support/**")
-                            .hasAnyAuthority(Roles.SUPPORT, Roles.SUPER_ADMIN)
+                            .hasAnyAuthority(Roles.SUPPORT.name(), Roles.SUPER_ADMIN.name())
 
                         // ADMIN + SUPER ADMIN
                         .requestMatchers("/admin/**")
-                        .hasAnyAuthority(Roles.ADMIN, Roles.SUPER_ADMIN)
+                        .hasAnyAuthority(Roles.ADMIN.name(), Roles.SUPER_ADMIN.name())
 
                         // SUPER ADMIN
                         .requestMatchers("/super-admin/**")
-                            .hasAuthority(Roles.SUPER_ADMIN)
+                            .hasAuthority(Roles.SUPER_ADMIN.name())
 
                         // EVERYTHING ELSE NEEDS AUTH
                         .anyRequest().authenticated()

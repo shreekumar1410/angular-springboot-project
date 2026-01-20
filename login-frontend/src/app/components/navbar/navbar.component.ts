@@ -36,11 +36,17 @@ export class NavbarComponent {
     return this.authService.isSuperAdmin();
   }
 
+  isEditor(): boolean {
+    return this.authService.isEditor();
+  }
+
   getUsersRoute(): string {
     const role = this.authService.getRole();
     switch (role) {
       case 'USER':
         return '/users';
+      case 'EDITOR':
+        return '/editor/users';
       case 'SUPPORT':
         return '/support/users'; // Support can also view users list
       case 'ADMIN':

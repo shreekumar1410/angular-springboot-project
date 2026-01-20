@@ -1,13 +1,15 @@
 package com.example.registration.dto;
 
+import com.example.registration.enums.Roles;
+
 public class LoginResponse {
 
     private LoginAlertDTO loginAlert;
     private String token;
-    private String role;
+    private Roles role;
     private boolean profileCreated;
 
-    public LoginResponse(String token, String role, boolean profileCreated) {
+    public LoginResponse(String token, Roles role, boolean profileCreated) {
         this.token = token;
         this.role = role;
         this.profileCreated = profileCreated;
@@ -15,7 +17,7 @@ public class LoginResponse {
 
     public LoginResponse(
             String token,
-            String role,
+            Roles role,
             boolean profileCreated,
             LoginAlertDTO loginAlert
     ) {
@@ -30,7 +32,7 @@ public class LoginResponse {
         return token;
     }
 
-    public String getRole() {
+    public Roles getRole() {
         return role;
     }
 

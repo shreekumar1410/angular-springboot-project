@@ -54,6 +54,9 @@ export class LoginComponent {
               case 'USER':
                 this.router.navigate(['/user/dashboard']);
                 break;
+              case 'EDITOR':
+                this.router.navigate(['/editor/dashboard']);
+                break;
               case 'SUPPORT':
                 this.router.navigate(['/support/dashboard']);
                 break;

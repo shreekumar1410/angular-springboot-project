@@ -6,13 +6,15 @@ import com.example.registration.dto.UserProfileRequest;
 import com.example.registration.dto.UserShortResponse;
 import com.example.registration.entity.User;
 import com.example.registration.entity.UserAuth;
+import com.example.registration.enums.ActionStatus;
+import com.example.registration.enums.ActionType;
 import com.example.registration.exception.AccessDeniedException;
 import com.example.registration.exception.ResourceNotFoundException;
 import com.example.registration.repository.UserAuthRepository;
 import com.example.registration.repository.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import static com.example.registration.util.Roles.*;
+import static com.example.registration.enums.Roles.*;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -22,6 +24,7 @@ public class UserService {
 
     private final UserRepository userRepo;
     private final UserAuthRepository authRepo;
+    ActionAuditService actionAuditService;
 
     public UserService(UserRepository userRepo, UserAuthRepository authRepo) {
         this.userRepo = userRepo;
@@ -32,15 +35,27 @@ public class UserService {
 
     public User createProfile(Long authId, UserProfileRequest request) {
 
-        String email = SecurityContextHolder.getContext()
+        String loggedInEmail = SecurityContextHolder.getContext()
                 .getAuthentication()
                 .getName();
+
+        String role = SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getAuthorities()
+                .iterator()
+                .next()
+                .getAuthority();
 //
 //        System.out.println("LOGIN MAIL");
 //        System.out.println("email = " + email);
 
         UserAuth auth = authRepo.findById(authId)
                 .orElseThrow(() -> new AccessDeniedException("Unauthorized"));
+
+        // USER restriction
+        if ("USER".equals(role) && !auth.getEmail().equals(loggedInEmail)) {
+            throw new AccessDeniedException("You can create only your own profile");
+        }
 
         if (auth.isProfileCreated()) {
             throw new AccessDeniedException("Profile already created");
@@ -65,6 +80,17 @@ public class UserService {
 
         auth.setProfileCreated(true);
         authRepo.save(auth);
+
+        //for action aduit
+        actionAuditService.logAction(
+                ActionType.PROFILE_CREATE,
+                ActionStatus.SUCCESS,
+                auth.getEmail(),
+                user.getId(),
+                null,
+                user.toString(), // or JSON
+                "Profile created"
+        );
 
         return savedUser;
     }
@@ -153,16 +179,42 @@ public class UserService {
                         .getAuthentication()
                         .getName();
 
+        String role = SecurityContextHolder.getContext()
+                .getAuthentication()
+                .getAuthorities()
+                .iterator()
+                .next()
+                .getAuthority();
+
+        String targetRole = existing.getAuth().getRole().name();
+
+//        System.out.println("this is from the user service...");
+//        System.out.println("loggedInEmail = " + loggedInEmail);
+//        System.out.println("role = " + role);
+//        System.out.println("targetRole = " + targetRole);
+
         // 3. Get profile owner's email
         String profileOwnerEmail =
                 existing.getAuth().getEmail();
 
-        // 4. Ownership check (ADMIN + USER)
-        if (!loggedInEmail.equals(profileOwnerEmail)) {
+        // USER restriction
+        if ("USER".equals(role) &&
+                !profileOwnerEmail.equals(loggedInEmail)) {
+
+            throw new AccessDeniedException("You can edit only your own profile");
+        }
+
+        // EDITOR restriction
+        if ("EDITOR".equals(role) &&
+                ("ADMIN".equals(targetRole) || "SUPER_ADMIN".equals(targetRole))) {
+
             throw new AccessDeniedException(
-                    "You can edit only your own profile"
+                    "You cannot edit ADMIN or SUPER_ADMIN profiles"
             );
         }
+
+        //for action aduit
+        String before = existing.toString();
 
         // 5. Update allowed fields
         existing.setName(user.getName());
@@ -176,6 +228,17 @@ public class UserService {
 //        System.out.println("USer Email = "+existing.getAuth().getEmail());
         existing.setEmailId(existing.getAuth().getEmail());
         existing.setQualification(user.getQualification());
+
+        //for action aduit
+        actionAuditService.logAction(
+                ActionType.PROFILE_UPDATE,
+                ActionStatus.SUCCESS,
+                existing.getAuth().getEmail(),
+                existing.getId(),
+                before,
+                existing.toString(),
+                "Profile updated"
+        );
 
 
         return userRepo.save(existing);

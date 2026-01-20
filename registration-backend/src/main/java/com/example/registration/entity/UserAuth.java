@@ -1,5 +1,6 @@
 package com.example.registration.entity;
 
+import com.example.registration.enums.Roles;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,8 +17,10 @@ public class UserAuth {
     @Column(nullable = false)
     private String password;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String role; // ADMIN / USER / SUPER_ADMIN
+    private Roles role;
+
 
     @Column(nullable = false)
     private boolean profileCreated = false;
@@ -47,11 +50,11 @@ public class UserAuth {
         this.password = password;
     }
 
-    public String getRole() {
+    public Roles getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Roles role) {
         this.role = role;
     }
 

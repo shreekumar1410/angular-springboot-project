@@ -20,6 +20,12 @@ export const routes: Routes = [
   { path: 'user/profile', loadComponent: () => import('./components/profile/profile.component').then(m => m.ProfileComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'USER' } },
   { path: 'users', loadComponent: () => import('./components/users-list/users-list.component').then(m => m.UsersListComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'USER' } },
   
+  // EDITOR role routes
+  { path: 'editor/dashboard', loadComponent: () => import('./components/editor-dashboard/editor-dashboard.component').then(m => m.EditorDashboardComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'EDITOR' } },
+  { path: 'editor/profile', loadComponent: () => import('./components/profile/profile.component').then(m => m.ProfileComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'EDITOR' } },
+  { path: 'editor/users', loadComponent: () => import('./components/users-list/users-list.component').then(m => m.UsersListComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'EDITOR' } },
+  { path: 'editor/profile-edit/:userId', loadComponent: () => import('./components/profile-form/profile-form.component').then(m => m.ProfileFormComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'EDITOR' } },
+  
   // SUPPORT role routes
   { path: 'support/dashboard', loadComponent: () => import('./components/support-dashboard/support-dashboard.component').then(m => m.SupportDashboardComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'SUPPORT' } },
   { path: 'support/profile', loadComponent: () => import('./components/profile/profile.component').then(m => m.ProfileComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'SUPPORT' } },

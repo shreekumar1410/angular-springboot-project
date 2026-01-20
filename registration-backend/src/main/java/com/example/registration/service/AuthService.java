@@ -3,6 +3,7 @@ package com.example.registration.service;
 import com.example.registration.dto.*;
 import com.example.registration.entity.UserAuth;
 import com.example.registration.enums.LoginReason;
+import com.example.registration.enums.Roles;
 import com.example.registration.exception.BadRequestException;
 import com.example.registration.exception.ResourceNotFoundException;
 import com.example.registration.repository.UserAuthRepository;
@@ -98,7 +99,7 @@ public class AuthService {
         auth.setEmail(request.getEmail());
         auth.setPassword(passwordEncoder.encode(request.getPassword()));
         auth.setRole(
-                request.getRole() != null ? request.getRole() : "USER"
+                request.getRole() != null ? request.getRole() : Roles.USER
         );
         auth.setProfileCreated(false);
         auth.setActive(true);

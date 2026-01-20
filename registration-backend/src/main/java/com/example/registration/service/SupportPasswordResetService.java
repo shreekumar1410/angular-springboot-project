@@ -2,6 +2,8 @@ package com.example.registration.service;
 
 import com.example.registration.entity.PasswordResetRequest;
 import com.example.registration.entity.UserAuth;
+import com.example.registration.enums.ActionStatus;
+import com.example.registration.enums.ActionType;
 import com.example.registration.enums.PasswordResetStatus;
 import com.example.registration.exception.ResourceNotFoundException;
 import com.example.registration.repository.PasswordResetRequestRepository;
@@ -20,6 +22,7 @@ public class SupportPasswordResetService {
     private final PasswordResetRequestRepository requestRepo;
     private final UserAuthRepository authRepo;
     private final PasswordEncoder passwordEncoder;
+    ActionAuditService actionAuditService;
 
 
 
@@ -162,6 +165,17 @@ public class SupportPasswordResetService {
 
         req.setStatus(PasswordResetStatus.PASSWORD_SENT);
         req.setPasswordSentAt(LocalDateTime.now());
+
+        actionAuditService.logAction(
+                ActionType.PASSWORD_RESET,
+                ActionStatus.SUCCESS,
+                auth.getEmail(),
+                auth.getId(),
+                "OLD_PASSWORD",
+                "PASSWORD_RESET",
+                "Support reset password"
+        );
+
 
         requestRepo.save(req);
     }

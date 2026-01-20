@@ -2,7 +2,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, AbstractControl, ValidationErrors } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
@@ -18,6 +18,7 @@ export class ProfileFormComponent implements OnInit {
   profileForm: FormGroup;
   isEdit: boolean = false;
   userId: string = '';
+  editingOtherUser: boolean = false; // True when EDITOR is editing another user's profile
   errorMessage: string = '';
   successMessage: string = '';
   isSubmitting: boolean = false;
@@ -26,7 +27,8 @@ export class ProfileFormComponent implements OnInit {
     private fb: FormBuilder,
     private userService: UserService,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.profileForm = this.fb.group({
       name: ['', [Validators.required, this.nameValidator]],
@@ -67,19 +69,56 @@ export class ProfileFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.profileForm.get('email')!.setValue(localStorage.getItem('email'));
-    this.isEdit = this.authService.isProfileCreated();
-    if (this.isEdit) {
-      this.userService.getCurrentUser().subscribe({
-        next: (user) => {
-          this.userId = user.id;
-          this.profileForm.patchValue(user);
-        },
-        error: (error) => {
-          this.errorMessage = 'Failed to load profile';
-        }
-      });
+    // Check if editing another user's profile (EDITOR role)
+    const routeUserId = this.route.snapshot.paramMap.get('userId');
+    const isEditor = this.authService.isEditor();
+
+    if (routeUserId && isEditor) {
+      // EDITOR editing another user's profile
+      this.editingOtherUser = true;
+      this.isEdit = true;
+      this.userId = routeUserId;
+      this.loadUserProfile(routeUserId);
+    } else {
+      // Normal flow: own profile creation/edit
+      this.profileForm.get('email')!.setValue(localStorage.getItem('email'));
+      this.isEdit = this.authService.isProfileCreated();
+      if (this.isEdit) {
+        this.userService.getCurrentUser().subscribe({
+          next: (user) => {
+            this.userId = user.id;
+            this.profileForm.patchValue(user);
+          },
+          error: (error) => {
+            this.errorMessage = 'Failed to load profile';
+          }
+        });
+      }
     }
+  }
+
+  loadUserProfile(userId: string): void {
+    this.userService.getOwnProfile(userId).subscribe({
+      next: (user) => {
+        this.profileForm.patchValue({
+          name: user.name,
+          email: user.emailId || user.email,
+          age: user.age,
+          address: user.address,
+          phone: user.phone,
+          gender: user.gender,
+          qualification: user.qualification,
+          dob: user.dob,
+          languages: user.languages
+        });
+        // Set email field (disabled)
+        this.profileForm.get('email')!.setValue(user.emailId || user.email);
+      },
+      error: (error) => {
+        this.errorMessage = error?.error?.message || 'Failed to load user profile';
+        console.error('Error loading user profile:', error);
+      }
+    });
   }
 
   onSubmit(): void {
@@ -100,13 +139,19 @@ export class ProfileFormComponent implements OnInit {
             console.log(this.profileForm.value);
             this.successMessage = 'Profile updated successfully';
             setTimeout(() => {
-              this.router.navigate(['/profile']);
+              // Navigate based on context
+              if (this.editingOtherUser) {
+                this.router.navigate(['/editor/users']);
+              } else {
+                this.router.navigate(['/profile']);
+              }
               this.isSubmitting = false;
             }, 2000);
           },
           error: (error) => {
-            this.errorMessage = 'Profile update failed';
+            this.errorMessage = error?.error?.message || 'Profile update failed';
             this.isSubmitting = false;
+            console.error('Profile update error:', error);
           }
         });
       } else {

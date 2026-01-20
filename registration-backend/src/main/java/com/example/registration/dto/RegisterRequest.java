@@ -1,10 +1,12 @@
 package com.example.registration.dto;
 
+import com.example.registration.enums.Roles;
+
 public class RegisterRequest {
 
     private String email;
     private String password;
-    private String role; // optional (ADMIN / USER)
+    private Roles role; // optional (ADMIN / USER)
 
     public String getEmail() {
         return email;
@@ -22,11 +24,11 @@ public class RegisterRequest {
         this.password = password;
     }
 
-    public String getRole() {
+    public Roles getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Roles role) {
         this.role = role;
     }
 }

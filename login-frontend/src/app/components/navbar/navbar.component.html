@@ -21,6 +21,18 @@
           </a>
         </li>
 
+        <!-- EDITOR MENU -->
+        <li class="nav-item" *ngIf="isEditor()">
+          <a class="nav-link-custom" routerLink="/editor/dashboard" routerLinkActive="active">
+            <i class="bi bi-speedometer2 me-1"></i>Dashboard
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isEditor()">
+          <a class="nav-link-custom" routerLink="/editor/profile" routerLinkActive="active">
+            <i class="bi bi-person-circle me-1"></i>Profile
+          </a>
+        </li>
+
         <!-- SUPPORT MENU -->
         <li class="nav-item" *ngIf="isSupport()">
           <a class="nav-link-custom" routerLink="/support/dashboard" routerLinkActive="active">
@@ -92,9 +104,15 @@
           </a>
         </li>
 
-        <!-- COMMON MENU ITEM: Users (for all roles) -->
-        <li class="nav-item" *ngIf="isLoggedIn()">
+        <!-- COMMON MENU ITEM: Users (for all roles except EDITOR - EDITOR has its own menu) -->
+        <li class="nav-item" *ngIf="isLoggedIn() && !isEditor()">
           <a class="nav-link-custom" [routerLink]="getUsersRoute()" routerLinkActive="active">
+            <i class="bi bi-people me-1"></i>Users
+          </a>
+        </li>
+        <!-- EDITOR Users Menu -->
+        <li class="nav-item" *ngIf="isEditor()">
+          <a class="nav-link-custom" routerLink="/editor/users" routerLinkActive="active">
             <i class="bi bi-people me-1"></i>Users
           </a>
         </li>

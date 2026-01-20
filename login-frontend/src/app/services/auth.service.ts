@@ -76,11 +76,17 @@ export class AuthService {
     return this.getRole() === 'SUPER_ADMIN';
   }
 
+  isEditor(): boolean {
+    return this.getRole() === 'EDITOR';
+  }
+
   getRoleBasedRoute(): string {
     const role = this.getRole();
     switch (role) {
       case 'USER':
         return '/user/dashboard';
+      case 'EDITOR':
+        return '/editor/dashboard';
       case 'SUPPORT':
         return '/support/dashboard';
       case 'ADMIN':

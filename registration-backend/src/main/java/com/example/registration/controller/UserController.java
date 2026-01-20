@@ -120,6 +120,10 @@ public class UserController {
 //    public User getUserById(@PathVariable Long id) {
 //        return service.getUserById(id);
 //    }
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable Long id){
+        return userService.getUserById(id);
+    }
 
     /**
      * UPDATE OWN PROFILE ONLY (ADMIN + USER)
