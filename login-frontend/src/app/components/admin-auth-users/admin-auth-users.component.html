@@ -25,6 +25,7 @@
                       [class.badge-user]="auth.role === 'USER'" 
                       [class.badge-admin]="auth.role === 'ADMIN'"
                       [class.badge-support]="auth.role === 'SUPPORT'"
+                      [class.badge-editor]="auth.role === 'EDITOR'"
                       [class.badge-super-admin]="auth.role === 'SUPER_ADMIN'">
                   {{ auth.role }}
                 </span>
@@ -46,7 +47,7 @@
                   <select
                     class="form-select-custom me-2"
                     [value]="auth.role"
-                    [disabled]="auth.email === loggedInEmail || (auth.role !== 'USER' && auth.role !== 'SUPPORT')"
+                    [disabled]="(auth.role === 'ADMIN' || auth.role === 'SUPER_ADMIN')"
                     (change)="onRoleChange(auth.id, $event)">
                     <option *ngFor="let role of getRolesForDropdown(auth.role)" [value]="role">{{ role }}</option>
                   </select>
@@ -54,7 +55,7 @@
                     class="btn-action" 
                     [class.btn-activate]="!auth.active" 
                     [class.btn-deactivate]="auth.active"
-                    [hidden]="auth.email === loggedInEmail || (auth.role !== 'USER' && auth.role !== 'SUPPORT')"
+                    [hidden]="(auth.role === 'ADMIN' || auth.role === 'SUPER_ADMIN')"
                     (click)="changeStatus(auth.id, !auth.active)">
                     <i class="bi" [class]="auth.active ? 'bi-toggle-on me-1' : 'bi-toggle-off me-1'"></i>
                     {{ auth.active ? 'Deactivate' : 'Activate' }}

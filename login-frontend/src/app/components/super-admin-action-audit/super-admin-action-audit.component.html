@@ -1,0 +1,252 @@
+<div class="table-container">
+  <div class="container py-5">
+    <div class="page-header mb-4">
+      <h2 class="page-title">
+        <i class="bi bi-file-earmark-text me-2"></i>Action Audit
+      </h2>
+      <p class="page-subtitle">Track all privileged actions performed in the system</p>
+    </div>
+
+    <div *ngIf="loading" class="loading-state">
+      <div class="spinner-custom">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3">Loading audit data...</p>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert-custom alert-danger-custom mb-4">
+      <i class="bi bi-exclamation-triangle me-2"></i>{{ errorMessage }}
+    </div>
+
+    <!-- Filters -->
+    <div class="filters-card mb-4" *ngIf="!loading && auditEntries.length > 0">
+      <div class="row g-3">
+        <div class="col-md-3">
+          <label class="filter-label">
+            <i class="bi bi-list-ul me-1"></i>Action Type
+          </label>
+          <select 
+            class="form-control-custom" 
+            [(ngModel)]="filterActionType"
+            (ngModelChange)="onFilterChange()">
+            <option *ngFor="let type of actionTypes" [value]="type">
+              {{ type === 'ALL' ? 'All Types' : formatActionType(type) }}
+            </option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label class="filter-label">
+            <i class="bi bi-check-circle me-1"></i>Status
+          </label>
+          <select 
+            class="form-control-custom" 
+            [(ngModel)]="filterStatus"
+            (ngModelChange)="onFilterChange()">
+            <option value="ALL">All Status</option>
+            <option value="SUCCESS">Success</option>
+            <option value="FAILED">Failed</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="filter-label">
+            <i class="bi bi-calendar me-1"></i>From Date
+          </label>
+          <input 
+            type="date" 
+            class="form-control-custom" 
+            [(ngModel)]="filterDateFrom"
+            (ngModelChange)="onFilterChange()">
+        </div>
+        <div class="col-md-2">
+          <label class="filter-label">
+            <i class="bi bi-calendar me-1"></i>To Date
+          </label>
+          <input 
+            type="date" 
+            class="form-control-custom" 
+            [(ngModel)]="filterDateTo"
+            (ngModelChange)="onFilterChange()">
+        </div>
+        <div class="col-md-2 d-flex align-items-end">
+          <button class="btn-clear-filters" (click)="clearFilters()">
+            <i class="bi bi-x-circle me-1"></i>Clear Filters
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-card" *ngIf="!loading && auditEntries.length > 0">
+      <div class="table-responsive">
+        <table class="table-custom">
+          <thead>
+            <tr>
+              <th style="width: 40px;"></th>
+              <th><i class="bi bi-clock me-1"></i>Time</th>
+              <th><i class="bi bi-person me-1"></i>Actor</th>
+              <th><i class="bi bi-shield me-1"></i>Actor Role</th>
+              <th><i class="bi bi-list-ul me-1"></i>Action</th>
+              <th><i class="bi bi-person-badge me-1"></i>Target User</th>
+              <th><i class="bi bi-check-circle me-1"></i>Status</th>
+              <th><i class="bi bi-info-circle me-1"></i>Reason</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let entry of paginatedEntries; let i = index">
+              <!-- Main Row -->
+              <tr class="audit-row" [class.row-failed]="entry.actionStatus === 'FAILED'">
+                <td>
+                  <button 
+                    class="btn-expand" 
+                    (click)="toggleRowExpansion(i)"
+                    [class.expanded]="isRowExpanded(i)"
+                    title="View details">
+                    <i class="bi" [ngClass]="isRowExpanded(i) ? 'bi-chevron-down' : 'bi-chevron-right'"></i>
+                  </button>
+                </td>
+                <td>
+                  <small class="text-muted">{{ formatDate(entry.performedAt) }}</small>
+                </td>
+                <td><strong>{{ entry.actorEmail }}</strong></td>
+                <td>
+                  <span class="badge-custom" 
+                        [class.badge-user]="entry.actorRole === 'USER'" 
+                        [class.badge-editor]="entry.actorRole === 'EDITOR'"
+                        [class.badge-support]="entry.actorRole === 'SUPPORT'"
+                        [class.badge-admin]="entry.actorRole === 'ADMIN'"
+                        [class.badge-super-admin]="entry.actorRole === 'SUPER_ADMIN'">
+                    {{ entry.actorRole }}
+                  </span>
+                </td>
+                <td>
+                  <span [class]="getActionTypeClass(entry.actionType)">
+                    <i class="bi" [ngClass]="getActionTypeIcon(entry.actionType) + ' me-1'"></i>
+                    {{ formatActionType(entry.actionType) }}
+                  </span>
+                </td>
+                <td><strong>{{ entry.targetUserEmail }}</strong></td>
+                <td>
+                  <span [class]="getStatusClass(entry.actionStatus)">
+                    <i class="bi" [ngClass]="entry.actionStatus === 'SUCCESS' ? 'bi-check-circle' : 'bi-x-circle'" class="me-1"></i>
+                    {{ entry.actionStatus }}
+                  </span>
+                </td>
+                <td>
+                  <span class="reason-text" [title]="entry.actionReason || 'N/A'">
+                    {{ entry.actionReason || '—' }}
+                  </span>
+                </td>
+              </tr>
+
+              <!-- Expanded Details Row -->
+              <tr *ngIf="isRowExpanded(i)" class="expanded-row">
+                <td colspan="8">
+                  <div class="expanded-content">
+                    <div class="row">
+                      <!-- Before State -->
+                      <div class="col-md-6" *ngIf="entry.beforeState">
+                        <div class="state-card">
+                          <h6 class="state-title">
+                            <i class="bi bi-archive me-2"></i>Before State
+                          </h6>
+                          <pre class="state-content">{{ formatState(entry.beforeState) }}</pre>
+                        </div>
+                      </div>
+
+                      <!-- After State -->
+                      <div class="col-md-6" *ngIf="entry.afterState">
+                        <div class="state-card">
+                          <h6 class="state-title">
+                            <i class="bi bi-file-earmark-check me-2"></i>After State
+                          </h6>
+                          <pre class="state-content">{{ formatState(entry.afterState) }}</pre>
+                        </div>
+                      </div>
+
+                      <!-- No State Information -->
+                      <div class="col-12" *ngIf="!entry.beforeState && !entry.afterState">
+                        <div class="no-state-info">
+                          <i class="bi bi-info-circle me-2"></i>
+                          No state information available for this action
+                        </div>
+                      </div>
+
+                      <!-- Full Details -->
+                      <div class="col-12 mt-3">
+                        <div class="full-details">
+                          <div class="detail-row">
+                            <span class="detail-label">Actor Email:</span>
+                            <span class="detail-value">{{ entry.actorEmail }}</span>
+                          </div>
+                          <div class="detail-row">
+                            <span class="detail-label">Actor Role:</span>
+                            <span class="detail-value">{{ entry.actorRole }}</span>
+                          </div>
+                          <div class="detail-row">
+                            <span class="detail-label">Target User:</span>
+                            <span class="detail-value">{{ entry.targetUserEmail }}</span>
+                          </div>
+                          <div class="detail-row">
+                            <span class="detail-label">Action Type:</span>
+                            <span class="detail-value">{{ formatActionType(entry.actionType) }}</span>
+                          </div>
+                          <div class="detail-row">
+                            <span class="detail-label">Status:</span>
+                            <span class="detail-value">{{ entry.actionStatus }}</span>
+                          </div>
+                          <div class="detail-row" *ngIf="entry.actionReason">
+                            <span class="detail-label">Reason:</span>
+                            <span class="detail-value">{{ entry.actionReason }}</span>
+                          </div>
+                          <div class="detail-row">
+                            <span class="detail-label">Performed At:</span>
+                            <span class="detail-value">{{ formatDate(entry.performedAt) }}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination-wrapper" *ngIf="totalPages > 1">
+        <nav aria-label="Page navigation">
+          <ul class="pagination-custom">
+            <li class="page-item-custom" [class.disabled]="currentPage === 1">
+              <a class="page-link-custom" (click)="previousPage()">
+                <i class="bi bi-chevron-left"></i> Previous
+              </a>
+            </li>
+            <li class="page-item-custom" *ngFor="let page of getPageNumbers()" 
+                [class.active]="currentPage === page">
+              <a class="page-link-custom" (click)="goToPage(page)">{{ page }}</a>
+            </li>
+            <li class="page-item-custom" [class.disabled]="currentPage === totalPages">
+              <a class="page-link-custom" (click)="nextPage()">
+                Next <i class="bi bi-chevron-right"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="pagination-info">
+          <small>
+            Showing {{ (currentPage - 1) * itemsPerPage + 1 }} - 
+            {{ getMin(currentPage * itemsPerPage, filteredEntries.length) }} 
+            of {{ filteredEntries.length }} entries
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!loading && auditEntries.length === 0" class="empty-state">
+      <i class="bi bi-inbox"></i>
+      <p>No audit records found</p>
+    </div>
+  </div>
+</div>

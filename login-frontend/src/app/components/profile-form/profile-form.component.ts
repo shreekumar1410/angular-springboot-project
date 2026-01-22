@@ -18,7 +18,9 @@ export class ProfileFormComponent implements OnInit {
   profileForm: FormGroup;
   isEdit: boolean = false;
   userId: string = '';
+  authId: string = ''; // For EDITOR creating profile for another user
   editingOtherUser: boolean = false; // True when EDITOR is editing another user's profile
+  creatingForOtherUser: boolean = false; // True when EDITOR is creating profile for another user
   errorMessage: string = '';
   successMessage: string = '';
   isSubmitting: boolean = false;
@@ -69,11 +71,19 @@ export class ProfileFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Check if editing another user's profile (EDITOR role)
     const routeUserId = this.route.snapshot.paramMap.get('userId');
+    const routeAuthId = this.route.snapshot.paramMap.get('authId');
     const isEditor = this.authService.isEditor();
 
-    if (routeUserId && isEditor) {
+    if (routeAuthId && isEditor) {
+      // EDITOR creating profile for another user
+      this.creatingForOtherUser = true;
+      this.isEdit = false;
+      this.authId = routeAuthId;
+      
+      // Need to fetch email for the auth user
+      this.loadAuthUserEmail(routeAuthId);
+    } else if (routeUserId && isEditor) {
       // EDITOR editing another user's profile
       this.editingOtherUser = true;
       this.isEdit = true;
@@ -95,6 +105,13 @@ export class ProfileFormComponent implements OnInit {
         });
       }
     }
+  }
+
+  loadAuthUserEmail(authId: string): void {
+    // Fetch auth user email from admin service
+    // We'll assume the email is passed or we need to fetch it
+    // For now, we'll just enable the form without pre-filling email
+    // The backend should handle the email association
   }
 
   loadUserProfile(userId: string): void {
@@ -141,7 +158,7 @@ export class ProfileFormComponent implements OnInit {
             setTimeout(() => {
               // Navigate based on context
               if (this.editingOtherUser) {
-                this.router.navigate(['/editor/users']);
+                this.router.navigate(['/editor/auth-users']);
               } else {
                 this.router.navigate(['/profile']);
               }
@@ -155,22 +172,43 @@ export class ProfileFormComponent implements OnInit {
           }
         });
       } else {
-        this.userService.createProfile(this.profileForm.value).subscribe({
-          next: () => {
-            localStorage.setItem('profileCreated', 'true');
-            console.log('Profile created successfully');
-            console.log(this.profileForm.value);
-            this.successMessage = 'Profile created successfully';
-            setTimeout(() => {
-              this.router.navigate(['/profile']);
+        // Check if creating for another user (EDITOR)
+        if (this.creatingForOtherUser && this.authId) {
+          this.userService.createProfileForUser(this.authId, this.profileForm.value).subscribe({
+            next: () => {
+              console.log('Profile created successfully for user');
+              console.log(this.profileForm.value);
+              this.successMessage = 'Profile created successfully';
+              setTimeout(() => {
+                this.router.navigate(['/editor/auth-users']);
+                this.isSubmitting = false;
+              }, 2000);
+            },
+            error: (error) => {
+              this.errorMessage = error?.error?.message || 'Profile creation failed';
               this.isSubmitting = false;
-            }, 2000);
-          },
-          error: (error) => {
-            this.errorMessage = 'Profile creation failed';
-            this.isSubmitting = false;
-          }
-        });
+              console.error('Profile creation error:', error);
+            }
+          });
+        } else {
+          // Self profile creation
+          this.userService.createProfile(this.profileForm.value).subscribe({
+            next: () => {
+              localStorage.setItem('profileCreated', 'true');
+              console.log('Profile created successfully');
+              console.log(this.profileForm.value);
+              this.successMessage = 'Profile created successfully';
+              setTimeout(() => {
+                this.router.navigate(['/profile']);
+                this.isSubmitting = false;
+              }, 2000);
+            },
+            error: (error) => {
+              this.errorMessage = 'Profile creation failed';
+              this.isSubmitting = false;
+            }
+          });
+        }
       }
     }
   }

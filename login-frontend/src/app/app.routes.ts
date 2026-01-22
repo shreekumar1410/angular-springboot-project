@@ -24,6 +24,8 @@ export const routes: Routes = [
   { path: 'editor/dashboard', loadComponent: () => import('./components/editor-dashboard/editor-dashboard.component').then(m => m.EditorDashboardComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'EDITOR' } },
   { path: 'editor/profile', loadComponent: () => import('./components/profile/profile.component').then(m => m.ProfileComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'EDITOR' } },
   { path: 'editor/users', loadComponent: () => import('./components/users-list/users-list.component').then(m => m.UsersListComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'EDITOR' } },
+  { path: 'editor/auth-users', loadComponent: () => import('./components/editor-auth-users/editor-auth-users.component').then(m => m.EditorAuthUsersComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'EDITOR' } },
+  { path: 'editor/profile-create/:authId', loadComponent: () => import('./components/profile-form/profile-form.component').then(m => m.ProfileFormComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'EDITOR' } },
   { path: 'editor/profile-edit/:userId', loadComponent: () => import('./components/profile-form/profile-form.component').then(m => m.ProfileFormComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'EDITOR' } },
   
   // SUPPORT role routes
@@ -47,4 +49,5 @@ export const routes: Routes = [
   { path: 'super-admin/roles', loadComponent: () => import('./components/super-admin-roles/super-admin-roles.component').then(m => m.SuperAdminRolesComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'SUPER_ADMIN' } },
   { path: 'super-admin/password-reset-audit', loadComponent: () => import('./components/admin-password-reset-audit/admin-password-reset-audit.component').then(m => m.AdminPasswordResetAuditComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'SUPER_ADMIN' } },
   { path: 'super-admin/login-audit', loadComponent: () => import('./components/super-admin-login-audit/super-admin-login-audit.component').then(m => m.SuperAdminLoginAuditComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'SUPER_ADMIN' } },
+  { path: 'super-admin/action-audit', loadComponent: () => import('./components/super-admin-action-audit/super-admin-action-audit.component').then(m => m.SuperAdminActionAuditComponent), canActivate: [AuthGuard, ProfileGuard, RoleGuard], data: { role: 'SUPER_ADMIN' } },
 ];

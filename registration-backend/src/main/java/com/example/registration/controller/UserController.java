@@ -58,9 +58,7 @@ import com.example.registration.entity.User;
 import com.example.registration.entity.UserAuth;
 import com.example.registration.exception.AccessDeniedException;
 import com.example.registration.repository.UserAuthRepository;
-import com.example.registration.service.LoginAuditService;
-import com.example.registration.service.SupportPasswordResetService;
-import com.example.registration.service.UserService;
+import com.example.registration.service.*;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -75,12 +73,15 @@ public class UserController {
     private final UserAuthRepository authRepo;
     private final SupportPasswordResetService supportPasswordResetService;
     private final LoginAuditService loginAuditService;
+    private final AdminService adminService;
 
-    public UserController(UserService userService, UserAuthRepository authRepo, SupportPasswordResetService supportPasswordResetService, LoginAuditService loginAuditService) {
+    public UserController(UserService userService, UserAuthRepository authRepo, SupportPasswordResetService supportPasswordResetService,
+                          LoginAuditService loginAuditService, AdminService adminService) {
         this.userService = userService;
         this.authRepo = authRepo;
         this.supportPasswordResetService = supportPasswordResetService;
         this.loginAuditService = loginAuditService;
+        this.adminService = adminService;
     }
 
     /**
@@ -106,6 +107,14 @@ public class UserController {
 
         // 4️⃣ Create profile via service
         return userService.createProfile(auth.getId(), request);
+    }
+
+    @PostMapping("/profile/{authId}")
+    public User createProfileForUser(
+            @PathVariable Long authId,
+            @RequestBody UserProfileRequest request) {
+
+        return userService.createProfileByEditor(authId, request);
     }
 
     /**
@@ -142,5 +151,10 @@ public class UserController {
     @GetMapping("/me/login-history")
     public List<LoginAudit> getMyLoginHistory() {
         return loginAuditService.getCurrentUserAudit();
+    }
+
+    @GetMapping("/auth-users")
+    public List<UserAuth> getAllAuthUsers() {
+        return adminService.getAllAuthUsers();
     }
 }

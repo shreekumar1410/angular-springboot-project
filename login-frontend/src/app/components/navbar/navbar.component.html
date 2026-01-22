@@ -32,6 +32,11 @@
             <i class="bi bi-person-circle me-1"></i>Profile
           </a>
         </li>
+        <li class="nav-item" *ngIf="isEditor()">
+          <a class="nav-link-custom" routerLink="/editor/auth-users" routerLinkActive="active">
+            <i class="bi bi-people me-1"></i>Auth Users
+          </a>
+        </li>
 
         <!-- SUPPORT MENU -->
         <li class="nav-item" *ngIf="isSupport()">
@@ -101,6 +106,11 @@
         <li class="nav-item" *ngIf="isSuperAdmin()">
           <a class="nav-link-custom" routerLink="/super-admin/login-audit" routerLinkActive="active">
             <i class="bi bi-clock-history me-1"></i>Login Audit
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isSuperAdmin()">
+          <a class="nav-link-custom" routerLink="/super-admin/action-audit" routerLinkActive="active">
+            <i class="bi bi-file-earmark-text me-1"></i>Action Audit
           </a>
         </li>
 

@@ -17,6 +17,11 @@ export class UserService {
     return this.http.post(`${this.apiUrl}/users/profile`, profile);
   }
 
+  // EDITOR creates profile for another user
+  createProfileForUser(authId: string, profile: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/users/profile/${authId}`, profile);
+  }
+
   getCurrentUser(): Observable<any> {
     return this.http.get(`${this.apiUrl}/users/me`);
   }

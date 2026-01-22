@@ -141,43 +141,54 @@ public class SupportPasswordResetService {
 
     public void sendPassword(Long requestId) {
 
-        PasswordResetRequest req = requestRepo.findById(requestId)
-                .orElseThrow(() -> new ResourceNotFoundException("Request not found"));
+        PasswordResetRequest req = null;
+        try {
+            req = requestRepo.findById(requestId)
+                    .orElseThrow(() -> new ResourceNotFoundException("Request not found"));
 
-        if (req.getStatus() != PasswordResetStatus.ACCEPTED) {
-            throw new IllegalStateException("Request not accepted yet");
+            if (req.getStatus() != PasswordResetStatus.ACCEPTED) {
+                throw new IllegalStateException("Request not accepted yet");
+            }
+
+            UserAuth auth = req.getUserAuth();
+
+            // update actual password (HASH)
+            auth.setPassword(req.getTempPasswordHash());
+            authRepo.save(auth);
+
+            // simulate sending password (PLAIN)
+            System.out.println(
+                    "TEMP PASSWORD SENT to " + auth.getEmail()
+                            + " . TEMP PASSWORD = " + req.getTempPasswordPlain()
+            );
+
+            // cleanup plain password
+            req.setTempPasswordPlain(null);
+
+            req.setStatus(PasswordResetStatus.PASSWORD_SENT);
+            req.setPasswordSentAt(LocalDateTime.now());
+
+            actionAuditService.logAction(
+                    ActionType.PASSWORD_RESET,
+                    ActionStatus.SUCCESS,
+                    auth.getEmail(),
+                    auth.getId(),
+                    "OLD_PASSWORD",
+                    "PASSWORD_RESET",
+                    "Support reset password"
+            );
+
+            requestRepo.save(req);
+        } catch (RuntimeException ex) {
+            actionAuditService.logFailure(
+                    ActionType.PASSWORD_RESET,
+                    req != null ? req.getUserAuth().getEmail() : null,
+                    req != null ? req.getUserAuth().getId() : null,
+                    ex.getMessage()
+            );
+
+            throw ex;
         }
-
-        UserAuth auth = req.getUserAuth();
-
-        // update actual password (HASH)
-        auth.setPassword(req.getTempPasswordHash());
-        authRepo.save(auth);
-
-        // simulate sending password (PLAIN)
-        System.out.println(
-                "TEMP PASSWORD SENT to " + auth.getEmail()
-                        + " . TEMP PASSWORD = " + req.getTempPasswordPlain()
-        );
-
-        // cleanup plain password
-        req.setTempPasswordPlain(null);
-
-        req.setStatus(PasswordResetStatus.PASSWORD_SENT);
-        req.setPasswordSentAt(LocalDateTime.now());
-
-        actionAuditService.logAction(
-                ActionType.PASSWORD_RESET,
-                ActionStatus.SUCCESS,
-                auth.getEmail(),
-                auth.getId(),
-                "OLD_PASSWORD",
-                "PASSWORD_RESET",
-                "Support reset password"
-        );
-
-
-        requestRepo.save(req);
     }
 
 

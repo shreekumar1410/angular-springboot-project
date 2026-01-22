@@ -17,7 +17,7 @@ export class AdminAuthUsersComponent implements OnInit {
   loggedInEmail = localStorage.getItem('email');
 
   // ADMIN can only change roles between USER and SUPPORT
-  availableRoles = ['USER', 'SUPPORT'];
+  availableRoles = ['USER', 'SUPPORT','EDITOR'];
 
   constructor(private adminService: AdminService) {}
 
@@ -71,9 +71,9 @@ export class AdminAuthUsersComponent implements OnInit {
       return;
     }
 
-    // ADMIN can only change USER <-> SUPPORT
-    if (role !== 'USER' && role !== 'SUPPORT') {
-      alert('ADMIN can only change roles between USER and SUPPORT');
+    // ADMIN can only change USER <-> SUPPORT <-> EDITOR
+    if ((role === 'ADMIN' || role === 'SUPER_ADMIN')) {
+      alert('ADMIN can only change roles between USER, SUPPORT and EDITOR');
       return;
     }
 

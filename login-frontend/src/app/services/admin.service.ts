@@ -19,7 +19,7 @@ export class AdminService {
 
   // Get auth users
   getAuthUsers(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/admin/auth-users`);
+    return this.http.get<any[]>(`${this.apiUrl}/users/auth-users`);
   }
 
   // Change role (USER <-> SUPPORT for ADMIN, can change ADMIN roles for SUPER_ADMIN)

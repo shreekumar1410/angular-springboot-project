@@ -59,4 +59,44 @@ public class ActionAuditService {
 
         auditRepo.save(audit);
     }
+
+    public void logFailure(
+            ActionType actionType,
+            String targetEmail,
+            Long targetUserId,
+            String reason
+    ) {
+        ActionAudit audit = new ActionAudit();
+
+        String actorEmail = SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getName();
+
+        Roles actorRole = Roles.valueOf(
+                SecurityContextHolder
+                        .getContext()
+                        .getAuthentication()
+                        .getAuthorities()
+                        .iterator()
+                        .next()
+                        .getAuthority()
+        );
+
+        audit.setActorEmail(actorEmail);
+        audit.setActorRole(actorRole);
+        audit.setTargetUserEmail(targetEmail);
+        audit.setTargetUserId(targetUserId);
+        audit.setActionType(actionType);
+        audit.setActionStatus(ActionStatus.FAILED);
+        audit.setActionReason(reason);
+        audit.setPerformedAt(Instant.now());
+
+        // failure → no state change
+        audit.setBeforeState(null);
+        audit.setAfterState(null);
+
+        auditRepo.save(audit);
+    }
+
 }
