@@ -2,8 +2,10 @@
   <div class="container py-5">
     <div class="page-header mb-4">
       <h2 class="page-title">
-        <i class="bi bi-shield-lock me-2"></i>Roles Management
+        <i class="bi" [class.bi-person-badge]="isAdmin" [class.bi-people]="isEditor" [class.bi-shield-lock]="isSuperAdmin" class="me-2"></i>
+        {{ getPageTitle() }}
       </h2>
+      <p *ngIf="getPageSubtitle()" class="page-subtitle">{{ getPageSubtitle() }}</p>
     </div>
 
     <div *ngIf="loading" class="loading-state">
@@ -11,7 +13,7 @@
         <div class="spinner-border text-primary" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
-        <p class="mt-3">Loading roles...</p>
+        <p class="mt-3">Loading auth users...</p>
       </div>
     </div>
 
@@ -23,7 +25,60 @@
       <i class="bi bi-check-circle me-2"></i>{{ successMessage }}
     </div>
 
-    <div class="table-card" *ngIf="!loading && authUsers.length > 0">
+    <!-- EDITOR View: Profile Management -->
+    <div class="table-card" *ngIf="!loading && authUsers.length > 0 && isEditor">
+      <div class="table-responsive">
+        <table class="table-custom">
+          <thead>
+            <tr>
+              <th><i class="bi bi-envelope me-1"></i>Email</th>
+              <th><i class="bi bi-shield-check me-1"></i>Role</th>
+              <th><i class="bi bi-person-check me-1"></i>Profile Status</th>
+              <th><i class="bi bi-gear me-1"></i>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let auth of authUsers">
+              <td><strong>{{ auth.email }}</strong></td>
+              <td>
+                <span class="badge-custom" [ngClass]="getRoleBadgeClass(auth.role)">
+                  {{ auth.role }}
+                </span>
+              </td>
+              <td>
+                <span class="badge-custom" [ngClass]="getProfileStatusClass(auth.profileCreated)">
+                  <i class="bi" [ngClass]="auth.profileCreated ? 'bi-check-circle me-1' : 'bi-x-circle me-1'"></i>
+                  {{ getProfileStatusText(auth.profileCreated) }}
+                </span>
+              </td>
+              <td>
+                <div class="action-group">
+                  <!-- Create Profile Button (shown when profile not created) -->
+                  <button 
+                    *ngIf="!auth.profileCreated"
+                    class="btn-action btn-create"
+                    (click)="createProfile(auth.id)">
+                    <i class="bi bi-person-plus me-1"></i>
+                    Create Profile
+                  </button>
+
+                  <!-- Profile Already Created Text (shown when profile already created) -->
+                  <span 
+                    *ngIf="auth.profileCreated"
+                    class="text-muted">
+                    <i class="bi bi-check-circle-fill text-success me-1"></i>
+                    Profile already created
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ADMIN & SUPER_ADMIN View: Role and Status Management -->
+    <div class="table-card" *ngIf="!loading && authUsers.length > 0 && (isAdmin || isSuperAdmin)">
       <div class="table-responsive">
         <table class="table-custom">
           <thead>
@@ -43,6 +98,7 @@
                       [class.badge-user]="auth.role === 'USER'" 
                       [class.badge-admin]="auth.role === 'ADMIN'"
                       [class.badge-support]="auth.role === 'SUPPORT'"
+                      [class.badge-editor]="auth.role === 'EDITOR'"
                       [class.badge-super-admin]="auth.role === 'SUPER_ADMIN'">
                   {{ auth.role }}
                 </span>
@@ -60,11 +116,11 @@
                 </span>
               </td>
               <td>
-                <div class="action-group" >
+                <div class="action-group">
                   <select
                     class="form-select-custom me-2"
                     [value]="auth.role"
-                    [disabled]="auth.email === loggedInEmail"
+                    [disabled]="!canModifyRole(auth)"
                     (change)="onRoleChange(auth.id, $event)">
                     <option *ngFor="let role of getRolesForDropdown(auth.role)" [value]="role">{{ role }}</option>
                   </select>
@@ -72,14 +128,12 @@
                     class="btn-action" 
                     [class.btn-activate]="!auth.active" 
                     [class.btn-deactivate]="auth.active"
-                    [hidden]="auth.email === loggedInEmail"
-
+                    [hidden]="!canModifyStatus(auth)"
                     (click)="changeStatus(auth.id, !auth.active)">
                     <i class="bi" [class]="auth.active ? 'bi-toggle-on me-1' : 'bi-toggle-off me-1'"></i>
                     {{ auth.active ? 'Deactivate' : 'Activate' }}
                   </button>
                 </div>
-                <!-- <span *ngIf="!canModify(auth)" class="text-muted">-</span> -->
               </td>
             </tr>
           </tbody>

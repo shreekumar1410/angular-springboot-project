@@ -1,9 +1,10 @@
 package com.example.registration.dto;
 
 import com.example.registration.enums.Roles;
+import org.springframework.validation.annotation.Validated;
 
 public class RegisterRequest {
-
+    
     private String email;
     private String password;
     private Roles role; // optional (ADMIN / USER)

@@ -1,8 +1,10 @@
-// Super Admin Login Audit Component
-// Extended to include PASSWORD_CHANGED audit records
+// Unified Login Audit Component
+// Handles SUPPORT, ADMIN, and SUPER_ADMIN roles with role-based features
 
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
+import { SupportService } from '../../services/support.service';
+import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -16,19 +18,25 @@ interface LoginAuditEntry {
 }
 
 @Component({
-  selector: 'app-super-admin-login-audit',
+  selector: 'app-login-audit',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './super-admin-login-audit.component.html',
-  styleUrls: ['./super-admin-login-audit.component.css']
+  templateUrl: './login-audit.component.html',
+  styleUrls: ['./login-audit.component.css']
 })
-export class SuperAdminLoginAuditComponent implements OnInit {
+export class LoginAuditComponent implements OnInit {
   auditEntries: LoginAuditEntry[] = [];
   filteredEntries: LoginAuditEntry[] = [];
   errorMessage: string = '';
   loading: boolean = false;
+  currentRole: string | null = null;
 
-  // Filters
+  // Role flags
+  isSupport: boolean = false;
+  isAdmin: boolean = false;
+  isSuperAdmin: boolean = false;
+
+  // Filters (only for SUPER_ADMIN)
   filterEmail: string = '';
   filterAction: string = 'ALL';
   filterStatus: string = 'ALL';
@@ -38,24 +46,53 @@ export class SuperAdminLoginAuditComponent implements OnInit {
   itemsPerPage: number = 10;
   totalPages: number = 1;
 
-  constructor(private adminService: AdminService) {}
+  constructor(
+    private adminService: AdminService,
+    private supportService: SupportService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
+    this.currentRole = this.authService.getRole();
+    this.setRoleFlags();
     this.loadAuditData();
+  }
+
+  setRoleFlags(): void {
+    this.isSupport = this.authService.isSupport();
+    this.isAdmin = this.authService.isAdmin();
+    this.isSuperAdmin = this.authService.isSuperAdmin();
   }
 
   loadAuditData(): void {
     this.loading = true;
     this.errorMessage = '';
-    this.adminService.getLoginAudit().subscribe({
+    
+    // Use appropriate service based on role
+    const service = this.isSupport 
+      ? this.supportService.getLoginAudit() 
+      : this.adminService.getLoginAudit();
+
+    service.subscribe({
       next: (data) => {
-        // Sort by latest first (eventTime descending)
-        this.auditEntries = data.sort((a, b) => {
-          const timeA = new Date(a.eventTime).getTime();
-          const timeB = new Date(b.eventTime).getTime();
-          return timeB - timeA;
-        });
-        this.applyFilters();
+        // Sort by latest first (eventTime descending) for SUPER_ADMIN and SUPPORT
+        if (this.isSuperAdmin || this.isSupport) {
+          this.auditEntries = data.sort((a, b) => {
+            const timeA = new Date(a.eventTime).getTime();
+            const timeB = new Date(b.eventTime).getTime();
+            return timeB - timeA;
+          });
+          if (this.isSuperAdmin) {
+            this.applyFilters();
+          } else {
+            this.filteredEntries = [...this.auditEntries];
+            this.updatePagination();
+          }
+        } else {
+          this.auditEntries = data;
+          this.filteredEntries = [...this.auditEntries];
+          this.updatePagination();
+        }
         this.loading = false;
       },
       error: (error) => {
@@ -66,7 +103,12 @@ export class SuperAdminLoginAuditComponent implements OnInit {
     });
   }
 
+  // Filters (only for SUPER_ADMIN)
   applyFilters(): void {
+    if (!this.isSuperAdmin) {
+      return;
+    }
+
     this.filteredEntries = this.auditEntries.filter(entry => {
       // Email filter
       if (this.filterEmail && !entry.email.toLowerCase().includes(this.filterEmail.toLowerCase())) {
@@ -193,6 +235,20 @@ export class SuperAdminLoginAuditComponent implements OnInit {
     }
   }
 
+  // Get login type class (for SUPPORT/ADMIN simple view)
+  getLoginTypeClass(loginType: string): string {
+    switch (loginType) {
+      case 'LOGIN':
+        return 'badge bg-success';
+      case 'LOGOUT':
+        return 'badge bg-info';
+      case 'FAILED':
+        return 'badge bg-danger';
+      default:
+        return 'badge bg-secondary';
+    }
+  }
+
   updatePagination(): void {
     this.totalPages = Math.ceil(this.filteredEntries.length / this.itemsPerPage);
     if (this.currentPage > this.totalPages && this.totalPages > 0) {
@@ -236,5 +292,17 @@ export class SuperAdminLoginAuditComponent implements OnInit {
 
   getPageNumbers(): number[] {
     return Array.from({ length: this.totalPages }, (_, i) => i + 1);
+  }
+
+  // Get page title based on role
+  getPageTitle(): string {
+    if (this.isSupport) {
+      return 'Login Audit (Read-Only)';
+    } else if (this.isAdmin) {
+      return 'Login Audit';
+    } else if (this.isSuperAdmin) {
+      return 'Login Audit';
+    }
+    return 'Login Audit';
   }
 }

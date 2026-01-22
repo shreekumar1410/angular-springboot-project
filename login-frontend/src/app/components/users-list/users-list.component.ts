@@ -32,7 +32,7 @@ export class UsersListComponent implements OnInit {
   canDelete: boolean = false;
   canEditProfile: boolean = false; // EDITOR can edit profiles
   // Note: canChangeRole and canActivateDeactivate require auth user data
-  // These are handled in admin-auth-users component
+  // These are handled in auth-users component
 
   constructor(
     private userService: UserService,

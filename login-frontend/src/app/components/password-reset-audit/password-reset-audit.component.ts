@@ -1,7 +1,9 @@
-// Admin Password Reset Audit Component (Read-only for ADMIN and SUPER_ADMIN)
+// Unified Password Reset Audit Component
+// Handles ADMIN and SUPER_ADMIN roles with role-based features
 
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
+import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 
 interface PasswordResetAuditEntry {
@@ -14,27 +16,42 @@ interface PasswordResetAuditEntry {
 }
 
 @Component({
-  selector: 'app-admin-password-reset-audit',
+  selector: 'app-password-reset-audit',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './admin-password-reset-audit.component.html',
-  styleUrls: ['./admin-password-reset-audit.component.css']
+  templateUrl: './password-reset-audit.component.html',
+  styleUrls: ['./password-reset-audit.component.css']
 })
-export class AdminPasswordResetAuditComponent implements OnInit {
+export class PasswordResetAuditComponent implements OnInit {
   auditEntries: PasswordResetAuditEntry[] = [];
   filteredEntries: PasswordResetAuditEntry[] = [];
   errorMessage: string = '';
   loading: boolean = false;
+  currentRole: string | null = null;
+
+  // Role flags
+  isAdmin: boolean = false;
+  isSuperAdmin: boolean = false;
 
   // Pagination
   currentPage: number = 1;
   itemsPerPage: number = 10;
   totalPages: number = 1;
 
-  constructor(private adminService: AdminService) {}
+  constructor(
+    private adminService: AdminService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
+    this.currentRole = this.authService.getRole();
+    this.setRoleFlags();
     this.loadAuditData();
+  }
+
+  setRoleFlags(): void {
+    this.isAdmin = this.authService.isAdmin();
+    this.isSuperAdmin = this.authService.isSuperAdmin();
   }
 
   loadAuditData(): void {
@@ -42,13 +59,18 @@ export class AdminPasswordResetAuditComponent implements OnInit {
     this.errorMessage = '';
     this.adminService.getPasswordResetAudit().subscribe({
       next: (data) => {
-        this.auditEntries = data;
+        // Sort by latest first (requestedAt descending) for ADMIN and SUPER_ADMIN
+        this.auditEntries = data.sort((a, b) => {
+          const timeA = new Date(a.requestedAt).getTime();
+          const timeB = new Date(b.requestedAt).getTime();
+          return timeB - timeA;
+        });
         this.filteredEntries = [...this.auditEntries];
         this.updatePagination();
         this.loading = false;
       },
       error: (error) => {
-        this.errorMessage = 'Failed to load password reset audit data';
+        this.errorMessage = error?.error?.message || 'Failed to load password reset audit data';
         this.loading = false;
         console.error('Error loading audit data:', error);
       }
@@ -111,5 +133,10 @@ export class AdminPasswordResetAuditComponent implements OnInit {
 
   getPageNumbers(): number[] {
     return Array.from({ length: this.totalPages }, (_, i) => i + 1);
+  }
+
+  // Get page title based on role
+  getPageTitle(): string {
+    return 'Password Reset Audit (Read-Only)';
   }
 }

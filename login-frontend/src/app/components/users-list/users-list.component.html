@@ -59,7 +59,7 @@
                   </button>
                   
                   <!-- Delete button: ADMIN can delete USER, SUPER_ADMIN can delete ADMIN and USER -->
-                  <!-- Note: Role change and activate/deactivate are available in admin-auth-users component -->
+                  <!-- Note: Role change and activate/deactivate are available in auth-users component -->
                   <!-- as they require auth user data (authId, role, active status) not included in user profile response -->
                   <button 
                     *ngIf="canDelete"

@@ -1,4 +1,4 @@
-/* Admin Password Reset Audit Component Styles */
+/* Unified Login Audit Component Styles */
 
 .table-container {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -113,6 +113,40 @@
   color: #495057;
 }
 
+.badge-custom {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.badge-user {
+  background: #e7f3ff;
+  color: #0066cc;
+}
+
+.badge-editor {
+  background: #c3cfe2;
+  color: #495057;
+}
+
+.badge-support {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.badge-admin {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.badge-super-admin {
+  background: #f8d7da;
+  color: #721c24;
+}
+
 .badge {
   padding: 0.5rem 0.75rem;
   border-radius: 8px;
@@ -122,14 +156,14 @@
   align-items: center;
 }
 
-.badge.bg-warning {
-  background: #fff3cd !important;
-  color: #856404;
-}
-
 .badge.bg-success {
   background: #d1e7dd !important;
   color: #0f5132;
+}
+
+.badge.bg-info {
+  background: #cff4fc !important;
+  color: #055160;
 }
 
 .badge.bg-danger {
@@ -137,9 +171,101 @@
   color: #721c24;
 }
 
+.badge.bg-warning {
+  background: #fff3cd !important;
+  color: #856404;
+}
+
 .badge.bg-secondary {
   background: #e2e3e5 !important;
   color: #383d41;
+}
+
+.badge-success {
+  background: #d1e7dd !important;
+  color: #0f5132;
+}
+
+.badge-info {
+  background: #cff4fc !important;
+  color: #055160;
+}
+
+.badge-danger {
+  background: #f8d7da !important;
+  color: #721c24;
+}
+
+.badge-warning {
+  background: #fff3cd !important;
+  color: #856404;
+}
+
+.badge-secondary {
+  background: #e2e3e5 !important;
+  color: #383d41;
+}
+
+/* Filters (only for SUPER_ADMIN) */
+.filters-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.filter-label {
+  display: block;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.form-control-custom {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.form-control-custom:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.btn-clear-filters {
+  padding: 0.75rem 1.5rem;
+  background: #6c757d;
+  /* background: #F67373; */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.btn-clear-filters:hover {
+  background: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+.reason-text {
+  font-size: 0.875rem;
+  color: #6c757d;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
 }
 
 .pagination-wrapper {
