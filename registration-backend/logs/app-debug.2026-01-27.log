@@ -1,0 +1,162 @@
+2026-01-27 17:37:03.118 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:37:03.508 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:40:14.499 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:40:14.969 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:40:31.819 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:40:35.196 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:42:04.687 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:42:08.312 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:43:34.229 [http-nio-8080-exec-2] DEBUG c.e.registration.config.JwtFilter - No JWT token found in request
+2026-01-27 17:43:34.914 [http-nio-8080-exec-2] DEBUG c.e.registration.config.JwtUtil - Generating JWT token
+2026-01-27 17:43:34.974 [http-nio-8080-exec-2] DEBUG c.e.registration.config.JwtUtil - JWT token generated successfully
+2026-01-27 17:43:35.061 [http-nio-8080-exec-2] DEBUG c.e.r.service.LoginAuditService - Building login alert for email=superadmin@system.com
+2026-01-27 17:44:33.216 [http-nio-8080-exec-5] DEBUG c.e.registration.config.JwtFilter - No JWT token found in request
+2026-01-27 17:44:33.291 [http-nio-8080-exec-5] DEBUG c.e.registration.config.JwtUtil - Generating JWT token
+2026-01-27 17:44:33.293 [http-nio-8080-exec-5] DEBUG c.e.registration.config.JwtUtil - JWT token generated successfully
+2026-01-27 17:44:33.302 [http-nio-8080-exec-5] DEBUG c.e.r.service.LoginAuditService - Building login alert for email=superadmin@system.com
+2026-01-27 17:44:39.452 [http-nio-8080-exec-7] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:44:39.486 [http-nio-8080-exec-7] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:44:39.488 [http-nio-8080-exec-7] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 17:44:50.148 [http-nio-8080-exec-9] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:44:50.154 [http-nio-8080-exec-9] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:44:50.155 [http-nio-8080-exec-9] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 17:44:50.208 [http-nio-8080-exec-9] DEBUG c.e.r.service.ActionAuditService - Action audit recorded type=ACCOUNT_DEACTIVATE status=SUCCESS actor=superadmin@system.com target=abnc@gmail.com
+2026-01-27 17:44:50.214 [http-nio-8080-exec-9] DEBUG c.e.r.service.ActionAuditService - Action audit recorded type=USER_DELETE status=SUCCESS actor=superadmin@system.com target=pavan@gmail.com
+2026-01-27 17:44:51.814 [http-nio-8080-exec-1] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:44:51.817 [http-nio-8080-exec-1] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:44:51.818 [http-nio-8080-exec-1] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 17:47:08.243 [http-nio-8080-exec-4] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:47:08.367 [http-nio-8080-exec-4] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:47:08.368 [http-nio-8080-exec-4] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 17:48:15.272 [http-nio-8080-exec-7] DEBUG c.e.registration.config.JwtFilter - No JWT token found in request
+2026-01-27 17:49:27.935 [http-nio-8080-exec-9] DEBUG c.e.registration.config.JwtFilter - No JWT token found in request
+2026-01-27 17:49:35.015 [http-nio-8080-exec-1] DEBUG c.e.registration.config.JwtFilter - No JWT token found in request
+2026-01-27 17:49:50.764 [http-nio-8080-exec-3] DEBUG c.e.registration.config.JwtFilter - No JWT token found in request
+2026-01-27 17:50:13.791 [http-nio-8080-exec-5] DEBUG c.e.registration.config.JwtFilter - No JWT token found in request
+2026-01-27 17:50:13.858 [http-nio-8080-exec-5] DEBUG c.e.registration.config.JwtUtil - Generating JWT token
+2026-01-27 17:50:13.863 [http-nio-8080-exec-5] DEBUG c.e.registration.config.JwtUtil - JWT token generated successfully
+2026-01-27 17:50:13.871 [http-nio-8080-exec-5] DEBUG c.e.r.service.LoginAuditService - Building login alert for email=support@system.com
+2026-01-27 17:50:17.761 [http-nio-8080-exec-7] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:50:17.764 [http-nio-8080-exec-7] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:50:17.764 [http-nio-8080-exec-7] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 17:50:20.679 [http-nio-8080-exec-9] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:50:20.681 [http-nio-8080-exec-9] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:50:20.681 [http-nio-8080-exec-9] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 17:50:20.765 [http-nio-8080-exec-10] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:50:20.767 [http-nio-8080-exec-10] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:50:20.767 [http-nio-8080-exec-10] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 17:50:23.170 [http-nio-8080-exec-2] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:50:23.174 [http-nio-8080-exec-2] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:50:23.174 [http-nio-8080-exec-2] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 17:50:23.189 [http-nio-8080-exec-2] DEBUG c.e.r.service.ActionAuditService - Action audit recorded type=PASSWORD_RESET status=SUCCESS actor=support@system.com target=pavan@gmail.com
+2026-01-27 17:50:23.201 [http-nio-8080-exec-4] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:50:23.204 [http-nio-8080-exec-4] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:50:23.205 [http-nio-8080-exec-4] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 17:52:59.005 [http-nio-8080-exec-7] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:52:59.014 [http-nio-8080-exec-7] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:52:59.014 [http-nio-8080-exec-7] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 17:53:18.022 [http-nio-8080-exec-9] DEBUG c.e.registration.config.JwtFilter - No JWT token found in request
+2026-01-27 17:55:49.841 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:55:50.540 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:55:59.467 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:55:59.861 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:56:08.740 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:56:09.145 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:56:12.878 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:56:13.283 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:56:19.055 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:56:19.429 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:56:23.171 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:56:23.553 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:56:46.770 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:56:47.159 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:56:52.920 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:56:53.358 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:56:57.086 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:56:57.443 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:57:00.080 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:57:00.411 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:57:02.067 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:57:02.418 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:57:34.857 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:57:35.183 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:57:36.857 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:57:37.156 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:57:39.840 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:57:40.116 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:57:46.933 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:57:47.214 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:57:51.953 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:57:52.224 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:57:56.533 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 17:58:01.647 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 17:58:04.005 [http-nio-8080-exec-2] DEBUG c.e.registration.config.JwtFilter - No JWT token found in request
+2026-01-27 17:58:32.695 [http-nio-8080-exec-4] DEBUG c.e.registration.config.JwtFilter - No JWT token found in request
+2026-01-27 17:58:32.767 [http-nio-8080-exec-4] DEBUG c.e.registration.config.JwtUtil - Generating JWT token
+2026-01-27 17:58:32.808 [http-nio-8080-exec-4] DEBUG c.e.registration.config.JwtUtil - JWT token generated successfully
+2026-01-27 17:58:32.857 [http-nio-8080-exec-4] DEBUG c.e.r.service.LoginAuditService - Building login alert for email=support@system.com
+2026-01-27 17:58:35.798 [http-nio-8080-exec-6] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:58:35.831 [http-nio-8080-exec-6] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:58:35.837 [http-nio-8080-exec-6] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 17:58:41.090 [http-nio-8080-exec-8] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:58:41.094 [http-nio-8080-exec-8] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:58:41.094 [http-nio-8080-exec-8] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 17:58:41.201 [http-nio-8080-exec-10] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 17:58:41.204 [http-nio-8080-exec-10] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 17:58:41.205 [http-nio-8080-exec-10] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:00:10.711 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 18:00:11.242 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 18:00:56.096 [http-nio-8080-exec-2] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 18:00:56.131 [http-nio-8080-exec-2] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 18:00:56.132 [http-nio-8080-exec-2] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:00:58.098 [http-nio-8080-exec-5] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 18:00:58.102 [http-nio-8080-exec-5] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 18:00:58.103 [http-nio-8080-exec-5] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:00:58.209 [http-nio-8080-exec-6] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 18:00:58.211 [http-nio-8080-exec-6] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 18:00:58.211 [http-nio-8080-exec-6] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:02:12.486 [http-nio-8080-exec-9] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 18:02:12.489 [http-nio-8080-exec-9] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 18:02:12.489 [http-nio-8080-exec-9] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:02:12.516 [http-nio-8080-exec-9] DEBUG c.e.r.service.ActionAuditService - Action audit recorded type=PASSWORD_RESET status=SUCCESS actor=support@system.com target=pavan@gmail.com
+2026-01-27 18:02:12.529 [http-nio-8080-exec-1] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 18:02:12.532 [http-nio-8080-exec-1] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 18:02:12.532 [http-nio-8080-exec-1] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:03:46.093 [http-nio-8080-exec-4] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 18:03:46.097 [http-nio-8080-exec-4] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 18:03:46.097 [http-nio-8080-exec-4] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:03:58.091 [http-nio-8080-exec-7] DEBUG c.e.registration.config.JwtFilter - No JWT token found in request
+2026-01-27 18:03:58.174 [http-nio-8080-exec-7] DEBUG c.e.registration.config.JwtUtil - Generating JWT token
+2026-01-27 18:03:58.179 [http-nio-8080-exec-7] DEBUG c.e.registration.config.JwtUtil - JWT token generated successfully
+2026-01-27 18:03:58.187 [http-nio-8080-exec-7] DEBUG c.e.r.service.LoginAuditService - Building login alert for email=pavan@gmail.com
+2026-01-27 18:06:56.042 [http-nio-8080-exec-10] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 18:06:56.046 [http-nio-8080-exec-10] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 18:06:56.046 [http-nio-8080-exec-10] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:07:06.324 [http-nio-8080-exec-2] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 18:07:06.330 [http-nio-8080-exec-2] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 18:07:06.330 [http-nio-8080-exec-2] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:10:04.453 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 18:10:05.031 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 18:10:06.683 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 18:10:07.108 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 18:12:27.943 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 18:12:28.491 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 18:12:36.374 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 18:12:36.779 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 18:12:39.820 [http-nio-8080-exec-2] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 18:12:39.852 [http-nio-8080-exec-2] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 18:12:39.853 [http-nio-8080-exec-2] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:15:38.077 [http-nio-8080-exec-4] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 18:15:38.108 [http-nio-8080-exec-4] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 18:15:38.109 [http-nio-8080-exec-4] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:15:38.236 [http-nio-8080-exec-4] DEBUG c.e.r.service.ActionAuditService - Action audit recorded type=PROFILE_CREATE status=SUCCESS actor=pavan@gmail.com target=pavan@gmail.com
+2026-01-27 18:15:40.407 [http-nio-8080-exec-6] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 18:15:40.411 [http-nio-8080-exec-6] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 18:15:40.411 [http-nio-8080-exec-6] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:15:40.416 [http-nio-8080-exec-8] DEBUG c.e.r.s.CustomUserDetailsService - Loading user details for authentication
+2026-01-27 18:15:40.419 [http-nio-8080-exec-8] DEBUG c.e.r.s.CustomUserDetailsService - User details loaded successfully
+2026-01-27 18:15:40.419 [http-nio-8080-exec-8] DEBUG c.e.registration.config.JwtFilter - JWT authentication set in security context
+2026-01-27 18:15:49.145 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 18:15:49.919 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-27 18:15:51.612 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-27 18:15:52.092 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use

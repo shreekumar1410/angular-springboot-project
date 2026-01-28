@@ -6,7 +6,8 @@ public enum Roles {
         EDITOR,
         SUPPORT,
         ADMIN,
-        SUPER_ADMIN
+        SUPER_ADMIN,
+        SYSTEM
 
 
 }

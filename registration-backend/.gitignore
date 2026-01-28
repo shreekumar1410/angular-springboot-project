@@ -31,3 +31,37 @@ build/
 
 ### VS Code ###
 .vscode/
+
+.env
+
+# Maven / Gradle builds
+target/
+build/
+
+# Logs
+*.log
+
+# Environment & secrets
+*.env
+.env.*
+application-*.properties
+application-*.yml
+
+# Compiled sources
+*.class
+
+# IDE settings
+.vscode/
+.idea/
+*.iml
+*.classpath
+*.project
+*.settings/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Dependencies (should be downloaded, not committed)
+.mvn/
+.gradle/

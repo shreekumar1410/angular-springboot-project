@@ -18,7 +18,7 @@ public class PasswordResetRequest {
 
     private String userEmail;
 
-    private String TempPasswordPlain;
+    private String tempPasswordPlain;
 
     private String tempPasswordHash;
 
@@ -60,11 +60,11 @@ public class PasswordResetRequest {
     }
 
     public String getTempPasswordPlain() {
-        return TempPasswordPlain;
+        return tempPasswordPlain;
     }
 
     public void setTempPasswordPlain(String tempPasswordPlain) {
-        TempPasswordPlain = tempPasswordPlain;
+        this.tempPasswordPlain = tempPasswordPlain;
     }
 
     public String getTempPasswordHash() {

@@ -1,0 +1,434 @@
+2026-01-28 14:28:00.419 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:28:02.038 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:29:22.790 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:29:24.425 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:29:35.018 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:29:35.326 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:29:49.547 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:29:49.825 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:30:07.060 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:30:07.290 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:30:08.953 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:30:09.162 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:30:12.860 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:30:13.183 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:30:15.066 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:30:15.493 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:30:17.123 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:30:17.431 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:30:19.103 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:30:19.260 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:30:39.566 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:30:39.780 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:30:53.895 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:30:54.054 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:32:23.224 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:32:23.416 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:33:09.453 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:33:09.604 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:33:12.420 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:33:12.576 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 14:33:28.700 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 14:33:28.902 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:35:12.592 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:35:13.936 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:35:15.876 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:35:16.130 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:35:22.386 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:35:22.840 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:35:25.224 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:35:25.408 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:35:53.075 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:35:53.266 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:36:00.210 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:36:00.391 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:36:06.950 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:36:08.416 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:36:50.802 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:36:51.121 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:36:54.069 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:36:54.289 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:37:05.382 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:37:05.595 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:37:12.638 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:37:12.855 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:37:25.952 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:37:26.167 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:37:44.380 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:37:44.582 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:38:31.557 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:38:31.760 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:38:35.623 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:38:35.804 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:38:39.653 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:38:39.811 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:38:42.606 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:38:42.781 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:38:52.832 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:38:52.979 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:39:50.177 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:39:50.347 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:39:52.072 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:39:52.212 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:39:55.949 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:39:56.094 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:40:15.319 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:40:15.459 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:41:19.871 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:41:20.053 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:41:27.987 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:41:28.129 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:41:43.199 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:41:44.708 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:45:38.331 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:45:38.760 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:45:40.809 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:45:41.054 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:46:19.880 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:46:20.159 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:46:23.016 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:46:23.219 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:46:26.067 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:46:26.291 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:47:04.090 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:47:04.278 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:47:06.072 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:47:06.255 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:47:18.331 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:47:18.506 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:47:24.420 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:47:24.575 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:47:31.474 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:47:31.651 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:48:23.853 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:48:24.084 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:48:25.949 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:48:26.215 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:48:28.508 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:48:28.690 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:48:37.764 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:48:37.922 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:48:51.035 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:48:51.195 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:49:02.210 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:49:02.376 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:49:06.181 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:49:06.337 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:49:18.365 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:49:18.513 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:49:24.373 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:49:24.522 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:49:27.328 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:49:27.471 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:49:46.687 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:49:46.852 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:49:54.817 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:49:54.960 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:50:06.025 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:50:06.183 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:53:33.692 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:53:34.045 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:53:36.844 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:53:36.998 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:53:38.883 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:53:39.031 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:53:50.003 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:53:50.148 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:53:59.101 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:53:59.249 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:54:01.042 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:54:01.187 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:54:03.979 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:54:04.116 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:54:14.063 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:54:14.195 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:54:19.022 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:54:19.157 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:54:33.215 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:54:33.348 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:54:40.260 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:54:40.418 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:54:43.239 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:54:43.361 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:54:47.151 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:54:47.296 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:55:29.147 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:55:29.307 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:55:31.084 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:55:31.210 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:55:34.063 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:55:34.209 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:55:35.967 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:55:36.097 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:55:37.866 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:55:38.002 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:55:51.057 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:55:51.194 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:55:53.954 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:55:54.090 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:55:56.848 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:55:56.980 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:56:01.232 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:56:01.375 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:59:25.811 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:59:26.055 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 16:59:43.422 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 16:59:43.585 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:00:01.766 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:00:01.899 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:00:32.414 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:00:32.547 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:00:38.416 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:00:38.547 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:00:44.455 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:00:44.637 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:00:48.473 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:00:48.631 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:00:52.495 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:00:52.641 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:00:55.446 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:00:55.579 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:00:59.386 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:00:59.520 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:01:02.353 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:01:02.550 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:01:04.448 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:01:04.599 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:01:06.341 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:01:06.495 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:01:08.267 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:01:08.386 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:01:21.411 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:01:21.575 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:03:27.358 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:03:27.823 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:05:01.835 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:05:02.044 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:05:08.084 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:05:08.243 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:05:13.096 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:05:13.242 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:05:19.140 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:05:19.363 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:06:32.003 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:06:32.138 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:06:45.217 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:06:45.374 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:07:03.602 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:07:03.737 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:07:16.805 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:07:16.975 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:07:23.935 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:07:24.063 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:07:26.814 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:07:26.944 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:07:28.686 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:07:28.820 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:07:31.615 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:07:31.738 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:07:41.683 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:07:41.824 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:07:45.699 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:07:45.826 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:07:52.718 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:07:52.888 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:07:55.684 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:07:55.856 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:07:57.751 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:07:57.886 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:08:01.672 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:08:01.797 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:08:08.679 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:08:08.812 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:08:23.908 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:08:24.046 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:09:03.800 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:09:03.929 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:09:17.965 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:09:18.094 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:09:29.092 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:09:29.216 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:09:43.282 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:09:43.413 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:10:03.698 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:10:03.840 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:10:12.738 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:10:12.870 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:10:18.713 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:10:18.853 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:10:37.000 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:10:37.142 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:14:35.910 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:14:36.184 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:14:38.369 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:14:38.539 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:14:59.244 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:14:59.401 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:15:08.332 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:15:08.545 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:15:10.326 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:15:10.452 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:15:20.411 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:15:20.552 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:15:25.386 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:15:25.516 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:15:31.369 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:15:31.508 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:15:48.575 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:15:48.714 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:15:54.560 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:15:54.707 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:16:51.906 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:16:52.045 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:16:56.930 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:16:57.090 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:16:58.812 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:16:58.962 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:17:10.976 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:17:11.102 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:18:34.834 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:18:35.405 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:18:47.001 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:18:47.171 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:19:00.188 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:19:00.320 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:19:05.178 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:19:05.324 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:19:09.132 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:19:09.270 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:19:21.284 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:19:21.423 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:20:10.411 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:20:10.549 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:20:19.547 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:20:19.702 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:20:26.577 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:20:26.781 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:20:28.636 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:20:28.774 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:20:52.055 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:20:52.192 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:21:53.490 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:21:53.633 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:21:56.415 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:21:56.551 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:22:00.369 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:22:00.502 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:22:03.269 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:22:03.406 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:22:14.366 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:22:14.486 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:22:18.309 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:22:18.446 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:22:26.357 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:22:26.506 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:22:33.376 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:22:33.507 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:22:52.690 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:22:52.815 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:27:21.958 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:27:22.646 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:27:42.638 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:27:42.791 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:27:59.923 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:28:00.068 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:28:06.955 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:28:07.116 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:28:15.054 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:28:15.203 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:28:24.210 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:28:24.335 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 17:28:30.171 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 17:28:30.311 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:07:50.433 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:07:50.816 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:08:00.977 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:08:01.266 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:09:24.707 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:09:25.019 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:09:30.007 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:09:30.152 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:09:34.975 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:09:35.106 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:13:27.495 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:13:27.989 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:13:36.064 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:13:36.231 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:13:46.234 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:13:46.399 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:13:48.311 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:13:48.443 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:15:50.693 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:15:50.979 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:15:58.086 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:15:58.212 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:16:09.195 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:16:09.330 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:19:13.878 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:19:14.184 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:19:54.444 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:19:54.607 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:19:58.486 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:19:58.703 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:20:22.116 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:20:22.271 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:22:30.247 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:22:30.969 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:22:36.142 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:22:36.291 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:22:44.157 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:22:44.287 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:22:46.014 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:22:46.156 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:23:34.477 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:23:34.802 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:23:37.162 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:23:37.392 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:26:42.407 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:26:42.751 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:27:13.423 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:27:13.640 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:27:21.652 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:27:21.835 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:27:28.735 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:27:28.881 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:27:41.935 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:27:42.090 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:27:43.840 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:27:44.021 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:27:57.052 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:27:57.294 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:28:23.642 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:28:23.793 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:28:28.610 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:28:28.753 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:28:32.536 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:28:32.673 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:29:14.429 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:29:14.591 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:29:21.528 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:29:21.660 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:30:38.578 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:30:38.894 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:30:55.098 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:30:55.276 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:30:57.133 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:30:57.275 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:31:43.106 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:31:43.260 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:31:54.272 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:31:54.483 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:31:56.165 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:31:56.326 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:32:19.662 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:32:19.833 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:35:08.311 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:35:08.753 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:35:10.876 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:35:11.002 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:39:42.608 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:39:44.111 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:43:45.631 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:43:47.116 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use
+2026-01-28 18:45:49.811 [restartedMain] DEBUG c.e.r.RegistrationApplication - Running with Spring Boot v4.0.0, Spring v7.0.1
+2026-01-28 18:45:52.210 [restartedMain] DEBUG c.e.registration.config.JwtFilter - Filter 'jwtFilter' configured for use

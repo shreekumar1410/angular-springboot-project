@@ -18,3 +18,23 @@ backend/*.log
 ################################
 .DS_Store
 Thumbs.db
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.swp
+*.bak
+
+# Node & Java common ignores (safety)
+node_modules/
+target/
+build/
+
+.zip

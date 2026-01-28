@@ -1,0 +1,478 @@
+2026-01-27 17:37:03.117 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 12136 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:37:03.118 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:37:03.255 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:37:03.255 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:37:03.303 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-88 - Starting...
+2026-01-27 17:37:03.342 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-88 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7d159061
+2026-01-27 17:37:03.342 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-88 - Start completed.
+2026-01-27 17:37:03.634 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.685 seconds (process running for 13857.165)
+2026-01-27 17:38:17.037 [Thread-345] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-88 - Shutdown initiated...
+2026-01-27 17:38:17.040 [Thread-345] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-88 - Shutdown completed.
+2026-01-27 17:40:14.498 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 23524 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:40:14.499 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:40:14.740 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:40:14.740 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:40:14.820 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-01-27 17:40:14.831 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b6d0090
+2026-01-27 17:40:14.832 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-01-27 17:40:15.156 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.795 seconds (process running for 32.832)
+2026-01-27 17:40:29.883 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-01-27 17:40:29.887 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-01-27 17:40:31.817 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 26080 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:40:31.820 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:40:33.107 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:40:33.109 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:40:33.111 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:40:33.764 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-27 17:40:34.056 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@d33e52
+2026-01-27 17:40:34.058 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-27 17:40:35.820 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:40:35.838 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 4.521 seconds (process running for 5.018)
+2026-01-27 17:42:02.423 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-27 17:42:02.434 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-27 17:42:04.685 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:42:04.687 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:42:06.175 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:42:06.177 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:42:06.177 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:42:06.877 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-27 17:42:07.153 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c0efb8d
+2026-01-27 17:42:07.154 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-27 17:42:08.948 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:42:08.968 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 4.81 seconds (process running for 5.346)
+2026-01-27 17:43:34.187 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-27 17:43:34.356 [http-nio-8080-exec-2] INFO  c.e.r.controller.AuthController - Login request received for email=superadmin@system.com
+2026-01-27 17:43:34.357 [http-nio-8080-exec-2] INFO  c.e.registration.service.AuthService - Login attempt for email=superadmin@system.com
+2026-01-27 17:43:35.061 [http-nio-8080-exec-2] INFO  c.e.r.service.LoginAuditService - Login audit recorded email=superadmin@system.com role=SUPER_ADMIN
+2026-01-27 17:43:35.105 [http-nio-8080-exec-2] INFO  c.e.registration.service.AuthService - Login successful for email=superadmin@system.com role=SUPER_ADMIN
+2026-01-27 17:43:35.105 [http-nio-8080-exec-2] INFO  c.e.r.controller.AuthController - Login successful for email=superadmin@system.com
+2026-01-27 17:44:33.219 [http-nio-8080-exec-5] INFO  c.e.r.controller.AuthController - Login request received for email=superadmin@system.com
+2026-01-27 17:44:33.219 [http-nio-8080-exec-5] INFO  c.e.registration.service.AuthService - Login attempt for email=superadmin@system.com
+2026-01-27 17:44:33.302 [http-nio-8080-exec-5] INFO  c.e.r.service.LoginAuditService - Login audit recorded email=superadmin@system.com role=SUPER_ADMIN
+2026-01-27 17:44:33.309 [http-nio-8080-exec-5] INFO  c.e.registration.service.AuthService - Login successful for email=superadmin@system.com role=SUPER_ADMIN
+2026-01-27 17:44:33.309 [http-nio-8080-exec-5] INFO  c.e.r.controller.AuthController - Login successful for email=superadmin@system.com
+2026-01-27 17:44:39.490 [http-nio-8080-exec-7] INFO  c.e.r.controller.UserController - User requested user list (role-based)
+2026-01-27 17:44:39.490 [http-nio-8080-exec-7] INFO  c.e.registration.service.UserService - User list requested by role=SUPER_ADMIN
+2026-01-27 17:44:50.158 [http-nio-8080-exec-9] INFO  c.e.r.controller.AdminController - Admin requested delete of user profile userId=11
+2026-01-27 17:44:50.158 [http-nio-8080-exec-9] INFO  c.e.r.service.AdminService - User delete attempt userId=11
+2026-01-27 17:44:50.185 [http-nio-8080-exec-9] INFO  c.e.r.service.AdminService - Account status change attempt authId=11 active=false
+2026-01-27 17:44:50.209 [http-nio-8080-exec-9] INFO  c.e.r.service.AdminService - Account status updated authId=11 from=true to=false
+2026-01-27 17:44:50.214 [http-nio-8080-exec-9] INFO  c.e.r.service.AdminService - User deleted successfully userId=11
+2026-01-27 17:44:51.819 [http-nio-8080-exec-1] INFO  c.e.r.controller.UserController - User requested user list (role-based)
+2026-01-27 17:44:51.819 [http-nio-8080-exec-1] INFO  c.e.registration.service.UserService - User list requested by role=SUPER_ADMIN
+2026-01-27 17:47:08.423 [http-nio-8080-exec-4] INFO  c.e.r.controller.AuthController - Logout request received for email=superadmin@system.com
+2026-01-27 17:47:08.508 [http-nio-8080-exec-4] INFO  c.e.r.service.LoginAuditService - Logout audit recorded email=superadmin@system.com
+2026-01-27 17:47:08.509 [http-nio-8080-exec-4] INFO  c.e.r.controller.AuthController - Logout recorded successfully for email=superadmin@system.com
+2026-01-27 17:48:15.290 [http-nio-8080-exec-7] INFO  c.e.r.controller.AuthController - Login request received for email=pavan@gmail.com
+2026-01-27 17:48:15.291 [http-nio-8080-exec-7] INFO  c.e.registration.service.AuthService - Login attempt for email=pavan@gmail.com
+2026-01-27 17:49:27.937 [http-nio-8080-exec-9] INFO  c.e.r.controller.AuthController - Login request received for email=pavan@gmail.com
+2026-01-27 17:49:27.938 [http-nio-8080-exec-9] INFO  c.e.registration.service.AuthService - Login attempt for email=pavan@gmail.com
+2026-01-27 17:49:35.017 [http-nio-8080-exec-1] INFO  c.e.r.controller.AuthController - Login request received for email=pavan@gmail.com
+2026-01-27 17:49:35.017 [http-nio-8080-exec-1] INFO  c.e.registration.service.AuthService - Login attempt for email=pavan@gmail.com
+2026-01-27 17:49:50.784 [http-nio-8080-exec-3] INFO  c.e.r.controller.AuthController - Password reset request raised for email=pavan@gmail.com
+2026-01-27 17:49:50.784 [http-nio-8080-exec-3] INFO  c.e.r.s.SupportPasswordResetService - Password reset request raised for email=pavan@gmail.com
+2026-01-27 17:49:50.804 [http-nio-8080-exec-3] INFO  c.e.r.s.SupportPasswordResetService - Password reset request stored for email=pavan@gmail.com
+2026-01-27 17:50:13.793 [http-nio-8080-exec-5] INFO  c.e.r.controller.AuthController - Login request received for email=support@system.com
+2026-01-27 17:50:13.793 [http-nio-8080-exec-5] INFO  c.e.registration.service.AuthService - Login attempt for email=support@system.com
+2026-01-27 17:50:13.871 [http-nio-8080-exec-5] INFO  c.e.r.service.LoginAuditService - Login audit recorded email=support@system.com role=SUPPORT
+2026-01-27 17:50:13.877 [http-nio-8080-exec-5] INFO  c.e.registration.service.AuthService - Login successful for email=support@system.com role=SUPPORT
+2026-01-27 17:50:13.877 [http-nio-8080-exec-5] INFO  c.e.r.controller.AuthController - Login successful for email=support@system.com
+2026-01-27 17:50:17.766 [http-nio-8080-exec-7] INFO  c.e.r.c.SupportPasswordController - SUPPORT requested password reset requests
+2026-01-27 17:50:17.766 [http-nio-8080-exec-7] INFO  c.e.r.s.SupportPasswordResetService - Password reset request list requested
+2026-01-27 17:50:20.683 [http-nio-8080-exec-9] INFO  c.e.r.c.SupportPasswordController - SUPPORT accepted password reset requestId=6
+2026-01-27 17:50:20.683 [http-nio-8080-exec-9] INFO  c.e.r.s.SupportPasswordResetService - Password reset accept attempt requestId=6
+2026-01-27 17:50:20.757 [http-nio-8080-exec-9] INFO  c.e.r.s.SupportPasswordResetService - Password reset request accepted requestId=6 approvedBy=support@system.com
+2026-01-27 17:50:20.767 [http-nio-8080-exec-10] INFO  c.e.r.c.SupportPasswordController - SUPPORT requested password reset requests
+2026-01-27 17:50:20.768 [http-nio-8080-exec-10] INFO  c.e.r.s.SupportPasswordResetService - Password reset request list requested
+2026-01-27 17:50:23.175 [http-nio-8080-exec-2] INFO  c.e.r.c.SupportPasswordController - SUPPORT sent temporary password for requestId=6
+2026-01-27 17:50:23.175 [http-nio-8080-exec-2] INFO  c.e.r.s.SupportPasswordResetService - Password reset send attempt requestId=6
+2026-01-27 17:50:23.190 [http-nio-8080-exec-2] INFO  c.e.r.s.SupportPasswordResetService - Password reset completed successfully for email=pavan@gmail.com
+2026-01-27 17:50:23.205 [http-nio-8080-exec-4] INFO  c.e.r.c.SupportPasswordController - SUPPORT requested password reset requests
+2026-01-27 17:50:23.205 [http-nio-8080-exec-4] INFO  c.e.r.s.SupportPasswordResetService - Password reset request list requested
+2026-01-27 17:52:59.018 [http-nio-8080-exec-7] INFO  c.e.r.controller.AuthController - Logout request received for email=support@system.com
+2026-01-27 17:52:59.033 [http-nio-8080-exec-7] INFO  c.e.r.service.LoginAuditService - Logout audit recorded email=support@system.com
+2026-01-27 17:52:59.033 [http-nio-8080-exec-7] INFO  c.e.r.controller.AuthController - Logout recorded successfully for email=support@system.com
+2026-01-27 17:53:18.030 [http-nio-8080-exec-9] INFO  c.e.r.controller.AuthController - Login request received for email=pavan@gmail.com
+2026-01-27 17:53:18.031 [http-nio-8080-exec-9] INFO  c.e.registration.service.AuthService - Login attempt for email=pavan@gmail.com
+2026-01-27 17:55:49.528 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:55:49.538 [Thread-1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:55:49.578 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-27 17:55:49.602 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-27 17:55:49.841 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:55:49.841 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:55:50.263 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:55:50.264 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:55:50.264 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:55:50.335 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-01-27 17:55:50.371 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@11434bdc
+2026-01-27 17:55:50.371 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-01-27 17:55:50.723 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:55:50.730 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.945 seconds (process running for 827.108)
+2026-01-27 17:55:59.390 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:55:59.396 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:55:59.399 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-01-27 17:55:59.403 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-01-27 17:55:59.466 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:55:59.467 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:55:59.661 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:55:59.662 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:55:59.662 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:55:59.740 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2026-01-27 17:55:59.750 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23c70c04
+2026-01-27 17:55:59.750 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2026-01-27 17:56:00.040 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:00.046 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.6 seconds (process running for 836.422)
+2026-01-27 17:56:08.672 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:08.676 [Thread-9] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:08.678 [Thread-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-01-27 17:56:08.681 [Thread-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-01-27 17:56:08.740 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:56:08.740 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:56:08.932 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:08.932 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:56:08.932 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:56:08.996 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2026-01-27 17:56:09.006 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1d1dcc4a
+2026-01-27 17:56:09.006 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2026-01-27 17:56:09.318 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:09.322 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.602 seconds (process running for 845.699)
+2026-01-27 17:56:12.812 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:12.819 [Thread-13] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:12.823 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2026-01-27 17:56:12.825 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2026-01-27 17:56:12.878 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:56:12.878 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:56:13.088 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:13.089 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:56:13.089 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:56:13.147 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2026-01-27 17:56:13.155 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@590c5576
+2026-01-27 17:56:13.155 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2026-01-27 17:56:13.430 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:13.434 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.573 seconds (process running for 849.811)
+2026-01-27 17:56:18.981 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:18.985 [Thread-17] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:18.987 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2026-01-27 17:56:18.990 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2026-01-27 17:56:19.054 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:56:19.055 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:56:19.219 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:19.220 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:56:19.220 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:56:19.293 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2026-01-27 17:56:19.303 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5595e212
+2026-01-27 17:56:19.303 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2026-01-27 17:56:19.578 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:19.582 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.547 seconds (process running for 855.959)
+2026-01-27 17:56:23.100 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:23.105 [Thread-21] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:23.107 [Thread-21] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2026-01-27 17:56:23.111 [Thread-21] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2026-01-27 17:56:23.170 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:56:23.171 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:56:23.344 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:23.345 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:56:23.345 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:56:23.411 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2026-01-27 17:56:23.423 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@29b07008
+2026-01-27 17:56:23.423 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2026-01-27 17:56:23.688 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:23.693 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.541 seconds (process running for 860.07)
+2026-01-27 17:56:46.699 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:46.705 [Thread-25] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:46.707 [Thread-25] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2026-01-27 17:56:46.711 [Thread-25] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+2026-01-27 17:56:46.769 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:56:46.770 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:56:46.955 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:46.955 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:56:46.957 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:56:47.010 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+2026-01-27 17:56:47.028 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@167a4f0a
+2026-01-27 17:56:47.028 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+2026-01-27 17:56:47.294 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:47.297 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.549 seconds (process running for 883.674)
+2026-01-27 17:56:52.839 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:52.848 [Thread-29] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:52.849 [Thread-29] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+2026-01-27 17:56:52.852 [Thread-29] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.
+2026-01-27 17:56:52.919 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:56:52.920 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:56:53.098 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:53.098 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:56:53.098 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:56:53.174 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Starting...
+2026-01-27 17:56:53.185 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-9 - Added connection com.mysql.cj.jdbc.ConnectionImpl@533af342
+2026-01-27 17:56:53.185 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Start completed.
+2026-01-27 17:56:53.509 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:53.514 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.617 seconds (process running for 889.891)
+2026-01-27 17:56:57.019 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:57.023 [Thread-33] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:57.025 [Thread-33] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown initiated...
+2026-01-27 17:56:57.028 [Thread-33] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-9 - Shutdown completed.
+2026-01-27 17:56:57.086 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:56:57.086 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:56:57.228 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:57.228 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:56:57.228 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:56:57.301 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Starting...
+2026-01-27 17:56:57.334 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-10 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2404cdc0
+2026-01-27 17:56:57.334 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Start completed.
+2026-01-27 17:56:57.567 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:56:57.571 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.503 seconds (process running for 893.948)
+2026-01-27 17:57:00.002 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:00.008 [Thread-37] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:00.009 [Thread-37] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown initiated...
+2026-01-27 17:57:00.014 [Thread-37] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-10 - Shutdown completed.
+2026-01-27 17:57:00.080 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:57:00.080 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:57:00.229 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:00.229 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:57:00.229 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:57:00.280 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Starting...
+2026-01-27 17:57:00.288 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-11 - Added connection com.mysql.cj.jdbc.ConnectionImpl@226c942c
+2026-01-27 17:57:00.288 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Start completed.
+2026-01-27 17:57:00.539 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:00.542 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.48 seconds (process running for 896.919)
+2026-01-27 17:57:01.996 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:02.002 [Thread-41] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:02.004 [Thread-41] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown initiated...
+2026-01-27 17:57:02.007 [Thread-41] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-11 - Shutdown completed.
+2026-01-27 17:57:02.067 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:57:02.068 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:57:02.231 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:02.232 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:57:02.232 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:57:02.288 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Starting...
+2026-01-27 17:57:02.298 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-12 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4285ba1d
+2026-01-27 17:57:02.298 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Start completed.
+2026-01-27 17:57:02.546 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:02.549 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.499 seconds (process running for 898.926)
+2026-01-27 17:57:34.790 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:34.795 [Thread-45] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:34.796 [Thread-45] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown initiated...
+2026-01-27 17:57:34.799 [Thread-45] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-12 - Shutdown completed.
+2026-01-27 17:57:34.857 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:57:34.857 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:57:35.007 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:35.007 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:57:35.007 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:57:35.064 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Starting...
+2026-01-27 17:57:35.073 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-13 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13bd5459
+2026-01-27 17:57:35.073 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Start completed.
+2026-01-27 17:57:35.342 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:35.345 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.504 seconds (process running for 931.722)
+2026-01-27 17:57:36.784 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:36.789 [Thread-49] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:36.790 [Thread-49] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Shutdown initiated...
+2026-01-27 17:57:36.793 [Thread-49] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-13 - Shutdown completed.
+2026-01-27 17:57:36.857 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:57:36.857 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:57:36.997 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:36.998 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:57:36.998 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:57:37.056 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Starting...
+2026-01-27 17:57:37.064 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-14 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3384ce4b
+2026-01-27 17:57:37.064 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Start completed.
+2026-01-27 17:57:37.300 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:37.304 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.463 seconds (process running for 933.681)
+2026-01-27 17:57:39.767 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:39.771 [Thread-53] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:39.773 [Thread-53] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Shutdown initiated...
+2026-01-27 17:57:39.776 [Thread-53] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-14 - Shutdown completed.
+2026-01-27 17:57:39.840 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:57:39.840 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:57:39.968 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:39.969 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:57:39.969 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:57:40.011 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Starting...
+2026-01-27 17:57:40.020 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-15 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3c8753a2
+2026-01-27 17:57:40.021 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Start completed.
+2026-01-27 17:57:40.260 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:40.264 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.439 seconds (process running for 936.641)
+2026-01-27 17:57:46.834 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:46.845 [Thread-57] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:46.847 [Thread-57] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Shutdown initiated...
+2026-01-27 17:57:46.850 [Thread-57] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-15 - Shutdown completed.
+2026-01-27 17:57:46.933 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:57:46.933 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:57:47.068 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:47.069 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:57:47.069 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:57:47.115 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Starting...
+2026-01-27 17:57:47.122 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-16 - Added connection com.mysql.cj.jdbc.ConnectionImpl@26f56f81
+2026-01-27 17:57:47.122 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Start completed.
+2026-01-27 17:57:47.347 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:47.351 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.449 seconds (process running for 943.728)
+2026-01-27 17:57:51.861 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:51.868 [Thread-61] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:51.870 [Thread-61] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Shutdown initiated...
+2026-01-27 17:57:51.873 [Thread-61] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-16 - Shutdown completed.
+2026-01-27 17:57:51.952 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 11108 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:57:51.953 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:57:52.080 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:52.080 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:57:52.080 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:57:52.124 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-17 - Starting...
+2026-01-27 17:57:52.131 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-17 - Added connection com.mysql.cj.jdbc.ConnectionImpl@8aef533
+2026-01-27 17:57:52.131 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-17 - Start completed.
+2026-01-27 17:57:52.346 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:52.350 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.426 seconds (process running for 948.726)
+2026-01-27 17:57:53.020 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-17 - Shutdown initiated...
+2026-01-27 17:57:53.022 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-17 - Shutdown completed.
+2026-01-27 17:57:56.531 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 27016 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 17:57:56.534 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 17:57:58.291 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:57:58.295 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 17:57:58.296 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 17:57:59.398 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-27 17:57:59.808 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c917a7e
+2026-01-27 17:57:59.810 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-27 17:58:02.636 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 17:58:02.664 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 6.797 seconds (process running for 7.354)
+2026-01-27 17:58:03.963 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-27 17:58:04.118 [http-nio-8080-exec-2] INFO  c.e.r.controller.AuthController - Password reset request raised for email=pavan@gmail.com
+2026-01-27 17:58:04.119 [http-nio-8080-exec-2] INFO  c.e.r.s.SupportPasswordResetService - Password reset request raised for email=pavan@gmail.com
+2026-01-27 17:58:04.622 [http-nio-8080-exec-2] INFO  c.e.r.s.SupportPasswordResetService - Password reset request stored for email=pavan@gmail.com
+2026-01-27 17:58:32.700 [http-nio-8080-exec-4] INFO  c.e.r.controller.AuthController - Login request received for email=support@system.com
+2026-01-27 17:58:32.700 [http-nio-8080-exec-4] INFO  c.e.registration.service.AuthService - Login attempt for email=support@system.com
+2026-01-27 17:58:32.857 [http-nio-8080-exec-4] INFO  c.e.r.service.LoginAuditService - Login audit recorded email=support@system.com role=SUPPORT
+2026-01-27 17:58:32.891 [http-nio-8080-exec-4] INFO  c.e.registration.service.AuthService - Login successful for email=support@system.com role=SUPPORT
+2026-01-27 17:58:32.891 [http-nio-8080-exec-4] INFO  c.e.r.controller.AuthController - Login successful for email=support@system.com
+2026-01-27 17:58:35.840 [http-nio-8080-exec-6] INFO  c.e.r.c.SupportPasswordController - SUPPORT requested password reset requests
+2026-01-27 17:58:35.840 [http-nio-8080-exec-6] INFO  c.e.r.s.SupportPasswordResetService - Password reset request list requested
+2026-01-27 17:58:41.095 [http-nio-8080-exec-8] INFO  c.e.r.c.SupportPasswordController - SUPPORT accepted password reset requestId=7
+2026-01-27 17:58:41.095 [http-nio-8080-exec-8] INFO  c.e.r.s.SupportPasswordResetService - Password reset accept attempt requestId=7
+2026-01-27 17:58:41.190 [http-nio-8080-exec-8] INFO  c.e.r.s.SupportPasswordResetService - Password reset request accepted requestId=7 approvedBy=support@system.com
+2026-01-27 17:58:41.205 [http-nio-8080-exec-10] INFO  c.e.r.c.SupportPasswordController - SUPPORT requested password reset requests
+2026-01-27 17:58:41.205 [http-nio-8080-exec-10] INFO  c.e.r.s.SupportPasswordResetService - Password reset request list requested
+2026-01-27 18:00:10.610 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:00:10.619 [Thread-1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:00:10.626 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-27 18:00:10.633 [Thread-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-27 18:00:10.711 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 27016 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 18:00:10.711 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 18:00:10.992 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:00:10.993 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 18:00:10.993 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 18:00:11.068 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+2026-01-27 18:00:11.082 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@431deaf4
+2026-01-27 18:00:11.083 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+2026-01-27 18:00:11.433 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:00:11.438 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.758 seconds (process running for 136.128)
+2026-01-27 18:00:56.081 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-27 18:00:56.133 [http-nio-8080-exec-2] INFO  c.e.r.c.SupportPasswordController - SUPPORT requested password reset requests
+2026-01-27 18:00:56.133 [http-nio-8080-exec-2] INFO  c.e.r.s.SupportPasswordResetService - Password reset request list requested
+2026-01-27 18:00:58.105 [http-nio-8080-exec-5] INFO  c.e.r.c.SupportPasswordController - SUPPORT accepted password reset requestId=6
+2026-01-27 18:00:58.105 [http-nio-8080-exec-5] INFO  c.e.r.s.SupportPasswordResetService - Password reset accept attempt requestId=6
+2026-01-27 18:00:58.203 [http-nio-8080-exec-5] INFO  c.e.r.s.SupportPasswordResetService - Password reset request accepted requestId=6 approvedBy=support@system.com
+2026-01-27 18:00:58.212 [http-nio-8080-exec-6] INFO  c.e.r.c.SupportPasswordController - SUPPORT requested password reset requests
+2026-01-27 18:00:58.212 [http-nio-8080-exec-6] INFO  c.e.r.s.SupportPasswordResetService - Password reset request list requested
+2026-01-27 18:02:12.490 [http-nio-8080-exec-9] INFO  c.e.r.c.SupportPasswordController - SUPPORT sent temporary password for requestId=6
+2026-01-27 18:02:12.491 [http-nio-8080-exec-9] INFO  c.e.r.s.SupportPasswordResetService - Password reset send attempt requestId=6
+2026-01-27 18:02:12.517 [http-nio-8080-exec-9] INFO  c.e.r.s.SupportPasswordResetService - Password reset completed successfully for email=pavan@gmail.com
+2026-01-27 18:02:12.533 [http-nio-8080-exec-1] INFO  c.e.r.c.SupportPasswordController - SUPPORT requested password reset requests
+2026-01-27 18:02:12.533 [http-nio-8080-exec-1] INFO  c.e.r.s.SupportPasswordResetService - Password reset request list requested
+2026-01-27 18:03:46.101 [http-nio-8080-exec-4] INFO  c.e.r.controller.AuthController - Logout request received for email=support@system.com
+2026-01-27 18:03:46.116 [http-nio-8080-exec-4] INFO  c.e.r.service.LoginAuditService - Logout audit recorded email=support@system.com
+2026-01-27 18:03:46.116 [http-nio-8080-exec-4] INFO  c.e.r.controller.AuthController - Logout recorded successfully for email=support@system.com
+2026-01-27 18:03:58.109 [http-nio-8080-exec-7] INFO  c.e.r.controller.AuthController - Login request received for email=pavan@gmail.com
+2026-01-27 18:03:58.109 [http-nio-8080-exec-7] INFO  c.e.registration.service.AuthService - Login attempt for email=pavan@gmail.com
+2026-01-27 18:03:58.187 [http-nio-8080-exec-7] INFO  c.e.r.service.LoginAuditService - Login audit recorded email=pavan@gmail.com role=ADMIN
+2026-01-27 18:03:58.202 [http-nio-8080-exec-7] INFO  c.e.registration.service.AuthService - Login successful for email=pavan@gmail.com role=ADMIN
+2026-01-27 18:03:58.202 [http-nio-8080-exec-7] INFO  c.e.r.controller.AuthController - Login successful for email=pavan@gmail.com
+2026-01-27 18:10:04.098 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:10:04.110 [Thread-5] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:10:04.134 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-01-27 18:10:04.143 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-01-27 18:10:04.452 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 27016 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 18:10:04.453 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 18:10:04.749 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:10:04.750 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 18:10:04.750 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 18:10:04.833 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Starting...
+2026-01-27 18:10:04.869 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4754e447
+2026-01-27 18:10:04.869 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Start completed.
+2026-01-27 18:10:05.195 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:10:05.200 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.797 seconds (process running for 729.889)
+2026-01-27 18:10:06.611 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:10:06.617 [Thread-9] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:10:06.619 [Thread-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-01-27 18:10:06.625 [Thread-9] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+2026-01-27 18:10:06.683 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 27016 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 18:10:06.684 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 18:10:06.882 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:10:06.883 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 18:10:06.883 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 18:10:06.962 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Starting...
+2026-01-27 18:10:06.970 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c6f699
+2026-01-27 18:10:06.970 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Start completed.
+2026-01-27 18:10:07.270 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:10:07.277 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.614 seconds (process running for 731.966)
+2026-01-27 18:12:27.797 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:12:27.808 [Thread-13] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:12:27.821 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown initiated...
+2026-01-27 18:12:27.828 [Thread-13] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-4 - Shutdown completed.
+2026-01-27 18:12:27.943 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 27016 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 18:12:27.944 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 18:12:28.167 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:12:28.167 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 18:12:28.167 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 18:12:28.233 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Starting...
+2026-01-27 18:12:28.268 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@270b75d7
+2026-01-27 18:12:28.268 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Start completed.
+2026-01-27 18:12:28.671 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:12:28.677 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.758 seconds (process running for 873.367)
+2026-01-27 18:12:36.299 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:12:36.305 [Thread-17] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:12:36.306 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown initiated...
+2026-01-27 18:12:36.312 [Thread-17] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-5 - Shutdown completed.
+2026-01-27 18:12:36.374 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 27016 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 18:12:36.374 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 18:12:36.584 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:12:36.584 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 18:12:36.584 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 18:12:36.648 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Starting...
+2026-01-27 18:12:36.656 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a3bfac4
+2026-01-27 18:12:36.656 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Start completed.
+2026-01-27 18:12:36.920 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:12:36.924 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.574 seconds (process running for 881.613)
+2026-01-27 18:12:39.807 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-27 18:15:38.124 [http-nio-8080-exec-4] INFO  c.e.r.controller.UserController - User requested to create own profile
+2026-01-27 18:15:38.130 [http-nio-8080-exec-4] INFO  c.e.registration.service.UserService - Profile creation attempt by role=ADMIN for authId=8
+2026-01-27 18:15:38.236 [http-nio-8080-exec-4] INFO  c.e.registration.service.UserService - Profile created successfully for authId=8
+2026-01-27 18:15:38.236 [http-nio-8080-exec-4] INFO  c.e.r.controller.UserController - Profile created successfully for authId=8
+2026-01-27 18:15:40.413 [http-nio-8080-exec-6] INFO  c.e.r.controller.UserController - User requested own profile
+2026-01-27 18:15:40.414 [http-nio-8080-exec-6] INFO  c.e.registration.service.UserService - Fetching profile for logged-in user email=pavan@gmail.com
+2026-01-27 18:15:40.420 [http-nio-8080-exec-8] INFO  c.e.r.controller.UserController - User requested own login history
+2026-01-27 18:15:40.420 [http-nio-8080-exec-8] INFO  c.e.r.service.LoginAuditService - User requested own login audit email=pavan@gmail.com
+2026-01-27 18:15:48.869 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:15:48.875 [Thread-21] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:15:48.894 [Thread-21] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown initiated...
+2026-01-27 18:15:48.902 [Thread-21] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-6 - Shutdown completed.
+2026-01-27 18:15:49.145 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 27016 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 18:15:49.146 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 18:15:49.519 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:15:49.519 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 18:15:49.519 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 18:15:49.615 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Starting...
+2026-01-27 18:15:49.673 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2f8dad96
+2026-01-27 18:15:49.673 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Start completed.
+2026-01-27 18:15:50.075 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:15:50.079 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.968 seconds (process running for 1074.768)
+2026-01-27 18:15:51.522 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:15:51.526 [Thread-25] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:15:51.529 [Thread-25] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown initiated...
+2026-01-27 18:15:51.532 [Thread-25] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-7 - Shutdown completed.
+2026-01-27 18:15:51.612 [restartedMain] INFO  c.e.r.RegistrationApplication - Starting RegistrationApplication using Java 21.0.7 with PID 27016 (C:\Users\104566\Desktop\angular-springboot-project\registration-backend\target\classes started by 104566 in C:\Users\104566\Desktop\angular-springboot-project\registration-backend)
+2026-01-27 18:15:51.613 [restartedMain] INFO  c.e.r.RegistrationApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-27 18:15:51.852 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:15:51.852 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-27 18:15:51.852 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-01-27 18:15:51.919 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Starting...
+2026-01-27 18:15:51.932 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-8 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6dc3f13a
+2026-01-27 18:15:51.933 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Start completed.
+2026-01-27 18:15:52.267 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-27 18:15:52.271 [restartedMain] INFO  c.e.r.RegistrationApplication - Started RegistrationApplication in 0.689 seconds (process running for 1076.96)
+2026-01-27 18:16:06.899 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown initiated...
+2026-01-27 18:16:06.902 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-8 - Shutdown completed.

@@ -5,6 +5,11 @@ import java.security.MessageDigest;
 
 public class JwtHashUtil {
 
+    // Prevent instantiation
+    private JwtHashUtil() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static String hash(String token) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
@@ -16,8 +21,9 @@ public class JwtHashUtil {
             }
             return sb.toString();
 
-        } catch (Exception e) {
-            throw new RuntimeException("JWT hash failed");
+        }catch (Exception e) {
+            throw new IllegalStateException("Failed to hash JWT", e);
         }
+
     }
 }

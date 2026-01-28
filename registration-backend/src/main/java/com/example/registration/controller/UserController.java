@@ -1,64 +1,15 @@
-//package com.example.registration.controller;
-//
-//
-//import com.example.registration.entity.User;
-//import com.example.registration.service.UserService;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.*;
-//
-//import java.util.List;
-//
-//@RestController
-//@RequestMapping("/api/users")
-//@CrossOrigin("*")
-//public class UserController {
-//
-//    private final UserService service;
-//
-//    public UserController(UserService service){
-//        this.service=service;
-//    }
-//
-//    @PostMapping
-//    public User createUser(@RequestBody User user){
-//        return service.saveUser(user);
-//    }
-//
-//    @GetMapping
-//    public List<User> getUser(){
-//        return service.getAllUsers();
-//    }
-//
-//    @GetMapping("/{id}")
-//    public User getUserById(@PathVariable Long id) {
-//        return service.getUserById(id);
-//    }
-//
-//    @PutMapping("/{id}")
-//    public User updateUser(@PathVariable Long id, @RequestBody User user){
-//        return service.updateUser(id, user);
-//    }
-//
-//   @DeleteMapping("/{id}")
-//   public ResponseEntity<?> delectUser(@PathVariable Long id){
-//        service.deleteUser(id);
-//        return ResponseEntity.ok().build();
-//    }
-//
-//
-//
-//}
-
-
 package com.example.registration.controller;
 
 import com.example.registration.dto.UserProfileRequest;
+import com.example.registration.dto.UserViewResponse;
 import com.example.registration.entity.LoginAudit;
 import com.example.registration.entity.User;
 import com.example.registration.entity.UserAuth;
 import com.example.registration.exception.AccessDeniedException;
+import com.example.registration.logging.BaseLogger;
 import com.example.registration.repository.UserAuthRepository;
 import com.example.registration.service.*;
+import jakarta.validation.Valid;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -67,94 +18,134 @@ import java.util.List;
 @RestController
 @RequestMapping("/users")
 @CrossOrigin("*")
-public class UserController {
+public class UserController extends BaseLogger {
 
     private final UserService userService;
     private final UserAuthRepository authRepo;
-    private final SupportPasswordResetService supportPasswordResetService;
     private final LoginAuditService loginAuditService;
     private final AdminService adminService;
 
-    public UserController(UserService userService, UserAuthRepository authRepo, SupportPasswordResetService supportPasswordResetService,
-                          LoginAuditService loginAuditService, AdminService adminService) {
+    public UserController(
+            UserService userService,
+            UserAuthRepository authRepo,
+            LoginAuditService loginAuditService,
+            AdminService adminService) {
+
         this.userService = userService;
         this.authRepo = authRepo;
-        this.supportPasswordResetService = supportPasswordResetService;
         this.loginAuditService = loginAuditService;
         this.adminService = adminService;
     }
 
     /**
-     * CREATE PROFILE (FIRST TIME AFTER LOGIN)
+     * CREATE OWN PROFILE (FIRST TIME)
      */
     @PostMapping("/profile")
-    public User createProfile(@RequestBody UserProfileRequest request) {
+    public User createProfile(@Valid @RequestBody UserProfileRequest request) {
 
-        // 1️⃣ Get logged-in email from JWT
-        String email =
-                SecurityContextHolder.getContext()
-                        .getAuthentication()
-                        .getName();
+        log.info("User requested to create own profile");
 
-        // 2️⃣ Fetch auth record
+
+        var authentication = SecurityContextHolder
+                .getContext()
+                .getAuthentication();
+
+        if (authentication == null || !authentication.isAuthenticated()) {
+            log.warn("Profile creation failed - unauthenticated access");
+            throw new AccessDeniedException("Unauthorized");
+        }
+
+        String email = authentication.getName();
+
         UserAuth auth = authRepo.findByEmail(email)
                 .orElseThrow(() -> new AccessDeniedException("Unauthorized"));
 
-        // 3️⃣ Allow profile creation only once
         if (auth.isProfileCreated()) {
+            log.warn("Profile creation blocked - already created for authId={}", auth.getId());
             throw new AccessDeniedException("Profile already created");
         }
 
-        // 4️⃣ Create profile via service
-        return userService.createProfile(auth.getId(), request);
-    }
+        User user = userService.createProfile(auth.getId(), request);
 
-    @PostMapping("/profile/{authId}")
-    public User createProfileForUser(
-            @PathVariable Long authId,
-            @RequestBody UserProfileRequest request) {
+        log.info("Profile created successfully for authId={}", auth.getId());
 
-        return userService.createProfileByEditor(authId, request);
+        return user;
     }
 
     /**
-     * ADMIN & USER VIEW (will be refined in Step 2)
+     * CREATE PROFILE BY EDITOR
+     */
+    @PostMapping("/profile/{authId}")
+    public User createProfileForUser(
+            @PathVariable Long authId,
+            @Valid @RequestBody UserProfileRequest request) {
+
+        log.info("Editor requested profile creation for authId={}", authId);
+
+        User user = userService.createProfileByEditor(authId, request);
+
+        log.info("Profile created by editor for authId={}", authId);
+
+        return user;
+    }
+
+    /**
+     * VIEW USERS (ROLE BASED)
      */
     @GetMapping
-    public List<?> getUser() {
+    public List<UserViewResponse> getUser() {
+
+        log.info("User requested user list (role-based)");
+
         return userService.getUsersByRole();
     }
 
-//    @GetMapping("/{id}")
-//    public User getUserById(@PathVariable Long id) {
-//        return service.getUserById(id);
-//    }
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id){
+    public User getUserById(@PathVariable Long id) {
+
+        log.info("User requested profile details for userId={}", id);
+
         return userService.getUserById(id);
     }
 
     /**
-     * UPDATE OWN PROFILE ONLY (ADMIN + USER)
+     * UPDATE OWN PROFILE
      */
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable Long id, @RequestBody User user) {
+    public User updateUser(
+            @PathVariable Long id,
+            @Valid @RequestBody User user) {
 
-        return userService.updateUser(id, user);
+        log.info("User requested profile update for userId={}", id);
+
+        User updatedUser = userService.updateUser(id, user);
+
+        log.info("Profile updated successfully for userId={}", id);
+
+        return updatedUser;
     }
 
     @GetMapping("/me")
     public User getMyProfile() {
+
+        log.info("User requested own profile");
+
         return userService.getMyProfile();
     }
 
     @GetMapping("/me/login-history")
     public List<LoginAudit> getMyLoginHistory() {
+
+        log.info("User requested own login history");
+
         return loginAuditService.getCurrentUserAudit();
     }
 
     @GetMapping("/auth-users")
     public List<UserAuth> getAllAuthUsers() {
+
+        log.info("Admin requested auth users list via user controller");
+
         return adminService.getAllAuthUsers();
     }
 }

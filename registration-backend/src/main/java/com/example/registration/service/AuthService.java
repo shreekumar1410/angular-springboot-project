@@ -6,6 +6,7 @@ import com.example.registration.enums.LoginReason;
 import com.example.registration.enums.Roles;
 import com.example.registration.exception.BadRequestException;
 import com.example.registration.exception.ResourceNotFoundException;
+import com.example.registration.logging.BaseLogger;
 import com.example.registration.repository.UserAuthRepository;
 import com.example.registration.config.JwtUtil;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,7 +16,7 @@ import org.springframework.stereotype.Service;
 import java.time.Instant;
 
 @Service
-public class AuthService {
+public class AuthService extends BaseLogger {
 
     private final UserAuthRepository authRepo;
     private final PasswordEncoder passwordEncoder;
@@ -32,10 +33,17 @@ public class AuthService {
         this.loginAuditService = loginAuditService;
     }
 
+    // =====================================================
+    // 🔐 LOGIN
+    // =====================================================
+
     public LoginResponse login(LoginRequest request) {
+
+        log.info("Login attempt for email={}", request.getEmail());
 
         UserAuth auth = authRepo.findByEmail(request.getEmail())
                 .orElseThrow(() -> {
+                    log.warn("Login failed - email not found email={}", request.getEmail());
                     loginAuditService.recordFailure(
                             request.getEmail(),
                             LoginReason.EMAIL_NOT_FOUND
@@ -44,6 +52,9 @@ public class AuthService {
                 });
 
         if (!passwordEncoder.matches(request.getPassword(), auth.getPassword())) {
+
+            log.warn("Login failed - invalid password email={}", request.getEmail());
+
             loginAuditService.recordFailure(
                     request.getEmail(),
                     LoginReason.INVALID_PASSWORD
@@ -52,6 +63,9 @@ public class AuthService {
         }
 
         if (!auth.isActive()) {
+
+            log.warn("Login failed - account disabled email={}", request.getEmail());
+
             loginAuditService.recordFailure(
                     request.getEmail(),
                     LoginReason.USER_DISABLED
@@ -63,8 +77,6 @@ public class AuthService {
                 auth.getEmail(),
                 auth.getRole()
         );
-
-//        audit.setFailureReason(reason);
 
         Instant loginTime = Instant.now();
 
@@ -81,6 +93,9 @@ public class AuthService {
                         loginTime
                 );
 
+        log.info("Login successful for email={} role={}",
+                auth.getEmail(), auth.getRole());
+
         return new LoginResponse(
                 token,
                 auth.getRole(),
@@ -89,9 +104,16 @@ public class AuthService {
         );
     }
 
+    // =====================================================
+    // 📝 REGISTER
+    // =====================================================
+
     public UserAuth register(RegisterRequest request) {
 
+        log.info("Registration attempt for email={}", request.getEmail());
+
         if (authRepo.findByEmail(request.getEmail()).isPresent()) {
+            log.warn("Registration failed - email already exists email={}", request.getEmail());
             throw new BadRequestException("Email already registered");
         }
 
@@ -104,31 +126,45 @@ public class AuthService {
         auth.setProfileCreated(false);
         auth.setActive(true);
 
-        return authRepo.save(auth);
+        UserAuth saved = authRepo.save(auth);
+
+        log.info("Registration successful email={} role={}",
+                saved.getEmail(), saved.getRole());
+
+        return saved;
     }
+
+    // =====================================================
+    // 🔑 CHANGE PASSWORD
+    // =====================================================
 
     public void changePassword(ChangePasswordRequest request) {
 
-        // 1. Get logged-in user's email from JWT
-        String email = SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getName();
+        var logAuth = SecurityContextHolder.getContext().getAuthentication();
+        if (logAuth == null || !logAuth.isAuthenticated() || logAuth.getAuthorities().isEmpty()) {
+            throw new BadRequestException("Unauthenticated request");
+        }
 
-        String role = SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getAuthorities()
+
+        String email = logAuth.getName();
+
+        String role = logAuth.getAuthorities()
                 .iterator()
                 .next()
                 .getAuthority();
 
+        log.info("Password change attempt email={} role={}", email, role);
+
         UserAuth auth = authRepo.findByEmail(email)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
-        // 2. Validate current password
         if (!passwordEncoder.matches(
                 request.getCurrentPassword(),
                 auth.getPassword()
         )) {
+
+            log.warn("Password change failed - invalid current password email={}", email);
+
             loginAuditService.recordPasswordChange(
                     email,
                     role,
@@ -138,11 +174,13 @@ public class AuthService {
             throw new BadRequestException("Current password is incorrect");
         }
 
-        // 3. Prevent same password reuse
         if (passwordEncoder.matches(
                 request.getNewPassword(),
                 auth.getPassword()
-        )){
+        )) {
+
+            log.warn("Password change failed - password reuse email={}", email);
+
             loginAuditService.recordPasswordChange(
                     email,
                     role,
@@ -152,21 +190,19 @@ public class AuthService {
             throw new BadRequestException("New password must be different");
         }
 
-        // 4. Update password
         auth.setPassword(
                 passwordEncoder.encode(request.getNewPassword())
         );
 
         authRepo.save(auth);
 
-        // ✅ audit success
         loginAuditService.recordPasswordChange(
                 email,
                 role,
                 true,
                 LoginReason.PASSWORD_CHANGED_SUCCESS
         );
+
+        log.info("Password changed successfully email={}", email);
     }
-
-
 }

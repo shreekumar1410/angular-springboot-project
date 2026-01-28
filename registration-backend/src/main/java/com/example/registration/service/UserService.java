@@ -1,9 +1,9 @@
-
 package com.example.registration.service;
 
 import com.example.registration.dto.UserFullResponse;
 import com.example.registration.dto.UserProfileRequest;
 import com.example.registration.dto.UserShortResponse;
+import com.example.registration.dto.UserViewResponse;
 import com.example.registration.entity.User;
 import com.example.registration.entity.UserAuth;
 import com.example.registration.enums.ActionStatus;
@@ -11,26 +11,38 @@ import com.example.registration.enums.ActionType;
 import com.example.registration.enums.Roles;
 import com.example.registration.exception.AccessDeniedException;
 import com.example.registration.exception.ResourceNotFoundException;
+import com.example.registration.logging.BaseLogger;
 import com.example.registration.repository.UserAuthRepository;
 import com.example.registration.repository.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import static com.example.registration.enums.Roles.*;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Service
-public class UserService {
+public class UserService extends BaseLogger {
 
     private final UserRepository userRepo;
     private final UserAuthRepository authRepo;
     private final ActionAuditService actionAuditService;
 
-    public UserService(UserRepository userRepo, UserAuthRepository authRepo, ActionAuditService actionAuditService) {
+    public UserService(
+            UserRepository userRepo,
+            UserAuthRepository authRepo,
+            ActionAuditService actionAuditService) {
+
         this.userRepo = userRepo;
         this.authRepo = authRepo;
         this.actionAuditService = actionAuditService;
+    }
+
+    private org.springframework.security.core.Authentication getAuthSafely() {
+        var auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null || !auth.isAuthenticated() || auth.getAuthorities().isEmpty()) {
+            throw new AccessDeniedException("Unauthorized");
+        }
+        return auth;
     }
 
     /* ================= FIRST-TIME PROFILE ================= */
@@ -40,34 +52,32 @@ public class UserService {
         UserAuth auth = null;
 
         try {
-            String loggedInEmail = SecurityContextHolder.getContext()
-                    .getAuthentication()
-                    .getName();
+            String loggedInEmail = getAuthSafely().getName();
 
-            String role = SecurityContextHolder.getContext()
-                    .getAuthentication()
-                    .getAuthorities()
+            String role = getAuthSafely().getAuthorities()
                     .iterator()
                     .next()
                     .getAuthority();
-//
-//        System.out.println("LOGIN MAIL");
-//        System.out.println("email = " + email);
+
+            log.info("Profile creation attempt by role={} for authId={}", role, authId);
 
             auth = authRepo.findById(authId)
                     .orElseThrow(() -> new AccessDeniedException("Unauthorized"));
 
-            // USER restriction
-            if ("USER".equals(role) && !auth.getEmail().equals(loggedInEmail)) {
+            if (Roles.USER.name().equals(role) &&
+                    !auth.getEmail().equals(loggedInEmail)) {
+
+                log.warn(
+                        "Profile creation denied: USER tried to create profile for another user authId={}",
+                        authId
+                );
                 throw new AccessDeniedException("You can create only your own profile");
             }
 
             if (auth.isProfileCreated()) {
+                log.warn("Profile already exists for authId={}", authId);
                 throw new AccessDeniedException("Profile already created");
             }
-//
-//        System.out.println("this is from user service");
-//        System.out.println(request.getEmailId());
 
             User user = new User();
             user.setName(request.getName());
@@ -86,19 +96,22 @@ public class UserService {
             auth.setProfileCreated(true);
             authRepo.save(auth);
 
-            //for action aduit
             actionAuditService.logAction(
                     ActionType.PROFILE_CREATE,
                     ActionStatus.SUCCESS,
                     auth.getEmail(),
-                    user.getId(),
+                    savedUser.getId(),
                     null,
-                    user.toString(), // or JSON
+                    savedUser.toString(),
                     "Profile created"
             );
 
+            log.info("Profile created successfully for authId={}", authId);
+
             return savedUser;
+
         } catch (RuntimeException ex) {
+
             actionAuditService.logFailure(
                     ActionType.PROFILE_CREATE,
                     auth != null ? auth.getEmail() : null,
@@ -106,91 +119,78 @@ public class UserService {
                     ex.getMessage()
             );
 
+            log.error("Profile creation failed for authId={}", authId);
+
             throw ex;
         }
-
     }
 
     public User createProfileByEditor(Long authId, UserProfileRequest request) {
 
-        String role = SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getAuthorities()
+        String role = getAuthSafely().getAuthorities()
                 .iterator()
                 .next()
                 .getAuthority();
 
-        System.out.println("this is from the userservice");
-        System.out.println("logined role = " + role);
+        log.info("Create profile by editor attempt for authId={}, role={}", authId, role);
 
-        if (!EDITOR.equals(role)) {
+        if (Roles.EDITOR.name().equals(role)) {
             return createProfile(authId, request);
         }
+
+        log.warn("Non-editor attempted profile creation for authId={}", authId);
         throw new AccessDeniedException("Only EDITOR can create profiles for users");
-
     }
 
+    /* ================= USER LIST ================= */
 
-    /* ================= EXISTING CRUD (FOR CONTROLLER) ================= */
+    public List<UserViewResponse> getUsersByRole() {
 
-    public User saveUser(User user) {
-        return userRepo.save(user);
-    }
+        var authentication = SecurityContextHolder
+                .getContext()
+                .getAuthentication();
 
-    public List<User> getAllUsers() {
-        return userRepo.findAll();
-    }
+        if (authentication == null || !authentication.isAuthenticated()
+                || authentication.getAuthorities().isEmpty()) {
 
-    public List<?> getUsersByRole() {
+            log.warn("User list request failed - unauthenticated or no authorities");
+            throw new AccessDeniedException("Unauthorized");
+        }
 
-        String role = SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getAuthorities()
+        String role = authentication.getAuthorities()
                 .iterator()
                 .next()
                 .getAuthority();
+
+        log.info("User list requested by role={}", role);
 
         List<User> users = userRepo.findAll();
 
-        System.out.println("role = " + role);
-
-
-        if (USER.equals(role)) {
-        // USER → SHORT INFO
-
-            System.out.println("this sout is used in userservice");
-            System.out.println("CURRENT USER ROLE: "+role);
+        if (Roles.USER.name().equals(role)) {
 
             AtomicLong sno = new AtomicLong(1);
+
             return users.stream()
-                    .map(u -> new UserShortResponse(
+                    .map(u -> (UserViewResponse) new UserShortResponse(
                             sno.getAndIncrement(),
                             u.getName(),
                             u.getAuth().getEmail(),
                             maskPhone(u.getPhone())
                     ))
                     .toList();
-
-        } else {
-            // ADMIN + SUPER_ADMIN → FULL INFO
-
-            System.out.println("this sout is used in userservice");
-            System.out.println("CURRENT USER ROLE: "+role);
-
-
-            return users.stream()
-                    .map(u -> new UserFullResponse(
-                            u.getId(),
-                            u.getName(),
-                            u.getAuth().getEmail(),
-                            u.getPhone(),
-                            u.getAddress(),
-                            u.getDob(),
-                            u.getLanguages()
-                    ))
-                    .toList();
-
         }
+
+        return users.stream()
+                .map(u -> (UserViewResponse) new UserFullResponse(
+                        u.getId(),
+                        u.getName(),
+                        u.getAuth().getEmail(),
+                        u.getPhone(),
+                        u.getAddress(),
+                        u.getDob(),
+                        u.getLanguages()
+                ))
+                .toList();
     }
 
     private String maskPhone(String phone) {
@@ -198,64 +198,49 @@ public class UserService {
         return "XXXXXX" + phone.substring(phone.length() - 4);
     }
 
+    /* ================= PROFILE CRUD ================= */
 
     public User getUserById(Long id) {
+
+        log.info("Fetching profile for userId={}", id);
+
         return userRepo.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
     }
 
     public User updateUser(Long id, User user) {
 
-        User existing =null;
+        User existing = null;
 
         try {
-            // 1. Fetch existing profile
             existing = getUserById(id);
 
-            // 2. Get logged-in user's email from JWT
-            String loggedInEmail =
-                    SecurityContextHolder.getContext()
-                            .getAuthentication()
-                            .getName();
+            String loggedInEmail = getAuthSafely().getName();
 
-            String role = SecurityContextHolder.getContext()
-                    .getAuthentication()
-                    .getAuthorities()
+            String role = getAuthSafely().getAuthorities()
                     .iterator()
                     .next()
                     .getAuthority();
 
-            String targetRole = existing.getAuth().getRole().name();
+            String profileOwnerEmail = existing.getAuth().getEmail();
 
-//        System.out.println("this is from the user service...");
-//        System.out.println("loggedInEmail = " + loggedInEmail);
-//        System.out.println("role = " + role);
-//        System.out.println("targetRole = " + targetRole);
+            log.info(
+                    "Profile update attempt by role={} for userId={}",
+                    role, id
+            );
 
-            // 3. Get profile owner's email
-            String profileOwnerEmail =
-                    existing.getAuth().getEmail();
-
-            // USER restriction
-            if ("USER".equals(role) &&
+            if (Roles.USER.name().equals(role) &&
                     !profileOwnerEmail.equals(loggedInEmail)) {
 
+                log.warn(
+                        "Profile update denied: USER tried to edit another profile userId={}",
+                        id
+                );
                 throw new AccessDeniedException("You can edit only your own profile");
             }
-//
-//             EDITOR restriction
-//            if ("EDITOR".equals(role) &&
-//                    ("ADMIN".equals(targetRole) || "SUPER_ADMIN".equals(targetRole))) {
-//
-//                throw new AccessDeniedException(
-//                        "You cannot edit ADMIN or SUPER_ADMIN profiles"
-//                );
-//            }
 
-            //for action aduit
             String before = existing.toString();
 
-            // 5. Update allowed fields
             existing.setName(user.getName());
             existing.setPhone(user.getPhone());
             existing.setAddress(user.getAddress());
@@ -263,25 +248,27 @@ public class UserService {
             existing.setLanguages(user.getLanguages());
             existing.setGender(user.getGender());
             existing.setAge(user.getAge());
-//        System.out.println("this sout is at userservice.");
-//        System.out.println("USer Email = "+existing.getAuth().getEmail());
             existing.setEmailId(existing.getAuth().getEmail());
             existing.setQualification(user.getQualification());
 
-            //for action aduit
+            User updated = userRepo.save(existing);
+
             actionAuditService.logAction(
                     ActionType.PROFILE_UPDATE,
                     ActionStatus.SUCCESS,
                     existing.getAuth().getEmail(),
                     existing.getId(),
                     before,
-                    existing.toString(),
+                    updated.toString(),
                     "Profile updated"
             );
 
+            log.info("Profile updated successfully for userId={}", id);
 
-            return userRepo.save(existing);
+            return updated;
+
         } catch (RuntimeException ex) {
+
             actionAuditService.logFailure(
                     ActionType.PROFILE_UPDATE,
                     existing != null ? existing.getAuth().getEmail() : null,
@@ -289,30 +276,20 @@ public class UserService {
                     ex.getMessage()
             );
 
+            log.error("Profile update failed for userId={}", id);
+
             throw ex;
         }
     }
 
-
-    public void deleteUser(Long id) {
-        if (!userRepo.existsById(id)) {
-            throw new ResourceNotFoundException("User not found");
-        }
-        userRepo.deleteById(id);
-    }
-
-
     public User getMyProfile() {
 
-        // Get logged-in email from JWT
-        String email = SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getName();
+        String email = getAuthSafely().getName();
 
-        System.out.println(" lOGIN Emial = "+email);
+        log.info("Fetching profile for logged-in user email={}", email);
 
         return userRepo.findByAuthEmail(email)
                 .orElseThrow(() ->
-                        new RuntimeException("Profile not found for logged-in user"));
+                        new ResourceNotFoundException("Profile not found for logged-in user"));
     }
 }

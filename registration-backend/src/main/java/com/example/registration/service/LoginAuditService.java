@@ -6,6 +6,8 @@ import com.example.registration.entity.UserAuth;
 import com.example.registration.enums.LoginAlertType;
 import com.example.registration.enums.LoginReason;
 import com.example.registration.enums.LoginType;
+import com.example.registration.exception.BadRequestException;
+import com.example.registration.logging.BaseLogger;
 import com.example.registration.repository.LoginAuditRepository;
 import com.example.registration.security.JwtHashUtil;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,7 +18,7 @@ import java.time.Instant;
 import java.util.List;
 
 @Service
-public class LoginAuditService {
+public class LoginAuditService extends BaseLogger {
 
     private final LoginAuditRepository loginAuditRepository;
 
@@ -25,6 +27,9 @@ public class LoginAuditService {
     }
 
     public List<LoginAudit> getAllAudits() {
+
+        log.info("Login audit list requested");
+
         return loginAuditRepository.findAll();
     }
 
@@ -40,8 +45,15 @@ public class LoginAuditService {
             audit.setJwtTokenHash(JwtHashUtil.hash(jwt));
             audit.setJwtIssuedAt(issuedAt);
             audit.setJwtExpiresAt(expiresAt);
+
             loginAuditRepository.save(audit);
-        } catch (Exception ignored) {}
+
+            log.info("Login audit recorded email={} role={}", user.getEmail(), user.getRole());
+
+        } catch (RuntimeException ex) {
+            // Audit must never break login
+            log.error("Failed to record login audit for email={}", user.getEmail(), ex);
+        }
     }
 
     public void recordLogout(UserAuth user, String jwt, Instant issuedAt, Instant expiresAt) {
@@ -56,8 +68,14 @@ public class LoginAuditService {
             audit.setJwtTokenHash(JwtHashUtil.hash(jwt));
             audit.setJwtIssuedAt(issuedAt);
             audit.setJwtExpiresAt(expiresAt);
+
             loginAuditRepository.save(audit);
-        } catch (Exception ignored) {}
+
+            log.info("Logout audit recorded email={}", user.getEmail());
+
+        } catch (RuntimeException ex) {
+            log.error("Failed to record logout audit for email={}", user.getEmail(), ex);
+        }
     }
 
     public void recordFailure(String email, LoginReason reason) {
@@ -67,11 +85,19 @@ public class LoginAuditService {
             audit.setEventTime(Instant.now());
             audit.setLoginType(LoginType.FAILED);
             audit.setReason(reason);
+
             loginAuditRepository.save(audit);
-        } catch (Exception ignored) {}
+
+            log.warn("Login failure recorded email={} reason={}", email, reason);
+
+        } catch (RuntimeException ex) {
+            log.error("Failed to record login failure audit email={}", email, ex);
+        }
     }
 
     public LoginAlertDTO buildLoginAlert(String email, Instant currentLoginTime) {
+
+        log.debug("Building login alert for email={}", email);
 
         List<LoginAudit> logins =
                 loginAuditRepository.findByEmailAndLoginTypeOrderByEventTimeAsc(
@@ -79,7 +105,6 @@ public class LoginAuditService {
                         LoginType.LOGIN
                 );
 
-        // 🟢 FIRST LOGIN
         if (logins.size() == 1) {
             return new LoginAlertDTO(
                     LoginAlertType.FIRST_LOGIN,
@@ -88,7 +113,6 @@ public class LoginAuditService {
             );
         }
 
-        // Find last logout
         return loginAuditRepository
                 .findTopByEmailAndLoginTypeOrderByEventTimeDesc(
                         email,
@@ -133,7 +157,7 @@ public class LoginAuditService {
         if (hours > 0) {
             result.append(hours).append(hours == 1 ? " hour " : " hours ");
         }
-        if (minutes > 0 || result.length() == 0) {
+        if (minutes > 0 || result.isEmpty()) {
             result.append(minutes).append(minutes == 1 ? " minute " : " minutes ");
         }
 
@@ -143,9 +167,16 @@ public class LoginAuditService {
     }
 
     public List<LoginAudit> getCurrentUserAudit() {
-        String email = SecurityContextHolder.getContext()
-                .getAuthentication()
-                .getName();
+
+        var auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth == null || !auth.isAuthenticated() || auth.getAuthorities().isEmpty()) {
+            throw new BadRequestException("Unauthenticated request");
+        }
+
+        String email = auth.getName();
+
+        log.info("User requested own login audit email={}", email);
+
         return loginAuditRepository.findByEmail(email);
     }
 
@@ -164,8 +195,16 @@ public class LoginAuditService {
             audit.setReason(reason);
 
             loginAuditRepository.save(audit);
-        } catch (Exception ignored) {}
+
+            if (success) {
+                log.info("Password change audit recorded email={}", email);
+            } else {
+                log.warn("Password change failed email={} reason={}", email, reason);
+            }
+
+        } catch (RuntimeException ex) {
+            log.error("Failed to record password change audit email={}", email, ex);
+        }
     }
-
-
 }
+    

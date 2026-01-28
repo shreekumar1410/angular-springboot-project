@@ -1,10 +1,35 @@
 package com.example.registration.entity;
 
+import com.example.registration.dto.UserProfileRequest;
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "users")
 public class User {
+
+    public static User fromProfileRequest(
+            UserProfileRequest request,
+            UserAuth auth
+    ) {
+        User user = new User();
+
+        user.setName(request.getName());
+        user.setAge(request.getAge());
+        user.setAddress(request.getAddress());
+        user.setPhone(request.getPhone());
+        user.setGender(request.getGender());
+        user.setQualification(request.getQualification());
+        user.setDob(request.getDob());
+        user.setLanguages(request.getLanguages());
+
+        user.setEmailId(auth.getEmail());
+        user.setAuth(auth);
+
+        return user;
+    }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,27 +41,12 @@ public class User {
     private String phone;
     private String gender;
     private String qualification;
-    private String dob;
+    private LocalDate dob;
     private String languages;
 
     @ManyToOne
     @JoinColumn(name = "auth_id")
     private UserAuth auth;
-
-    public User(String name, String emailId, Integer age, String address, String phone, String gender, String qualification, String dob, String languages) {
-        this.name = name;
-        this.emailId = emailId;
-        this.age = age;
-        this.address = address;
-        this.phone = phone;
-        this.gender = gender;
-        this.qualification = qualification;
-        this.dob = dob;
-        this.languages = languages;
-    }
-
-    public User() {
-    }
 
     public void setId(Long id) {
         this.id = id;
@@ -55,8 +65,6 @@ public class User {
     }
 
     public String getEmailId() {
-        System.out.println("this sout is at user.");
-        System.out.println("USer Email = "+emailId);
         return emailId;
     }
 
@@ -104,11 +112,11 @@ public class User {
         this.qualification = qualification;
     }
 
-    public String getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
@@ -127,5 +135,7 @@ public class User {
     public void setAuth(UserAuth auth) {
         this.auth = auth;
     }
+
+
 
 }

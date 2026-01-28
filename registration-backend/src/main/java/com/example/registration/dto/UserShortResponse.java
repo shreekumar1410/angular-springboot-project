@@ -1,6 +1,6 @@
 package com.example.registration.dto;
 
-public class UserShortResponse {
+public class UserShortResponse implements UserViewResponse {
 
     private Long sno;
     private String name;

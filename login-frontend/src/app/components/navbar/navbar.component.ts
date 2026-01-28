@@ -14,7 +14,11 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private authService: AuthService, private router: Router) {}
+  // role: string | null;
+
+  constructor(private authService: AuthService, private router: Router) {
+    // this.role = this.authService.getRole();
+  }
 
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
@@ -71,5 +75,65 @@ export class NavbarComponent {
         this.router.navigate(['/login']);
       }
     });
+  }
+
+  // Get formatted role display name
+  getRoleDisplayName(): string {
+    const role = this.authService.getRole();
+    if (!role) return '';
+    switch (role) {
+      case 'USER':
+        return 'USER';
+      case 'EDITOR':
+        return 'EDITOR';
+      case 'SUPPORT':
+        return 'SUPPORT';
+      case 'ADMIN':
+        return 'ADMIN';
+      case 'SUPER_ADMIN':
+        return 'SUPER_ADMIN';
+      default:
+        return role;
+    }
+  }
+
+  // Get role badge class for styling
+  getRoleBadgeClass(): string {
+    const role = this.authService.getRole();
+    if (!role) return 'role-badge-default';
+    switch (role) {
+      case 'USER':
+        return 'role-badge-user';
+      case 'EDITOR':
+        return 'role-badge-editor';
+      case 'SUPPORT':
+        return 'role-badge-support';
+      case 'ADMIN':
+        return 'role-badge-admin';
+      case 'SUPER_ADMIN':
+        return 'role-badge-super-admin';
+      default:
+        return 'role-badge-default';
+    }
+  }
+
+  // Get role icon
+  getRoleIcon(): string {
+    const role = this.authService.getRole();
+    if (!role) return 'bi-person';
+    switch (role) {
+      case 'USER':
+        return 'bi-person me-1';
+      case 'EDITOR':
+        return 'bi-pencil-square me-1';
+      case 'SUPPORT':
+        return 'bi-headset me-1';
+      case 'ADMIN':
+        return 'bi-shield-check me-1';
+      case 'SUPER_ADMIN':
+        return 'bi-shield-lock me-1';
+      default:
+        return 'bi-person me-1';
+    }
   }
 }

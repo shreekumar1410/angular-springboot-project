@@ -127,7 +127,14 @@
           </a>
         </li>
       </ul>
+     
       <ul class="navbar-nav" *ngIf="isLoggedIn()">
+        <li class="nav-item">
+          <span class="role-badge" [ngClass]="getRoleBadgeClass()">
+            <i class="bi" [ngClass]="getRoleIcon()"></i>
+            {{ getRoleDisplayName() }}
+          </span>
+        </li>
         <li class="nav-item">
           <button class="btn-logout" (click)="logout()">
             <i class="bi bi-box-arrow-right me-2"></i>Logout
